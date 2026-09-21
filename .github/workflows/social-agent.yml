@@ -1,0 +1,107 @@
+name: Bible Verse Agent
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  Biblia Tafsiri Mbalimbali — posts one YouVersion Verse-of-the-Day image +
+#  its Swahili SUV caption to the Facebook page every day at 09:00 EAT.
+#
+#  GitHub's cron fires this workflow every 30 minutes around the clock at
+#  :13/:43 — but the timing barely matters. Every run that lands PRE-SCHEDULES
+#  the next "scheduleDays" days (default 3) with META'S OWN scheduled
+#  publishing — Meta's servers then publish each post exactly at 09:00 EAT,
+#  no matter when or whether GitHub fires again.
+#
+#  WHY THIS DESIGN? GitHub silently DROPS most scheduled runs on young
+#  accounts (observed live on the sister repo: 1 of ~70 fires landed on
+#  2026-09-21, regardless of cron density). Relying on GitHub firing at slot
+#  time does not work. With Meta-side pre-scheduling, ONE landed run every
+#  2 days keeps the horizon booked. Landed runs also record permalinks after
+#  posts go live, and late direct posting (4-hour catch-up, "graceMinutes")
+#  remains the fallback for unscheduled slots.
+#
+#  The minutes are deliberately OFF-PEAK (:13/:43, never :00/:30): GitHub
+#  drops scheduled runs at peak minutes when Actions load is high.
+#
+#  FIRST-RUN TOKEN: paste a fresh Graph API Explorer token into
+#  data/meta-token.txt and push — the next landed run mints the permanent
+#  page token into data/config.json and clears the file.
+#
+#  ⟶ To CHANGE posting time: edit "slots" (and "timezone") in data/config.json
+#    only — this file never needs to change.
+# ⟶ To POST RIGHT NOW (or rescue a MISSED slot the same day): Actions tab →
+#    "Bible Verse Agent" → "Run workflow" → tick "force".
+# ⟶ To TEST without publishing: same, but tick "dryRun".
+# ⟶ To PAUSE: set "autoPost": false in data/config.json — the next landed
+#    run also deletes any pending Meta-scheduled posts.
+#
+#  Free-tier notes (private repo): only runs that START bill minutes (~2-5
+#  landed runs/day ≈ 100-300 of the 2000 monthly included minutes). State
+#  commits after every posting keep the repo active, so scheduled workflows
+#  never get auto-disabled.
+# ─────────────────────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        description: "Dry run — pick content and log the plan, publish nothing"
+        type: boolean
+        default: false
+      force:
+        description: "Force — post the most recent unposted slot right now (rescues a missed slot the same day)"
+        type: boolean
+        default: false
+
+# Never let two runs race on data/state.json
+concurrency:
+  group: bible-verse-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write # to commit data/state.json back
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Any file dropped into data/photos/ (phone PNG, huge export, too-small
+      # image) is auto-converted/cropped/scaled to platform-safe JPEG and the
+      # fix is committed back to the repo.
+      - name: Normalize photos
+        run: |
+          mkdir -p /tmp/norm && cd /tmp/norm
+          npm init -y >/dev/null 2>&1
+          npm install sharp --silent --no-audit --no-fund >/dev/null 2>&1 || true
+          cd "$GITHUB_WORKSPACE"
+          NODE_PATH=/tmp/norm/node_modules node scripts/normalize-photos.js \
+            || echo "normalize skipped (non-fatal — the agent posts files as-is)"
+
+      - name: Run the agent
+        env:
+          INPUT_DRY_RUN: ${{ inputs.dryRun }}
+          INPUT_FORCE: ${{ inputs.force }}
+        run: |
+          FLAGS=""
+          if [ "$INPUT_DRY_RUN" = "true" ]; then FLAGS="$FLAGS --dry-run"; fi
+          if [ "$INPUT_FORCE" = "true" ]; then FLAGS="$FLAGS --force"; fi
+          node scripts/gh-agent.mjs $FLAGS
+
+      - name: Persist state + normalized photos
+        run: |
+          git config user.name "verse-agent-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/
+          if git diff --cached --quiet; then
+            echo "nothing changed — no commit"
+          else
+            git commit -m "agent: state update $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push || (git pull --rebase origin main && git push)
+          fi

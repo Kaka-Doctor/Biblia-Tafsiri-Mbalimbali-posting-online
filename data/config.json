@@ -1,0 +1,14 @@
+{
+  "_readme": "THE config file for the Biblia Tafsiri Mbalimbali agent — everything you might switch lives here. (1) FIRST RUN: open https://developers.facebook.com/tools/explorer, select your app, generate a token with pages_show_list + pages_manage_posts + pages_read_engagement (and Business use case permissions), and paste it into data/meta-token.txt (plain text, one line) — then push. The next agent run mints this page's PERMANENT token, writes it into pageAccessToken below, and clears meta-token.txt. Page tokens never expire, so this is a one-time step. (2) Pause everything: set autoPost to false (the runner reads it live; force runs still work). (3) Schedule: slots + timezone. Page: Biblia Tafsiri Mbalimbali = 447560908444853 (@biblia_tafsiri_mbalimbali). If this repo ever goes public, move these values to host env vars instead.",
+  "metaUserToken": "",
+  "appId": "1396184215347531",
+  "appSecret": "c2e2387de1cefa6b8c95a963b49f5c6d",
+  "pageId": "447560908444853",
+  "pageName": "Biblia Tafsiri Mbalimbali",
+  "pageUsername": "biblia_tafsiri_mbalimbali",
+  "platforms": "facebook",
+  "timezone": "Africa/Dar_es_Salaam",
+  "slots": "09:00",
+  "graceMinutes": 240,
+  "scheduleDays": 3
+}
