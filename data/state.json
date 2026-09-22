@@ -28,12 +28,6 @@
           "id": "122205160550587338"
         }
       }
-    },
-    "2026-09-22": {
-      "09:00": {
-        "status": "guarded",
-        "at": "2026-09-22T06:02:25.157Z"
-      }
     }
   },
   "rotation": {
@@ -46,21 +40,14 @@
       "level": "info",
       "date": "2026-09-23",
       "slot": "09:00",
-      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z) — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
+      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z) \u2014 \"votd-2026-09-15.jpg\" | IG \u2713 | FB \u2713"
     },
     {
       "ts": "2026-09-22T05:54:58.612Z",
       "level": "info",
       "date": "2026-09-24",
       "slot": "09:00",
-      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z) — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
-    },
-    {
-      "ts": "2026-09-22T06:02:25.157Z",
-      "level": "info",
-      "date": "2026-09-22",
-      "slot": "09:00",
-      "message": "Skipped by duplicate guard — last post 8 min ago"
+      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z) \u2014 \"votd-2026-09-16.jpg\" | IG \u2713 | FB \u2713"
     }
   ]
 }

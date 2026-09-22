@@ -289,13 +289,26 @@ function recordEvent(state, ev) {
 }
 
 // ── Duplicate guard (mirrors src/lib/meta.ts minutesSinceLastPost) ──────────
-async function minutesSinceLastPost(page) {
+// ⚠ IG /media lists SCHEDULED-but-unpublished containers too, with timestamp =
+// CREATION time — the guard would misread our own horizon booking as "a post
+// just went out" and skip the current slot (observed live 2026-09-22: run at
+// 08:54 booked 09-23/09-24 → run at 09:02 skipped the 09:00 slot "8 min ago").
+// Fix: ignore IG media ids that state.json itself recorded as scheduled.
+async function minutesSinceLastPost(page, state) {
   const cutoff = Date.now() - 7 * 86400000
   const future = Date.now() + 60000 // ignore future timestamps (scheduled posts)
+  const scheduledIgIds = new Set()
+  for (const day of Object.values(state?.days ?? {})) {
+    for (const rec of Object.values(day ?? {})) {
+      if (rec?.status === 'scheduled' && rec?.ig?.id) scheduledIgIds.add(String(rec.ig.id))
+    }
+  }
   try {
     if (page.igUserId) {
-      const json = await graphGet(`${page.igUserId}/media`, { fields: 'timestamp', limit: '3', access_token: page.pageToken })
-      const ts = (json.data ?? []).map((m) => (m.timestamp ? new Date(m.timestamp).getTime() : 0)).filter(Boolean).filter((t) => t < future)
+      const json = await graphGet(`${page.igUserId}/media`, { fields: 'id,timestamp', limit: '10', access_token: page.pageToken })
+      const ts = (json.data ?? [])
+        .filter((m) => !scheduledIgIds.has(String(m.id)))
+        .map((m) => (m.timestamp ? new Date(m.timestamp).getTime() : 0)).filter(Boolean).filter((t) => t < future)
       const latest = Math.max(...ts, 0)
       if (latest > cutoff) return Math.max(0, Math.round((Date.now() - latest) / 60000))
       return null
@@ -705,7 +718,7 @@ async function main() {
 
     // ---- duplicate guard (cross-runtime safety net) ----
     const guardMinutes = ARG_FORCE ? 3 : 30
-    const lastAgo = await minutesSinceLastPost(page)
+    const lastAgo = await minutesSinceLastPost(page, state)
     if (lastAgo !== null && lastAgo < guardMinutes) {
       log(`[guard] a post went out ${lastAgo} min ago (< ${guardMinutes} min guard) — skipping to avoid double-posting`)
       const gday = state.days[dateKey] ?? {}
