@@ -34,11 +34,13 @@ does not rely on that:
 
 1. A workflow fires every 30 minutes (cron `13,43 * * * *`) — whenever GitHub
    actually lets one through.
-2. Every landed run **pre-books the next `scheduleDays` (3) days with Meta's
-   own scheduled publishing on BOTH platforms**: FB photos with
-   `scheduled_publish_time = 09:00 EAT` and IG containers with
-   `publish_time = 09:00 EAT` — **Meta's servers publish both at exactly
-   09:00** — with zero further involvement from GitHub.
+2. Every landed run **pre-books the next `scheduleDays` (3) days of FB posts
+   with Meta's own scheduled publishing**: FB photos with
+   `scheduled_publish_time = 09:00 EAT` — **Meta's servers publish the FB
+   post at exactly 09:00** with zero further involvement from GitHub. (IG
+   containers cannot be scheduled — the API's `publish_time` is silently
+   ignored, verified 2026-09-22 — so the Instagram half is posted directly by
+   the first landed run after 09:00, within the 4-hour catch-up window.)
 3. Later landed runs **reconcile**: they confirm scheduled posts that went
    live and record their permalinks in `data/state.json`.
 4. If a slot somehow has no Meta booking and a run lands within
@@ -48,8 +50,9 @@ does not rely on that:
    the same day.
 
 Net effect: **one landed GitHub run every ~2 days is enough** for perfect
-09:00 punctuality. This is the same reliability model the sister repo has
-running in production since 2026-09-21.
+09:00 punctuality on Facebook; the IG post follows on the first landed run
+after 09:00 (exact-to-minutes-late depending on GitHub, force-button rescue
+for the rest).
 
 ## One-time setup — ✅ DONE (2026-09-22)
 
