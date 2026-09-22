@@ -323,6 +323,30 @@ async function minutesSinceLastPost(page, state) {
   return null
 }
 
+/** IG-only guard variant: used when posting ONLY the Instagram half of a
+ *  Meta-scheduled slot. The FB twin publishes at slot time via Meta and would
+ *  false-positive a whole-page guard check — so only IG's own recent posts
+ *  count here. State-recorded IG ids are excluded (already accounted slots). */
+async function minutesSinceLastIgPost(page, state) {
+  const cutoff = Date.now() - 7 * 86400000
+  const future = Date.now() + 60000
+  const knownIgIds = new Set()
+  for (const day of Object.values(state?.days ?? {})) {
+    for (const rec of Object.values(day ?? {})) {
+      if (rec?.ig?.id) knownIgIds.add(String(rec.ig.id))
+    }
+  }
+  try {
+    const json = await graphGet(`${page.igUserId}/media`, { fields: 'id,timestamp', limit: '10', access_token: page.pageToken })
+    const ts = (json.data ?? [])
+      .filter((m) => !knownIgIds.has(String(m.id)))
+      .map((m) => (m.timestamp ? new Date(m.timestamp).getTime() : 0)).filter(Boolean).filter((t) => t < future)
+    const latest = Math.max(...ts, 0)
+    if (latest > cutoff) return Math.max(0, Math.round((Date.now() - latest) / 60000))
+  } catch { /* unknown — do not block */ }
+  return null
+}
+
 // ── Publish (IG via Meta CDN, FB via binary upload) ─────────────────────────
 async function publishInstagram(page, photoPath, caption) {
   const steps = []
@@ -395,52 +419,12 @@ async function publishFacebook(page, photoPath, caption) {
 }
 
 // ── Meta-scheduled publishing (the reliability core) ────────────────────────
-// IG: container with publish_time + media_publish → post sits in SCHEDULED
-//     state on Meta's servers until the exact slot time.
-// FB: photo upload with published=false + scheduled_publish_time.
-// Meta publishes both punctually by itself — GitHub's schedule drops become
-// irrelevant: any single landed run keeps the next `scheduleDays` days full.
-
-async function scheduleInstagramPost(page, photoPath, caption, publishTimeISO) {
-  const steps = []
-  let helperPhotoId = ''
-  try {
-    const up = await fbUploadPhoto(page.pageId, page.pageToken, photoPath, { published: false })
-    helperPhotoId = String(up.id ?? '')
-    const info = await graphGet(helperPhotoId, { fields: 'images', access_token: page.pageToken })
-    const images = (info.images ?? []).slice().sort((a, b) => (b.width ?? 0) - (a.width ?? 0))
-    const cdnUrl = String(images[0]?.source ?? '')
-    if (!cdnUrl) throw new Error('no CDN URL on the helper photo')
-    const container = await graphPost(`${page.igUserId}/media`, {
-      image_url: cdnUrl,
-      caption: caption.slice(0, 2200),
-      publish_time: publishTimeISO,
-      access_token: page.pageToken,
-    })
-    const creationId = String(container.id ?? '')
-    if (!creationId) throw new Error('no container id returned')
-    let ready = false
-    for (let i = 0; i < 10; i++) {
-      const st = await graphGet(creationId, { fields: 'status_code', access_token: page.pageToken })
-      const code = String(st.status_code ?? '')
-      if (code === 'FINISHED') { ready = true; break }
-      if (code === 'ERROR') throw new Error('Instagram could not process the image')
-      await new Promise((r) => setTimeout(r, 2000))
-    }
-    if (!ready) throw new Error('image processing timed out (try a smaller JPEG)')
-    const scheduled = await graphPost(`${page.igUserId}/media_publish`, { creation_id: creationId, access_token: page.pageToken })
-    const postId = String(scheduled.id ?? '')
-    if (!postId) throw new Error('media_publish returned no id')
-    steps.push(`IG media ${postId} scheduled for ${publishTimeISO}`)
-    return { ok: true, postId, error: '', steps }
-  } catch (e) {
-    return { ok: false, postId: '', error: e.message, steps }
-  } finally {
-    if (helperPhotoId) {
-      try { await graphDelete(helperPhotoId, { access_token: page.pageToken }) } catch { /* best-effort cleanup */ }
-    }
-  }
-}
+// FB ONLY: photo upload with published=false + scheduled_publish_time — Meta
+// publishes exactly at 09:00 EAT; GitHub's schedule drops become irrelevant
+// for FB. IG has NO API scheduling (publish_time is SILENTLY IGNORED —
+// media_publish posts immediately, verified live with a controlled experiment
+// 2026-09-22; scheduled_publish_time is whitelist-gated). IG halves are posted
+// directly by landed runs in each slot's catch-up window instead.
 
 async function scheduleFacebookPost(page, photoPath, caption, publishTimeUnixSec) {
   try {
@@ -460,38 +444,42 @@ async function scheduleFacebookPost(page, photoPath, caption, publishTimeUnixSec
   }
 }
 
-/** Confirm Meta-scheduled slots that have gone live → record permalinks. */
-async function reconcileScheduled(page, state) {
+/** Confirm Meta-scheduled FB posts that went live → record permalinks.
+ *  IG is never pre-scheduled (API dead), so a scheduled slot's IG half is
+ *  completed by the catch-up logic in main(); reconcile only (a) fills the FB
+ *  permalink once Meta flips the scheduled photo to a live feed post, and
+ *  (b) closes slots as 'partial' (FB-only) when the IG catch-up window lapsed
+ *  without a landed run. */
+async function reconcileScheduled(page, state, graceMinutes) {
   let changed = false
   for (const [dk, day] of Object.entries(state.days ?? {})) {
     for (const [label, rec] of Object.entries(day ?? {})) {
       if (rec?.status !== 'scheduled' || !rec.publishTime) continue
       const due = new Date(rec.publishTime).getTime()
       if (Date.now() < due + 5 * 60000) continue // not due yet
-      let igOk = false, fbOk = false, igPerma = '', fbPerma = ''
-      if (rec.ig?.id) {
-        try {
-          const m = await graphGet(String(rec.ig.id), { fields: 'permalink,timestamp', access_token: page.pageToken })
-          const live = m.permalink && m.timestamp && new Date(m.timestamp).getTime() <= Date.now() + 60000
-          if (live) { igOk = true; igPerma = String(m.permalink) }
-        } catch { /* not confirmable yet */ }
-      }
-      if (rec.fb?.id) {
-        // photo id while unpublished; pageId_photoId once it becomes a feed post
+      // (a) FB confirmation: scheduled photo flips to a feed post with a permalink
+      if (rec.fb?.id && !rec.fb.permalink) {
         for (const cid of [String(rec.fb.id), `${page.pageId}_${String(rec.fb.id)}`]) {
           try {
             const p = await graphGet(cid, { fields: 'permalink_url,created_time', access_token: page.pageToken })
-            const live = p.permalink_url && p.created_time && new Date(p.created_time).getTime() <= Date.now() + 60000
-            if (live) { fbOk = true; fbPerma = String(p.permalink_url); rec.fb.id = cid; break }
+            if (p.permalink_url && p.created_time && new Date(p.created_time).getTime() <= Date.now() + 60000) {
+              rec.fb = { id: cid, permalink: String(p.permalink_url) }
+              changed = true
+              break
+            }
           } catch { /* not confirmable via this id yet */ }
         }
       }
-      if (igOk || fbOk) {
-        rec.status = igOk && fbOk ? 'published' : 'partial'
+      const igDone = Boolean(rec.ig?.id)
+      if (igDone) {
+        rec.status = 'published'
         rec.at = rec.publishTime
-        if (rec.ig) rec.ig = { id: rec.ig.id, permalink: igPerma }
-        if (rec.fb) rec.fb = { id: rec.fb.id, permalink: fbPerma }
-        recordEvent(state, { level: igOk && fbOk ? 'success' : 'error', date: dk, slot: label, message: `${label} published by Meta on schedule — IG ${igOk ? `✓ ${igPerma}` : '✗ unconfirmed'} | FB ${fbOk ? `✓ ${fbPerma}` : '✗ unconfirmed'}` })
+        recordEvent(state, { level: 'success', date: dk, slot: label, message: `${label} completed — FB (Meta) + IG (catch-up) both live` })
+        changed = true
+      } else if (Date.now() > due + graceMinutes * 60000) {
+        rec.status = 'partial'
+        rec.at = rec.publishTime
+        recordEvent(state, { level: 'error', date: dk, slot: label, message: `${label} partial — FB published by Meta on time, but no landed run caught up the IG half within ${graceMinutes} min` })
         changed = true
       }
     }
@@ -623,7 +611,7 @@ async function main() {
 
   // ---- reconcile: confirm Meta-scheduled slots that have gone live ----
   if (!ARG_DRY) {
-    const changed = await reconcileScheduled(page, state)
+    const changed = await reconcileScheduled(page, state, grace)
     if (changed) { await writeState(state); log('[reconcile] recorded live permalinks for scheduled slots') }
   }
 
@@ -635,13 +623,15 @@ async function main() {
 
   if (ARG_FORCE || ARG_DRY) {
     // manual runs: first rescue the slot that is due RIGHT NOW — the most
-    // recent past slot with no successful post (includes slots already
-    // marked "missed", excludes slots Meta already has scheduled).
+    // recent past slot without BOTH halves done. A 'scheduled' slot (FB booked
+    // on Meta) whose IG half is missing IS rescuable: force posts just the IG
+    // half right now (FB is already in Meta's hands).
     for (const s of [...slots].reverse()) {
       if (s.minutes > now.minutesOfDay) continue
       const done = state.days[now.date]?.[s.label]
-      if (done && ['published', 'partial', 'scheduled'].includes(done.status)) continue
-      target = { ...s, date: now.date }
+      if (done && ['published', 'partial', 'guarded', 'missed', 'cancelled'].includes(done.status)) continue
+      if (done && done.status === 'scheduled' && done.ig?.id) continue // both halves done
+      target = { ...s, date: now.date, igOnly: Boolean(done && done.status === 'scheduled' && !done.ig?.id) }
       break
     }
     // otherwise the next future slot (today, else tomorrow)
@@ -660,8 +650,15 @@ async function main() {
     }
   } else {
     for (const s of slots) {
-      if (doneToday[s.label]) continue
+      const rec = doneToday[s.label]
       const since = now.minutesOfDay - s.minutes
+      if (rec && rec.status === 'scheduled') {
+        // FB is booked on Meta and will publish on time; the IG half is ours.
+        // Post it the moment a landed run sees the slot time arrive.
+        if (!rec.ig?.id && since >= 0 && since <= grace) target = { ...s, igOnly: true }
+        continue
+      }
+      if (rec) continue
       if (since >= 0 && since <= grace) target = s
       else if (since > grace) missed.push(s)
     }
@@ -681,19 +678,26 @@ async function main() {
   if (ARG_DRY) {
     let pi = state.rotation.photoIndex
     if (target) {
-      const dPhoto = photos[pi % photos.length]
-      log(`[pick] slot ${target.label} on ${target.date ?? now.date} → photo: ${dPhoto} (rotation index ${pi % photos.length} of ${photos.length})`)
-      pi++
-      log('[dry-run] would publish now:')
-      log(`  Facebook (${page.pageName || 'Biblia Tafsiri Mbalimbali'}): binary upload with caption`)
-      if (page.igUserId) log(`  Instagram (@${page.igUsername}): hidden FB photo → CDN url → container → media_publish`)
+      const rec = state.days[target.date ?? now.date]?.[target.label]
+      if (target.igOnly) {
+        log(`[pick] slot ${target.label} on ${target.date ?? now.date} → IG half only (FB already booked on Meta, photo "${rec?.photo ?? '?'}")`)
+        if (page.igUserId) log('[dry-run] would publish Instagram only right now:')
+        if (page.igUserId) log(`  Instagram (@${page.igUsername}): hidden FB photo → CDN url → container → media_publish`)
+      } else {
+        const dPhoto = photos[pi % photos.length]
+        log(`[pick] slot ${target.label} on ${target.date ?? now.date} → photo: ${dPhoto} (rotation index ${pi % photos.length} of ${photos.length})`)
+        pi++
+        log('[dry-run] would publish now:')
+        log(`  Facebook (${page.pageName || 'Biblia Tafsiri Mbalimbali'}): binary upload with caption`)
+        if (page.igUserId) log(`  Instagram (@${page.igUsername}): hidden FB photo → CDN url → container → media_publish`)
+      }
     }
     if (horizon.length > 0) {
-      log(`[dry-run] would pre-schedule ${horizon.length} slot(s) via Meta (published exactly on time):`)
+      log(`[dry-run] would pre-schedule ${horizon.length} slot(s) — FB via Meta exactly on time; IG posted later by landed catch-up runs:`)
       for (const h of horizon) {
         const ph = photos[pi % photos.length]
         pi++
-        log(`  ${h.dk} ${h.slot.label} → "${ph}" → Meta publishes at ${new Date(h.slotUnix).toISOString()}`)
+        log(`  ${h.dk} ${h.slot.label} → "${ph}" → FB at ${new Date(h.slotUnix).toISOString()} + IG on the next landed run after that`)
       }
     }
     log('[dry-run] nothing published or scheduled, state unchanged')
@@ -703,58 +707,81 @@ async function main() {
   if (target) {
     const dateKey = target.date ?? now.date
     const slotLabel = `${target.label} Auto`
+    const existing = state.days[dateKey]?.[target.label] // set when this slot was pre-booked on Meta
 
-    // ---- pick content (rotation, mirrors poster's least-recently-used) ----
-    const photoFile = photos[state.rotation.photoIndex % photos.length]
-    const captionText = captions[state.rotation.captionIndex % captions.length]
+    // ---- pick content ----
+    // IG-catch-up (slot was pre-booked on Meta): reuse the slot's OWN photo and
+    // caption recorded at booking time — the FB half is already live/live-soon
+    // with exactly this content; IG must match it, not advance the rotation.
+    // Fresh catch-up: rotation picks, both platforms, as always.
+    let photoFile, captionText
+    if (target.igOnly && existing?.photo && existing?.caption) {
+      photoFile = existing.photo
+      captionText = existing.caption
+      log(`[pick] slot ${slotLabel} on ${dateKey} → IG half of pre-booked slot (photo "${photoFile}" pinned at booking time)`)
+    } else {
+      photoFile = photos[state.rotation.photoIndex % photos.length]
+      captionText = captions[state.rotation.captionIndex % captions.length]
+      log(`[pick] slot ${slotLabel} on ${dateKey} → photo: ${photoFile} (rotation index ${state.rotation.photoIndex % photos.length} of ${photos.length})`)
+    }
     const photoPath = path.join(PHOTOS_DIR, photoFile)
-
-    const plan = [
-      `[pick] slot ${slotLabel} on ${dateKey}`,
-      `[pick] photo: ${photoFile} (rotation index ${state.rotation.photoIndex % photos.length} of ${photos.length})`,
-      `[pick] caption: "${captionText.slice(0, 70).replace(/\n/g, ' ')}…" (${captionText.length} chars)`,
-    ]
-    plan.forEach(log)
+    log(`[pick] caption: "${captionText.slice(0, 70).replace(/\n/g, ' ')}…" (${captionText.length} chars)`)
 
     // ---- duplicate guard (cross-runtime safety net) ----
+    // IG-only catch-ups check IG only — the FB twin publishes via Meta at slot
+    // time and would false-positive the FB side of the guard.
     const guardMinutes = ARG_FORCE ? 3 : 30
-    const lastAgo = await minutesSinceLastPost(page, state)
+    const lastAgo = target.igOnly
+      ? await minutesSinceLastIgPost(page, state)
+      : await minutesSinceLastPost(page, state)
     if (lastAgo !== null && lastAgo < guardMinutes) {
       log(`[guard] a post went out ${lastAgo} min ago (< ${guardMinutes} min guard) — skipping to avoid double-posting`)
       const gday = state.days[dateKey] ?? {}
-      gday[target.label] = { status: 'guarded', at: new Date().toISOString() }
+      gday[target.label] = target.igOnly
+        ? { ...existing, guard: new Date().toISOString() } // keep the booking; a later run retries the IG half
+        : { status: 'guarded', at: new Date().toISOString() }
       state.days[dateKey] = gday
       recordEvent(state, { level: 'info', date: dateKey, slot: target.label, message: `Skipped by duplicate guard — last post ${lastAgo} min ago` })
       await writeState(state)
       target = null
     } else {
       // ---- publish ----
-      log(`[post] publishing slot ${slotLabel} …`)
+      log(`[post] publishing slot ${slotLabel} ${target.igOnly ? '(Instagram half; Facebook is in Meta\u2019s hands)' : ''} …`)
       const igResult = page.igUserId
         ? await publishInstagram(page, photoPath, captionText)
         : { ok: true, postId: '', permalink: '', error: '', steps: ['IG not configured'] }
       igResult.steps?.forEach((s) => log(`  IG: ${s}`))
-      const fbResult = await publishFacebook(page, photoPath, captionText)
+      const fbResult = target.igOnly
+        ? { ok: true, postId: existing?.fb?.id ?? '', permalink: existing?.fb?.permalink ?? '', error: '', steps: ['FB: pre-booked on Meta'] }
+        : await publishFacebook(page, photoPath, captionText)
+      if (target.igOnly) log('  FB: pre-booked on Meta (publishes/published at slot time — no action)')
 
       const igOk = igResult.ok
       const fbOk = fbResult.ok
       const status = igOk && fbOk ? 'published' : igOk || fbOk ? 'partial' : 'failed'
       log(`[post] IG: ${igOk ? `✓ ${igResult.permalink || igResult.postId}` : `✗ ${igResult.error}`}`)
-      log(`[post] FB: ${fbOk ? `✓ ${fbResult.permalink || fbResult.postId}` : `✗ ${fbResult.error}`}`)
+      if (!target.igOnly) log(`[post] FB: ${fbOk ? `✓ ${fbResult.permalink || fbResult.postId}` : `✗ ${fbResult.error}`}`)
 
       // ---- state update ----
       const day = state.days[dateKey] ?? {}
       day[target.label] = {
         status,
         at: new Date().toISOString(),
+        publishTime: existing?.publishTime,
         photo: photoFile,
+        caption: captionText,
         ig: igOk ? { id: igResult.postId, permalink: igResult.permalink } : { error: igResult.error },
-        fb: fbOk ? { id: fbResult.postId, permalink: fbResult.permalink } : { error: fbResult.error },
+        fb: target.igOnly
+          ? (existing?.fb ?? { error: 'booking lost' })
+          : fbOk ? { id: fbResult.postId, permalink: fbResult.permalink } : { error: fbResult.error },
       }
       state.days[dateKey] = day
       if (status !== 'failed') {
-        state.rotation.photoIndex = (state.rotation.photoIndex + 1) % photos.length
-        state.rotation.captionIndex = (state.rotation.captionIndex + 1) % captions.length
+        // rotation advanced at booking time for pre-booked slots — not here
+        if (!target.igOnly) {
+          state.rotation.photoIndex = (state.rotation.photoIndex + 1) % photos.length
+          state.rotation.captionIndex = (state.rotation.captionIndex + 1) % captions.length
+        }
       }
       recordEvent(state, {
         level: status === 'published' ? 'success' : 'error',
@@ -773,44 +800,41 @@ async function main() {
     log(`[done] no slot due right now — today: ${Object.keys(doneToday).map((k) => `${k}=${doneToday[k].status}`).join(', ') || 'nothing posted yet'}`)
   }
 
-  // ---- pre-schedule the horizon: Meta publishes these exactly on time ----
-  if (horizon.length > 0) log(`[schedule] pre-scheduling ${horizon.length} upcoming slot(s) with Meta …`)
+  // ---- pre-schedule the horizon: FB only, Meta publishes exactly on time ----
+  // (IG cannot be pre-scheduled — API dead. Landed runs post the IG half of
+  // each slot in its catch-up window; see the igOnly logic above.)
+  if (horizon.length > 0) log(`[schedule] pre-scheduling ${horizon.length} upcoming slot(s) on Facebook via Meta …`)
   let scheduledCount = 0
   for (const h of horizon) {
     const hPhoto = photos[state.rotation.photoIndex % photos.length]
     const hCaption = captions[state.rotation.captionIndex % captions.length]
     const hPhotoPath = path.join(PHOTOS_DIR, hPhoto)
     const hISO = new Date(h.slotUnix).toISOString()
-    log(`[schedule] ${h.dk} ${h.slot.label} → "${hPhoto}" → Meta publishes at ${hISO}`)
-    const igS = page.igUserId
-      ? await scheduleInstagramPost(page, hPhotoPath, hCaption, hISO)
-      : { ok: true, postId: '', error: '', steps: ['IG not configured'] }
-    igS.steps?.forEach((s) => log(`  IG: ${s}`))
+    log(`[schedule] ${h.dk} ${h.slot.label} → "${hPhoto}" → FB publishes at ${hISO}; IG half on the next landed run after that`)
     const fbS = await scheduleFacebookPost(page, hPhotoPath, hCaption, Math.floor(h.slotUnix / 1000))
-    if (igS.ok || fbS.ok) {
+    if (fbS.ok) {
       const day = state.days[h.dk] ?? {}
       day[h.slot.label] = {
         status: 'scheduled',
         publishTime: hISO,
         at: new Date().toISOString(),
         photo: hPhoto,
-        ig: igS.ok ? { id: igS.postId } : { error: igS.error },
-        fb: fbS.ok ? { id: fbS.postId } : { error: fbS.error },
+        caption: hCaption,
+        fb: { id: fbS.postId },
       }
       state.days[h.dk] = day
       state.rotation.photoIndex = (state.rotation.photoIndex + 1) % photos.length
       state.rotation.captionIndex = (state.rotation.captionIndex + 1) % captions.length
-      recordEvent(state, { level: 'info', date: h.dk, slot: h.slot.label, message: `${h.slot.label} pre-scheduled via Meta (publishes ${hISO}) — "${hPhoto}" | IG ${igS.ok ? '✓' : `✗ ${igS.error}`} | FB ${fbS.ok ? '✓' : `✗ ${fbS.error}`}` })
-      if (!igS.ok || !fbS.ok) log(`  partial: IG ${igS.ok ? '✓' : `✗ ${igS.error}`} | FB ${fbS.ok ? '✓' : `✗ ${fbS.error}`}`)
+      recordEvent(state, { level: 'info', date: h.dk, slot: h.slot.label, message: `${h.slot.label} FB half pre-scheduled via Meta (publishes ${hISO}) — "${hPhoto}"; IG half to be posted by a landed run in the catch-up window` })
       scheduledCount++
     } else {
-      recordEvent(state, { level: 'error', date: h.dk, slot: h.slot.label, message: `${h.slot.label} scheduling FAILED — IG: ${igS.error} | FB: ${fbS.error} (next run retries)` })
-      log(`  ✗ scheduling failed: IG ${igS.error} | FB ${fbS.error} — next run retries`)
+      recordEvent(state, { level: 'error', date: h.dk, slot: h.slot.label, message: `${h.slot.label} FB scheduling FAILED — ${fbS.error} (next run retries)` })
+      log(`  ✗ FB scheduling failed: ${fbS.error} — next run retries`)
     }
   }
   if (scheduledCount > 0) {
     await writeState(state)
-    log(`[state] saved — ${scheduledCount} upcoming slot(s) pre-scheduled with Meta`)
+    log(`[state] saved — ${scheduledCount} upcoming slot(s): FB pre-scheduled with Meta`)
   }
 }
 
