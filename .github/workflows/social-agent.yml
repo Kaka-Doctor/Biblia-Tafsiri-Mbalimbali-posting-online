@@ -2,7 +2,8 @@ name: Bible Verse Agent
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  Biblia Tafsiri Mbalimbali — posts one YouVersion Verse-of-the-Day image +
-#  its Swahili SUV caption to the Facebook page every day at 09:00 EAT.
+#  its Swahili SUV caption to the Facebook page AND the connected Instagram
+#  account (@biblia_tafsiri_mbalimbali) every day at 09:00 EAT.
 #
 #  GitHub's cron fires this workflow every 30 minutes around the clock at
 #  :13/:43 — but the timing barely matters. Every run that lands PRE-SCHEDULES
@@ -21,9 +22,11 @@ name: Bible Verse Agent
 #  The minutes are deliberately OFF-PEAK (:13/:43, never :00/:30): GitHub
 #  drops scheduled runs at peak minutes when Actions load is high.
 #
-#  FIRST-RUN TOKEN: paste a fresh Graph API Explorer token into
-#  data/meta-token.txt and push — the next landed run mints the permanent
-#  page token into data/config.json and clears the file.
+#  TOKENS: the permanent page token (data/config.json → pageAccessToken,
+#  minted 2026-09-22, covers pages_manage_posts + instagram_content_publish)
+#  never expires. If it is ever revoked, paste a fresh Graph API Explorer
+#  token into data/meta-token.txt and push — the next landed run re-mints it
+#  and clears the file.
 #
 #  ⟶ To CHANGE posting time: edit "slots" (and "timezone") in data/config.json
 #    only — this file never needs to change.

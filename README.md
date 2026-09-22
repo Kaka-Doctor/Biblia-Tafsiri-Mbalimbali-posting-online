@@ -1,9 +1,13 @@
 # Biblia Tafsiri Mbalimbali — Bible Verse Auto-Poster
 
-Posts **one Bible verse image + caption every day at 09:00 EAT** to the Facebook
-page [Biblia Tafsiri Mbalimbali](https://www.facebook.com/biblia_tafsiri_mbalimbali)
-(`447560908444853`, @biblia_tafsiri_mbalimbali) — fully automated from this repo
-via GitHub Actions. No server, no database, no cost.
+Posts **one Bible verse image + caption every day at 09:00 EAT** to **both** the
+Facebook page [Biblia Tafsiri Mbalimbali](https://www.facebook.com/biblia_tafsiri_mbalimbali)
+(`447560908444853`) **and** its connected Instagram account
+[@biblia_tafsiri_mbalimbali](https://www.instagram.com/biblia_tafsiri_mbalimbali)
+(IG `17841470180666328`, 114 followers) — fully automated from this repo via
+GitHub Actions. No server, no database, no cost. The same verse image + caption
+goes to both platforms in one run: Facebook gets a direct photo upload, Instagram
+gets the image via a container (hidden-FB-photo → CDN URL → media_publish).
 
 The images are **YouVersion Verse of the Day** graphics (previous days),
 collected into `data/photos/`. Each image is paired in `data/posts.json` with a
@@ -16,8 +20,8 @@ caption written for **the exact scripture on that image**:
 
 Sister repo: [Kaka-Doctor/Posting-to-social-medias](https://github.com/Kaka-Doctor/Posting-to-social-medias)
 runs the same engine for the Teacher's Lesson Plan page + Instagram
-(3 posts/day). This repo is a trimmed, Facebook-only copy of that proven
-production system.
+(3 posts/day). This repo is a trimmed copy of that proven production system,
+posting to the Biblia page + Instagram instead.
 
 ---
 
@@ -31,9 +35,10 @@ does not rely on that:
 1. A workflow fires every 30 minutes (cron `13,43 * * * *`) — whenever GitHub
    actually lets one through.
 2. Every landed run **pre-books the next `scheduleDays` (3) days with Meta's
-   own scheduled publishing**: the photo is uploaded now with
-   `scheduled_publish_time = 09:00 EAT`, and **Meta's servers publish it at
-   exactly 09:00** — with zero further involvement from GitHub.
+   own scheduled publishing on BOTH platforms**: FB photos with
+   `scheduled_publish_time = 09:00 EAT` and IG containers with
+   `publish_time = 09:00 EAT` — **Meta's servers publish both at exactly
+   09:00** — with zero further involvement from GitHub.
 3. Later landed runs **reconcile**: they confirm scheduled posts that went
    live and record their permalinks in `data/state.json`.
 4. If a slot somehow has no Meta booking and a run lands within
@@ -46,11 +51,16 @@ Net effect: **one landed GitHub run every ~2 days is enough** for perfect
 09:00 punctuality. This is the same reliability model the sister repo has
 running in production since 2026-09-21.
 
-## One-time setup (the only manual step)
+## One-time setup — ✅ DONE (2026-09-22)
 
-The page's posting token cannot be generated from code — Facebook requires
-your login for it. One paste and you are done forever (page tokens never
-expire):
+The permanent page token has already been minted (the owner pasted a fresh
+Explorer token; it was exchanged to long-lived with the app secret, then used
+to mint the **never-expiring page token** now stored in `pageAccessToken` in
+`data/config.json`). It covers both `pages_manage_posts` and
+`instagram_content_publish` — Facebook **and** Instagram posting.
+
+If the token is ever revoked (password change, app removal, permission
+change), redo it — the flow is one paste:
 
 1. Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer)
    and select your app.
@@ -60,10 +70,19 @@ expire):
 4. In this repo, open **`data/meta-token.txt`**, paste the token (one line),
    and commit the file.
 5. Within ~30 minutes a scheduled run (or press *Run workflow* yourself) will:
-   mint the **permanent page token**, save it to `pageAccessToken` in
+   re-mint the **permanent page token**, save it to `pageAccessToken` in
    `data/config.json`, and clear `meta-token.txt`. From then on everything is
-   automatic. (If you paste a page token instead of a user token, that works
-   too — the agent detects and saves it.)
+   automatic again. (If you paste a page token instead of a user token, that
+   works too — the agent detects and saves it.)
+
+### Instagram publishing requirements (already satisfied)
+
+- The IG account must be **Business or Creator** and linked to the FB page —
+  ✓ @biblia_tafsiri_mbalimbali is linked (page → `instagram_business_account`).
+- The token needs `instagram_content_publish` — ✓ included in the permanent
+  page token.
+- IG API publishing is limited to **25 posts per 24 h** and 50 API calls/h —
+  at 1 post/day this is nowhere near a concern.
 
 Until the token exists, the workflow runs end-to-end in plan mode; use
 *tick `dryRun`* to preview what would be posted.
@@ -72,7 +91,7 @@ Until the token exists, the workflow runs end-to-end in plan mode; use
 
 | Time (EAT)         | What happens                                                  |
 | ------------------ | ------------------------------------------------------------- |
-| ~09:00             | Meta publishes the day's verse image + caption on the page    |
+| ~09:00             | Meta publishes the verse image + caption on FB **and** IG      |
 | every 30 min       | GitHub *tries* to run the agent; landed runs re-book the horizon |
 | after 09:00+4h     | a landed run records the live post's permalink in the state   |
 

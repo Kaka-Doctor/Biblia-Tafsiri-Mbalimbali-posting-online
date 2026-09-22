@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Read-only live check: what is actually on the "Biblia Tafsiri Mbalimbali"
- * Facebook page vs. what data/state.json claims. Posts nothing.
+ * Facebook page + Instagram account vs. what data/state.json claims. Posts nothing.
  * Usage: node scripts/check-live-posts.mjs
  */
 import { promises as fs } from 'node:fs'
@@ -71,3 +71,30 @@ for (const [dk, day] of Object.entries(state.days ?? {})) {
     console.log(`  ${dk} ${label} → ${rec?.status}${rec?.publishTime ? ' (publishes ' + rec.publishTime + ')' : ''}`)
   }
 }
+
+// ── Instagram ──────────────────────────────────────────────────────────────
+if (cfg.igUserId) {
+  const ig = await g(cfg.igUserId, { fields: 'username,followers_count,media_count', access_token: token })
+  if (ig.error) {
+    console.log(`\nIG CHECK FAILED: ${ig.error.message}`)
+  } else {
+    console.log(`\nINSTAGRAM: @${ig.username} (${ig.followers_count} followers, ${ig.media_count} posts)`) 
+    const media = await g(`${cfg.igUserId}/media`, {
+      fields: 'id,caption,timestamp,permalink,media_type',
+      limit: '10',
+      access_token: token,
+    })
+    console.log('LIVE IG MEDIA (latest 10):')
+    for (const m of media.data ?? []) {
+      const stamp = m.timestamp ? new Date(m.timestamp).toISOString().replace('T', ' ').slice(0, 16) + ' UTC' : '????'
+      const first = String(m.caption ?? '').split('\n')[0].slice(0, 60)
+      console.log(`  ${stamp} | ${first}`)
+      console.log(`             ${m.permalink ?? m.id}`)
+    }
+    if (!media.data?.length) console.log('  (empty — nothing posted yet)')
+    // Note: IG posts scheduled on Meta's side (publish_time containers) appear in
+    // the media list only after they go live; upcoming ones are visible in
+    // state.json (status "scheduled") and reconcile into permalinks later.
+  }
+}
+
