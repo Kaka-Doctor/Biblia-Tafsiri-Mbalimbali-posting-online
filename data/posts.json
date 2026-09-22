@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "description": "Content library for the Biblia Tafsiri Mbalimbali agent. RULE (owner-set, 2026-09-22): the caption language MUST match the language of the scripture on the image — English image -> English caption, Swahili image -> Swahili caption ('lang' field on every entry). The agent alternates daily: one day English, the next Swahili. English images: YouVersion Verse of the Day + web verse graphics. Swahili images: YouVersion 'Fungu la Siku' (Swahili VOTD, collected from bible.com/sw/verse-of-the-day); their verse text is quoted verbatim as written on each image (BHN/SUV wording, verified against bible.com). Captions: verse + two sentences of explanation and encouragement + five hashtags ending with #BibliaTafsiriMbalimbali. With a GEMINI_API_KEY secret configured, the agent re-writes the Swahili encouragement sentences with Google Gemini at posting time (stored caption = fallback). Additionally 6 Swahili verse cards (SUV text fetched from bible.com, composed on AI-generated backgrounds) extend the Swahili pool to 15 images.",
+  "description": "Content library for the Biblia Tafsiri Mbalimbali agent. RULE (owner-set, 2026-09-22): the caption language MUST match the language of the scripture on the image — English image -> English caption, Swahili image -> Swahili caption (\"lang\" field on every entry). The agent alternates daily: one day English, the next Kiswahili. 100 images = 55 English (YouVersion Verse of the Day graphics + verse cards composed on AI backgrounds with NIV text fetched from bible.com) + 45 Kiswahili (YouVersion \"Fungu la Siku\" graphics + verse cards with SUV text fetched from bible.com). Captions: verse + two sentences of explanation and encouragement + five hashtags ending with #BibliaTafsiriMbalimbali. With the GEMINI_API_KEY secret configured, Google Gemini rewrites the Swahili encouragement sentences at posting time (stored caption = fallback). Rotation: each language pool cycles in order; ~100 days of unique content before any image repeats.",
   "generated": "2026-09-22",
   "posts": [
     {
@@ -18,6 +18,302 @@
       "source": "YouVersion Verse of the Day, 16 Sep 2026",
       "reference": "Isaiah 41:13",
       "caption": "Isaiah 41:13\n\n\"Fear not, for I am the one who helps you.\"\n\nThe God who formed you does not shout this from a distance — He holds your right hand as He says it. Whatever fear you carry today, put it down; your Helper is already beside you.\n\n#Isaiah #FearNot #GodIsMyHelper #FaithOverFear #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-john-14-27",
+      "photo": "en-card-john-14-27.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "John 14:27",
+      "caption": "John 14:27\n\n\"Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.\"\n\nJesus does not hand out peace like the world does — conditional, temporary, easily lost. His peace guards the heart that stays close to Him, so keep your grip on His words today.\n\n#John #PeaceOfChrist #DoNotBeAfraid #UntroubledHeart #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-matthew-11-28",
+      "photo": "en-card-matthew-11-28.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Matthew 11:28",
+      "caption": "Matthew 11:28\n\n\"Come to me, all you who are weary and burdened, and I will give you rest.\"\n\nJesus does not demand that you carry your load one more step before inviting you in. Whatever has drained you this week, lay it at His feet and receive the rest He promises.\n\n#Matthew #ComeToMe #RestForTheWeary #BurdenBearer #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-46-1",
+      "photo": "en-card-psalm-46-1.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 46:1",
+      "caption": "Psalm 46:1\n\n\"God is our refuge and strength, an ever-present help in trouble.\"\n\nTrouble has a way of making everything feel unstable — except God. Run into Him as your refuge today; He is not a distant help but an ever-present one.\n\n#Psalm #GodIsMyRefuge #EverPresentHelp #StrengthForToday #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-34-8",
+      "photo": "en-card-psalm-34-8.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 34:8",
+      "caption": "Psalm 34:8\n\n\"Taste and see that the LORD is good; blessed is the one who takes refuge in him.\"\n\nGod's goodness is not a theory to debate but a taste to experience. Take one step of trust today, and you will find Him sweeter than anything else you have been feeding on.\n\n#Psalm #TasteAndSee #GodIsGood #BlessedRefuge #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-a",
+      "photo": "votd-2026-09-22-a.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design A)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"Am I now trying to win the approval of human beings, or of God? Or am I trying to please people? If I were still trying to please people, I would not be a servant of Christ.\"\n\nWhose applause are you living for? When the fear of people's opinions loosens its grip, serving Christ becomes simple and free — aim today at the one audience who already delights in you.\n\n#Galatians #PleaseGodNotPeople #ServantOfChrist #FreedomInChrist #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-119-105",
+      "photo": "en-card-psalm-119-105.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 119:105",
+      "caption": "Psalm 119:105\n\n\"Your word is a lamp for my feet, a light on my path.\"\n\nGod's Word does not always flood the whole road with light, but it always shows the next step. That is enough for today — walk in the light you have been given.\n\n#Psalm #LampToMyFeet #WordOfGod #LightForThePath #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-isaiah-41-10",
+      "photo": "en-card-isaiah-41-10.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Isaiah 41:10",
+      "caption": "Isaiah 41:10\n\n\"So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.\"\n\nFear shrinks when you remember who is standing beside you. The same God who promises strength and help is holding you up with His own hand today.\n\n#Isaiah #DoNotFear #GodIsWithYou #HeUpholdsMe #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-isaiah-26-3",
+      "photo": "en-card-isaiah-26-3.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Isaiah 26:3",
+      "caption": "Isaiah 26:3\n\n\"You will keep in perfect peace those whose minds are steadfast, because they trust in you.\"\n\nPerfect peace is not reserved for perfect circumstances but for steadfast minds. Fix your thoughts on God today, and He will do the keeping.\n\n#Isaiah #PerfectPeace #SteadfastMind #TrustInGod #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-isaiah-40-8",
+      "photo": "en-card-isaiah-40-8.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Isaiah 40:8",
+      "caption": "Isaiah 40:8\n\n\"The grass withers and the flowers fall, but the word of our God endures forever.\"\n\nEverything around you has an expiry date — except what God has spoken. Anchor your hope today to the one thing that will still be standing when everything else fades.\n\n#Isaiah #WordEnduresForever #UnshakableHope #EternalPromise #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-b",
+      "photo": "votd-2026-09-22-b.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design B)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"For am I now seeking the approval of man, or of God? Or am I trying to please man? If I were still trying to please man, I would not be a servant of Christ.\"\n\nLiving for human approval is an endless race with no finish line. God's approval over you was settled at the cross — rest in it, and let today's choices flow from that peace.\n\n#Galatians #ApprovalOfGod #FearOfMan #BoldFaith #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-jeremiah-17-7",
+      "photo": "en-card-jeremiah-17-7.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Jeremiah 17:7",
+      "caption": "Jeremiah 17:7\n\n\"But blessed is the one who trusts in the LORD, whose confidence is in him.\"\n\nWhere your confidence sits decides how your day survives surprises. Place it fully in the LORD, and you join the blessed who are never left disappointed.\n\n#Jeremiah #BlessedTrust #ConfidenceInGod #RootedAndStable #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-hebrews-11-1",
+      "photo": "en-card-hebrews-11-1.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Hebrews 11:1",
+      "caption": "Hebrews 11:1\n\n\"Now faith is confidence in what we hope for and assurance about what we do not see.\"\n\nFaith is not wishful thinking — it is confidence in a Person who has never failed. Hold on to His promises today, even the ones still hidden from your eyes.\n\n#Hebrews #Faith #ConfidenceInGod #Assurance #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-james-1-5",
+      "photo": "en-card-james-1-5.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "James 1:5",
+      "caption": "James 1:5\n\n\"If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.\"\n\nGod does not criticize you for not knowing — He invites you to ask. Whatever decision is weighing on you, bring it to the One who gives wisdom generously.\n\n#James #AskForWisdom #GodGivesGenerously #Guidance #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-1corinthians-13-4",
+      "photo": "en-card-1corinthians-13-4.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "1 Corinthians 13:4",
+      "caption": "1 Corinthians 13:4\n\n\"Love is patient, love is kind. It does not envy, it does not boast, it is not proud.\"\n\nReal love shows itself in small, unglamorous ways — patience, kindness, humility. Ask God to grow that kind of love in you today, starting with the people closest to you.\n\n#1Corinthians #LoveIsPatient #Kindness #RealLove #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-c",
+      "photo": "votd-2026-09-22-c.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design C)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"I am not trying to please people. I want to please God.\"\n\nOne settled sentence can quiet a thousand anxieties: I want to please God. Let that single focus hush the noise of everyone's expectations around you today.\n\n#Galatians #PleaseGod #SingleFocus #PeaceOfMind #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-romans-15-13",
+      "photo": "en-card-romans-15-13.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Romans 15:13",
+      "caption": "Romans 15:13\n\n\"May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.\"\n\nGod is not rationing joy and peace — He fills until you overflow. Trust Him today, and let the Holy Spirit turn your emptiness into hope that spills onto others.\n\n#Romans #GodOfHope #Overflow #JoyAndPeace #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-romans-8-28",
+      "photo": "en-card-romans-8-28.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Romans 8:28",
+      "caption": "Romans 8:28\n\n\"And we know that in all things God works for the good of those who love him, who have been called according to his purpose.\"\n\nNothing in your story is wasted when it is held by God. He weaves even the tangled threads into good for those who love Him — including today's.\n\n#Romans #AllThingsWorkTogether #GodsPurpose #NothingWasted #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-ephesians-2-8",
+      "photo": "en-card-ephesians-2-8.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Ephesians 2:8",
+      "caption": "Ephesians 2:8\n\n\"For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.\"\n\nSalvation was never a wage you could earn — it arrived as a gift wrapped in grace. Stop trying to pay for what God has already freely given, and simply receive it.\n\n#Ephesians #SavedByGrace #GiftOfGod #Faith #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-galatians-5-22",
+      "photo": "en-card-galatians-5-22.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Galatians 5:22",
+      "caption": "Galatians 5:22\n\n\"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness.\"\n\nThe Spirit does not produce one quality at a time — He grows a whole orchard in a willing heart. Stay connected to Him today, and let people taste the fruit.\n\n#Galatians #FruitOfTheSpirit #Kindness #WalkByTheSpirit #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-d",
+      "photo": "votd-2026-09-22-d.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design D)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"IF I WERE STILL TRYING TO PLEASE PEOPLE, I WOULD NOT BE A SERVANT OF CHRIST.\"\n\nThe clearest mark of a servant of Christ is a life that answers to God first. When pleasing people would cost you your integrity, choose the Master's smile over the crowd's.\n\n#Galatians #ServantOfChrist #Integrity #CourageToStand #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-colossians-3-23",
+      "photo": "en-card-colossians-3-23.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Colossians 3:23",
+      "caption": "Colossians 3:23\n\n\"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.\"\n\nThere are no small tasks when the audience is the Lord. Do today's work — however hidden — with all your heart, as an offering rather than a performance.\n\n#Colossians #WorkHeartily #ForTheLord #Excellence #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-1thess-5-16-18",
+      "photo": "en-card-1thess-5-16-18.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "1 Thessalonians 5:16-18",
+      "caption": "1 Thessalonians 5:16-18\n\n\"Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.\"\n\nGod's will for your day is beautifully simple: joy, prayer, gratitude. Practice all three today — not because everything is perfect, but because He is good in everything.\n\n#1Thessalonians #RejoiceAlways #PrayContinually #ThankfulHeart #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-1peter-5-7",
+      "photo": "en-card-1peter-5-7.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "1 Peter 5:7",
+      "caption": "1 Peter 5:7\n\n\"Cast all your anxiety on him because he cares for you.\"\n\nGod has broad shoulders and a caring heart — He can carry what is crushing you. Do not drag your anxieties through another day; throw the full weight of them on Him.\n\n#1Peter #CastYourAnxiety #HeCaresForYou #LetItGo #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-philippians-4-6",
+      "photo": "en-card-philippians-4-6.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Philippians 4:6",
+      "caption": "Philippians 4:6\n\n\"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.\"\n\nAnxiety grows in silence, but shrinks in prayer. Turn every worry of today into a request, wrap it in thanksgiving, and hand it over to God.\n\n#Philippians #DoNotBeAnxious #PrayerChangesThings #PeaceOfGod #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-e",
+      "photo": "votd-2026-09-22-e.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design E)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"Am I now trying to win the approval of human beings or of God?\"\n\nThat question works like a mirror — it shows you what is really steering your decisions. Bring the answer into the open before God today; His acceptance is the only one that never runs out.\n\n#Galatians #WhoseApproval #IdentityInChrist #HonestFaith #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-27-1",
+      "photo": "en-card-psalm-27-1.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 27:1",
+      "caption": "Psalm 27:1\n\n\"The LORD is my light and my salvation— whom shall I fear? The LORD is the stronghold of my life— of whom shall I be afraid?\"\n\nWhen God is your light, darkness loses its argument. Let this question settle over your fears today: if the LORD is my stronghold, what can actually break me?\n\n#Psalm #TheLordIsMyLight #WhomShallIFear #Stronghold #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-37-4",
+      "photo": "en-card-psalm-37-4.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 37:4",
+      "caption": "Psalm 37:4\n\n\"Take delight in the LORD, and he will give you the desires of your heart.\"\n\nDelight in God has a way of reordering desires until they match His heart. Enjoy Him first today, and watch what He does with the deepest longings of your life.\n\n#Psalm #DelightInTheLord #DesiresOfTheHeart #DesiresReordered #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-56-3",
+      "photo": "en-card-psalm-56-3.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 56:3",
+      "caption": "Psalm 56:3\n\n\"When I am afraid, I put my trust in you.\"\n\nFaith does not wait for fear to disappear before it acts. The moment fear shows up today, let trust answer it — one small surrender at a time.\n\n#Psalm #WhenIAmAfraid #ITrustYou #FaithOverFear #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-proverbs-16-3",
+      "photo": "en-card-proverbs-16-3.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Proverbs 16:3",
+      "caption": "Proverbs 16:3\n\n\"Commit to the LORD whatever you do, and he will establish your plans.\"\n\nPlans committed to God gain a stability that self-made plans never find. Hand Him your goals, your work and your hopes for today, and let Him establish them.\n\n#Proverbs #CommitToTheLord #EstablishedPlans #Guidance #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-f",
+      "photo": "votd-2026-09-22-f.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design F)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"Am I now trying to win the approval of human beings, or of God?\"\n\nOpinions are loud, but they were never meant to be your compass. Set your course by the God who called you, and the noise around you loses its power to steer you.\n\n#Galatians #GodsApproval #Unshaken #WalkByFaith #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-proverbs-18-10",
+      "photo": "en-card-proverbs-18-10.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Proverbs 18:10",
+      "caption": "Proverbs 18:10\n\n\"The name of the LORD is a fortified tower; the righteous run to it and are safe.\"\n\nThere is a tower you can reach before any trouble catches you — the name of the LORD. Run to Him first today, not last, and find safety that walls cannot give.\n\n#Proverbs #StrongTower #NameOfTheLord #SafeInHim #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-ecclesiastes-3-1",
+      "photo": "en-card-ecclesiastes-3-1.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Ecclesiastes 3:1",
+      "caption": "Ecclesiastes 3:1\n\n\"There is a time for everything, and a season for every activity under the heavens.\"\n\nNothing about your life is random — God assigns seasons, and every one of them has a purpose. Trust the season you are in today, even when you cannot yet see what it is growing.\n\n#Ecclesiastes #Seasons #TimesAndSeasons #TrustTheProcess #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-luke-1-37",
+      "photo": "en-card-luke-1-37.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Luke 1:37",
+      "caption": "Luke 1:37\n\n\"For no word from God will ever fail.\"\n\nEvery promise God has spoken carries the full weight of His power. What He has said over your life will not fall to the ground — hold on to it today.\n\n#Luke #NoWordFails #PromisesOfGod #GodIsAble #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-mark-10-27",
+      "photo": "en-card-mark-10-27.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Mark 10:27",
+      "caption": "Mark 10:27\n\n\"Jesus looked at them and said, 'With man this is impossible, but not with God; all things are possible with God.'\"\n\nThe word 'impossible' only measures what people can do. Bring that stuck situation to Jesus today — with God, the door you stopped knocking on can still open.\n\n#Mark #AllThingsPossible #WithGod #NothingIsImpossible #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-2026-09-22-g",
+      "photo": "votd-2026-09-22-g.jpg",
+      "lang": "en",
+      "source": "YouVersion Verse of the Day, 22 Sep 2026 (design G)",
+      "reference": "Galatians 1:10",
+      "caption": "Galatians 1:10\n\n\"For am I now trying to win the favor of people, or God? Or am I striving to please people? If I were still trying to please people, I would not be a slave of Christ.\"\n\nMan's favor shifts with the seasons, but God's favor stands like a rock. Build your identity on what He has spoken over you, and no criticism can dismantle it.\n\n#Galatians #GodsFavor #FirmFoundation #Identity #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-micah-6-8",
+      "photo": "en-card-micah-6-8.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Micah 6:8",
+      "caption": "Micah 6:8\n\n\"He has shown you, O mortal, what is good. And what does the LORD require of you? To act justly and to love mercy and to walk humbly with your God.\"\n\nGod's requirements are not hidden in complexity — justice, mercy, humility. Practice all three today, and you will walk squarely in the center of His will.\n\n#Micah #ActJustly #LoveMercy #WalkHumbly #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "en-card-psalm-121-1-2",
+      "photo": "en-card-psalm-121-1-2.jpg",
+      "lang": "en",
+      "source": "Verse card (NIV text from bible.com, AI background)",
+      "reference": "Psalm 121:1-2",
+      "caption": "Psalm 121:1-2\n\n\"I lift up my eyes to the mountains— where does my help come from? My help comes from the LORD, the Maker of heaven and earth.\"\n\nWhere your eyes go, your hope follows. Lift them above the problem today, to the Maker of heaven and earth — your help has a face and a name.\n\n#Psalm #LiftYourEyes #MyHelpComes #MakerOfHeavenAndEarth #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-17",
@@ -162,6 +458,246 @@
       "source": "YouVersion Fungu la Siku, 17 Sep 2026 (Kiswahili)",
       "reference": "Warumi 8:6",
       "caption": "Warumi 8:6\n\n\"Kwa kuwa nia ya mwili ni mauti; bali nia ya roho ni uzima na amani.\"\n\nAmani ya kweli haitokani na mazingira, bali na nia inayomruhusu Roho wa Mungu kuiongoza. Leo, lishughulikie moyo wako kwa Neno lake, na uzima na amani vitakufunika.\n\n#Warumi #AmaniYaMungu #RohoWaMungu #Uzima #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yohana-14-1",
+      "photo": "sw-card-yohana-14-1.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Yohana 14:1",
+      "caption": "Yohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nYesu anatambua kwamba mioyo yetu hufadhaika kwa urahisi, ndiyo anatanguliza amani yake kabla ya matatizo kuja. Weka imani yako kwake leo, na moyo wako utapata utulivu usio na kifani.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-mathayo-6-33",
+      "photo": "sw-card-mathayo-6-33.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Mathayo 6:33",
+      "caption": "Mathayo 6:33\n\n\"Bali utafuteni kwanza ufalme wake, na haki yake; na hayo yote mtazidishiwa.\"\n\nMungu anajua mahitaji yako yote kabla hujayaombe, tena anaweka mpangilio safi: yeye kwanza, mambo mengine yatafuata. Utafute ufalme wake leo, na utaona vitu vingi vya maisha vikiangukia mahali pake.\n\n#Mathayo #UfalmeWaMungu #TafuteniKwanza #MaadamuYaMungu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-zaburi-55-22",
+      "photo": "sw-card-zaburi-55-22.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Zaburi 55:22",
+      "caption": "Zaburi 55:22\n\n\"Umtwike BWANA mzigo wako naye atakutegemeza, Hatamwacha mwenye haki aondoshwe milele.\"\n\nMizigo ya maisha haikupangwa uibebe peke yako; BWANA mwenyewe anaomba uitwike kwake. Mtwike leo yote yanayokandamiza, naye atakutegemeza kwa mkono wake wenye nguvu.\n\n#Zaburi #MzigoWako #MtwikeBWANA #Tegemezo #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-zaburi-62-1",
+      "photo": "sw-card-zaburi-62-1.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Zaburi 62:1",
+      "caption": "Zaburi 62:1\n\n\"Nafsi yangu yamngoja Mungu peke yake kwa kimya, Wokovu wangu hutoka kwake.\"\n\nKatika ulimwengu wa kelele na mafarakano, roho inapata mapumziko ya kweli kwa kimya mbele za Mungu. Tulia kwake leo, kwa sababu wokovu wako hutoka kwake peke yake, si kwa nguvu za binadamu.\n\n#Zaburi #NafsiYangu #KimyaMbeleZaMungu #Wokovu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-zaburi-91-1-2",
+      "photo": "sw-card-zaburi-91-1-2.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Zaburi 91:1-2",
+      "caption": "Zaburi 91:1-2\n\n\"Aketiye mahali pa siri pake Aliye juu Atakaa katika uvuli wake Mwenyezi. Nitasema, BWANA ndiye kimbilio langu na ngome yangu, Mungu wangu nitakayemtumaini.\"\n\nAnayejificha katika uwingu wa Mwenyezi Mungu ana mahali pa usalama ambapo hatari haiwezi kufika. Semesha na wewe leo kwamba BWANA ndiye kimbilio lako, na utaishi kwa ujasiri wa kutegemea yeye pekee.\n\n#Zaburi #Kimbilio #UvuliWakeMwenyezi #Ujasiri #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-isaya-43-19",
+      "photo": "sw-card-isaya-43-19.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Isaya 43:19",
+      "caption": "Isaya 43:19\n\n\"Tazama, nitatenda neno jipya; sasa litachipuka; je! Hamtalijua sasa? Nitafanya njia hata jangwani, na mito ya maji nyikani.\"\n\nMungu hatendi mambo ya zamani tu; anafanya mambo mapya hata katika sehemu za kukavu za maisha yako. Fungua macho yako leo, kwa sababu njia anayoifanya jangwani ni wako wewe.\n\n#Isaya #NenoJipya #NjiaJangwani #MatumainiMapya #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-isaya-12-2",
+      "photo": "sw-card-isaya-12-2.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Isaya 12:2",
+      "caption": "Isaya 12:2\n\n\"Tazama, Mungu ndiye wokovu wangu; Nitatumaini wala sitaogopa; Maana BWANA YEHOVA ni nguvu zangu na wimbo wangu; Naye amekuwa wokovu wangu.\"\n\nWokovu si kitu unachokilinda kwa nguvu zako, bali ni Mungu mwenyewe aliye tayari kuwaimbua. Mtumainie BWANA leo, na hofu itakua nyumbani kwako haipo tena; yeye ataimba pamoja nawe wimbo wa ushindi.\n\n#Isaya #WokovuWangu #Sitaogopa #NguvuZangu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yeremia-33-3",
+      "photo": "sw-card-yeremia-33-3.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Yeremia 33:3",
+      "caption": "Yeremia 33:3\n\n\"Niite, nami nitakuitikia, nami nitakuonyesha mambo makubwa, magumu usiyoyajua.\"\n\nMwenyezi Mungu si mkuu wa mbali asiyeitikii; yeye anakuomba umwite kwa ufunguo wa maombi. Mwite leo kwa moyo wote, na utaona majibu ya ajabu kwa mambo uliyokwishakata tamaa nayo.\n\n#Yeremia #Niite #Maombi #MajibuYaMungu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-mithali-4-23",
+      "photo": "sw-card-mithali-4-23.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Mithali 4:23",
+      "caption": "Mithali 4:23\n\n\"Linda moyo wako kuliko yote uyalindayo; Maana ndiko zitokako chemchemi za uzima.\"\n\nKila kitu cha maisha yako — maneno, maamuzi, na tabia — hutoka katika chemchemi ya moyo wako. Linda moyo huo kwa Neno la Mungu leo, na mtiririko wa uzima utaendelea kutiririka bila kukwama.\n\n#Mithali #LindaMoyo #ChemchemiZaUzima #MachoYako #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-mhubiri-12-13",
+      "photo": "sw-card-mhubiri-12-13.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Mhubiri 12:13",
+      "caption": "Mhubiri 12:13\n\n\"Hii ndiyo jumla ya maneno; yote yamekwisha sikiwa; Mche Mungu, nawe uzishike amri zake, Maana kwa jumla ndiyo impasayo mtu.\"\n\nBaada ya kila falsafa na kila busara la ulimwengu, kila kitu kinarudi kwenye sentensi moja rahisi: mche Mungu na uishike amri zake. Ishike moyoni mwako leo, ndipo utapata utulivu wa maana ya maisha.\n\n#Mhubiri #McheMungu #JumlaYaManeno #MaanaYaMaisha #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-waebrania-13-8",
+      "photo": "sw-card-waebrania-13-8.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Waebrania 13:8",
+      "caption": "Waebrania 13:8\n\n\"Yesu Kristo ni yeye yule, jana na leo na hata milele.\"\n\nKatika ulimwengu unaobadilika kila siku, kuna uhakika mmoja usiobadilika: Yesu Kristo ni yeye yule. Umegundua jana kuwa mwaminifu, utamwonya leo pia, hata wewe kama huna imani.\n\n#Waebrania #YesuNiYuleYule #Habadiliki #Uhakika #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yakobo-4-8",
+      "photo": "sw-card-yakobo-4-8.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Yakobo 4:8",
+      "caption": "Yakobo 4:8\n\n\"Mkaribieni Mungu, naye atawakaribia ninyi. Itakaseni mikono yenu, enyi wenye dhambi, na kuisafisha mioyo yenu, enyi wenye nia mbili.\"\n\nUkaribu na Mungu hauanzi kwa mikono yake, bali kwa hatua moja ya wewe kuja karibu. Karibia leo kwa moyo safi, naye ameshaahidi kukaribia wewe kwa mikono miwili.\n\n#Yakobo #MkaribieniMungu #MoyoSafi #UkaribuNaMungu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-1yohana-4-19",
+      "photo": "sw-card-1yohana-4-19.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "1 Yohana 4:19",
+      "caption": "1 Yohana 4:19\n\n\"Sisi twapenda kwa maana yeye alitupenda sisi kwanza.\"\n\nUpendo wako kwa Mungu na kwa jirani si juhudi ya kuanzisha kitu kipya, bali ni majibu ya upendo ulioanza kwake. Fikiri upendo wake uliokwanza leo, nao utaipa moyo wako nguvu ya kupenda bila kuchoka.\n\n#1Yohana #AlitupendaKwanza #Upendo #MajibuYaUpendo #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-ufunuo-21-4",
+      "photo": "sw-card-ufunuo-21-4.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Ufunuo 21:4",
+      "caption": "Ufunuo 21:4\n\n\"Naye atafuta kila chozi katika macho yao, wala mauti haitakuwapo tena; wala maombolezo, wala kilio, wala maumivu hayatakuwapo tena; kwa kuwa mambo ya kwanza yamekwisha kupita.\"\n\nKila chozi utakacholia leo si mwisho wa hadithi yako; Mungu ana siku atakayofuta machozi yote kwa mkono wake. Shikilia tumaini, kwa sababu maumivu ya sasa ni ya muda, faraja ya milele inakuja.\n\n#Ufunuo #AtafutaChozi #Tumaini #FarajaYaMilele #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-warumi-10-17",
+      "photo": "sw-card-warumi-10-17.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Warumi 10:17",
+      "caption": "Warumi 10:17\n\n\"Basi imani, chanzo chake ni kusikia; na kusikia huja kwa neno la Kristo.\"\n\nImani haijalazimishwi kwa nguvu, inakua kama unavyosikia Neno la Kristo mara kwa mara. Weka utaratibu wa kusikia au kusoma Neno leo, na imani yako itaongezeka kwa hatua ya kushangaza.\n\n#Warumi #Imani #KusikiaNeno #UkuajiWaImani #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-warumi-12-2",
+      "photo": "sw-card-warumi-12-2.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Warumi 12:2",
+      "caption": "Warumi 12:2\n\n\"Wala msiifuatishe namna ya dunia hii; bali mgeuzwe kwa kufanywa upya nia zenu, mpate kujua hakika mapenzi ya Mungu yaliyo mema, ya kumpendeza, na ukamilifu.\"\n\nDunia ina mfumo wake wa kufikiri, lakini mfumo huo hauleti mapenzi ya Mungu katika maisha yako. Ruhusu Mungu akugeuze kwa nia mpya leo, na utaanza kutambua yaliyo mema machoni pake.\n\n#Warumi #MgeuzweUpya #NiaMpya #MapenziYaMungu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-waefeso-4-32",
+      "photo": "sw-card-waefeso-4-32.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Waefeso 4:32",
+      "caption": "Waefeso 4:32\n\n\"Tena iweni wafadhili ninyi kwa ninyi, wenye huruma, mkasameheane kama na Mungu katika Kristo alivyowasamehe ninyi.\"\n\nKusamehe si kusema jeraha halikuwa na uchungu, bali ni kuachilia mtuho mikononi mwa Mungu. Kumbuka jinsi Kristo alivyokusamehe wewe, nao utapata nguvu ya kuwasamehe wengine leo.\n\n#Waefeso #Msameheane #Huruma #Kusamehe #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-wakolosai-3-15",
+      "photo": "sw-card-wakolosai-3-15.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Wakolosai 3:15",
+      "caption": "Wakolosai 3:15\n\n\"Na amani ya Kristo iamue mioyoni mwenu; ndiyo mliyoitiwa katika mwili mmoja; tena iweni watu wa shukrani.\"\n\nAmani ya Kristo inaweza kuwa mwamuzi wa kila swali linalokata mioyo yetu kwa mafarakano. Ruhusu amani yake iamue leo, na usisahau kumshukuru Mungu ndani ya hali zote.\n\n#Wakolosai #AmaniYaKristo #Shukrani #Mwamuzi #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-wagalatia-6-9",
+      "photo": "sw-card-wagalatia-6-9.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Wagalatia 6:9",
+      "caption": "Wagalatia 6:9\n\n\"Tena tusichoke katika kutenda mema; maana tutavuna kwa wakati wake, tusipozimia roho.\"\n\nKutenda mema kunaweza kuchukua muda kabla ya matunda kuonekana, lakini Mungu hakusahau mavuno ya wafanyaji mema. Usichoke leo, kwa sababu wakati wa kuvuna unakuja kwa uhakika.\n\n#Wagalatia #Usichoke #KutendaMema #Mavuno #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-wafilipi-4-19",
+      "photo": "sw-card-wafilipi-4-19.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Wafilipi 4:19",
+      "caption": "Wafilipi 4:19\n\n\"Na Mungu wangu atawajazeni kila mnachokihitaji kwa kadiri ya utajiri wake, katika utukufu, ndani ya Kristo Yesu.\"\n\nMungu wako si maskini; hazina zake hazichoki wala hazipimiki kwa kadiri ya mahitaji yako. Mtegemee leo kwa utajiri wake, utaona akijaza kila pengo la maisha yako.\n\n#Wafilipi #Atawajazeni #MunguWangu #UtajiriWaMungu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-2wakorintho-12-9",
+      "photo": "sw-card-2wakorintho-12-9.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "2 Wakorintho 12:9",
+      "caption": "2 Wakorintho 12:9\n\n\"Naye akaniambia, Neema yangu yakutosha; maana uweza wangu hutimilika katika udhaifu. Basi nitajisifia udhaifu wangu kwa furaha nyingi, ili uweza wa Kristo ukae juu yangu.\"\n\nMungu hachaguii watu wakuu kwa nguvu zao, bali hutumia udhaifu wetu kuonyesha uweza wake wa ajabu. Usione aibu katika udhaifu wako leo, kwa sababu ndipo neema yake inapotimilika zaidi.\n\n#2Wakorintho #NeemaYakutosha #Udhaifu #UwezaWaKristo #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-1thesalonika-5-11",
+      "photo": "sw-card-1thesalonika-5-11.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "1 Thesalonika 5:11",
+      "caption": "1 Thesalonika 5:11\n\n\"Basi, farijianeni na kujengana kila mtu na mwenzake, vile vile kama mnavyofanya.\"\n\nNeno moja la faraja linaweza kuuza moto wa moyo unaozimika kwa muda. Jenga wengine leo kwa maneno yako, kwa sababu dini yetu hukua kwa kujengana, si kwa kulaumiana.\n\n#1Thesalonika #Farijianeni #Kujengana #Faraja #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-luka-12-32",
+      "photo": "sw-card-luka-12-32.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Luka 12:32",
+      "caption": "Luka 12:32\n\n\"Msiogope, enyi kundi dogo; kwa kuwa Baba yenu ameona vema kuwapa ule ufalme.\"\n\nUkiwa una hisia ya kuwa wachache na dhaifu, kumbuka kwamba ufalme haukabidhiwi kwa hesabu ya watu. Baba yenu wa mbinguni amekupa urithi wa ufalme, hofu haina nafasi katika maisha yako.\n\n#Luka #KundiDogo #Msiogope #Ufalme #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-marko-9-23",
+      "photo": "sw-card-marko-9-23.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Marko 9:23",
+      "caption": "Marko 9:23\n\n\"Yesu akamwambia, Ukiweza! Yote yawezekana kwake aaminiye.\"\n\nSwali la Yesu linaugeuza kila kanuni ya dunia: si uwezo wako unaopima, bali imani yako. Mweke imani yako juu ya uwezo wa Mungu leo, na mambo yasiyoonekana yawezekana yataanza kutokea.\n\n#Marko #YoteYawezekana #ImaniYako #UwezoWaMungu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yohana-15-5",
+      "photo": "sw-card-yohana-15-5.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Yohana 15:5",
+      "caption": "Yohana 15:5\n\n\"Mimi ni mzabibu; ninyi ni matawi, akaaye ndani yangu nami ndani yake, huyo huzaa sana; maana pasipo mimi ninyi hamwezi kufanya neno lo lote.\"\n\nTawi linapatia uzima kutoka kwa mzabibu, si kwa bidii yake ya ndani, kama usipo katika mzabibu. Kaa ndani ya Kristo leo, na matunda ya maisha yako yatamshangaza wanaokuona.\n\n#Yohana #MzabibuNaMatawi #KaaNdani #Matunda #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yohana-16-33",
+      "photo": "sw-card-yohana-16-33.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Yohana 16:33",
+      "caption": "Yohana 16:33\n\n\"Hayo nimewaambieni mpate kuwa na amani ndani yangu. Ulimwenguni mnayo dhiki; lakini jipeni moyo; mimi nimeushinda ulimwengu.\"\n\nYesu hakutuahidia ulimwengu bila dhiki, bali aliutoshea amani ya ndani yenye nguvu kuliko dhiki. Jipe moyo leo, kwa sababu ulimwengu uliosumbuaye umekwishashindwa kabla ya mapigano yako.\n\n#Yohana #AmaniNdaniYake #JipeniMoyo #Ushindi #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-mathayo-5-16",
+      "photo": "sw-card-mathayo-5-16.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Mathayo 5:16",
+      "caption": "Mathayo 5:16\n\n\"Vivyo hivyo nuru yenu na iangaze mbele ya watu, wapate kuyaona matendo yenu mema, wamtukuze Baba yenu aliye mbinguni.\"\n\nWokovu wako si taa ya kufunikwa chini ya bakuli, bali ni nuru iliyo wazi kwa ulimwengu wote. Angaza leo kwa matendo mema, ili watu wamtuze Mungu kwa kuona maisha yako.\n\n#Mathayo #NuruYenu #Angaza #MatendoMema #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-zaburi-130-5",
+      "photo": "sw-card-zaburi-130-5.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Zaburi 130:5",
+      "caption": "Zaburi 130:5\n\n\"Nimemngoja BWANA, roho yangu imengoja, Na neno lake nimelitumainia.\"\n\nKungoja kwa Mungu si kupoteza muda, bali ni kuweka matumaini sehemu salama kabisa ya ulimwengu. Ruhusu roho yako iendelee kumngoja BWANA leo, kwa sababu neno lake haliziwi wala halicheleweshi.\n\n#Zaburi #NimemngojaBWANA #Matumaini #NenoLake #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-nehemia-8-10",
+      "photo": "sw-card-nehemia-8-10.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Nehemia 8:10",
+      "caption": "Nehemia 8:10\n\n\"Kisha akawaambia, Enendeni zenu, mle kilichonona, na kunywa kilicho kitamu, tena mpelekeeni sehemu yeye asiyewekewa kitu; maana siku hii ni takatifu kwa BWANA wetu; wala msihuzunike; kwa kuwa furaha ya BWANA ni nguvu zenu.\"\n\nWakati mgumu hauhitaji huzuni kupita kiasi, bali furaha ya BWANA inayogeuka kuwa nguvu. Sherehekehe furaha ya BWANA leo, na utapata nguvu mpya ya kuendelea na kujenga.\n\n#Nehemia #FurahaYaBWANA #NguvuZenu #Furaha #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-zaburi-34-18",
+      "photo": "sw-card-zaburi-34-18.jpg",
+      "lang": "sw",
+      "source": "Kadi ya fungu la Biblia (matini ya SUV kutoka bible.com, mandhari ya AI)",
+      "reference": "Zaburi 34:18",
+      "caption": "Zaburi 34:18\n\n\"BWANA yu karibu nao waliovunjika moyo, Na waliopondeka roho huwaokoa.\"\n\nMungu hafichi kwenye ngome za wakuu, bali hukaa karibu na waliovunjika moyo. Ikiwa moyo wako umevunjika leo, jua kwamba BWANA yupo pale karibu nawe, tayari kuokoa.\n\n#Zaburi #YuKaribu #MoyoUmevunjika #Wokovu #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-sw-2026-09-18",

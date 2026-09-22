@@ -27,7 +27,7 @@ the scripture on that image** (owner rule, 2026-09-22):
 Kiswahili the next — "if today you use english tomorrow use swahili". The
 agent tracks the language of the most recent post in `data/state.json` and
 always schedules the opposite language for the next slot, with a separate
-rotation index per language (18 English images, 9 Swahili images).
+rotation index per language (55 English images, 45 Kiswahili images).
 
 **Google Gemini (optional, owner request 2026-09-22):** if a
 `GEMINI_API_KEY` repo secret is configured
@@ -126,8 +126,11 @@ Until the token exists, the workflow runs end-to-end in plan mode; use
 `"lang": "sw"`. `data/state.json` tracks one rotation index **per language**
 (`rotation.en`, `rotation.sw`) plus the language of every posted slot, and the
 agent alternates the slot language daily. After the last pair of a language
-the cycle restarts — 18 English images ≈ 36 days, 9 Swahili images ≈ 18 days
-per full cycle (each language posts every second day).
+the cycle restarts — the library holds **100 images (55 English + 45
+Kiswahili)**: YouVersion VOTD graphics from both language pages, verse cards
+composed on AI backgrounds (NIV text for English, SUV text for Kiswahili,
+fetched from bible.com), and web verse graphics. That is ~200 days of unique
+content before any image repeats (each language posts every second day).
 To extend a pool:
 
 - **English:** download more previous-days images from
@@ -138,15 +141,19 @@ To extend a pool:
 
 The image URLs are
 `https://s3.amazonaws.com/static-youversionapi-com/images/base/{id}/1280x1280.jpg`.
-Drop them in `data/photos/`, append entries to `data/posts.json` (read the
+Drop them in `data/photos/`, add entries to `data/posts.json` (read the
 verse on each image and write a matching-language caption for it), push —
-done.
+done. New entries can be appended anywhere AFTER position 2 of their
+language pool without disturbing the rotation pointers (`rotation.en` /
+`rotation.sw` in state.json); entries placed BEFORE the current pointer
+shift what posts next.
 
 ## Repo layout
 
 ```
 data/
-  photos/          27 verse images (18 English + 9 Kiswahili YouVersion VOTD JPEGs)
+  photos/          100 verse images (55 English + 45 Kiswahili: YouVersion VOTD
+                    graphics + AI-background verse cards + web verse graphics)
   posts.json       the content pool: image ↔ caption pairs, lang-tagged, alternate daily
   config.json      the switch file: page, slots (09:00), timezone, grace, tokens
   state.json       per-slot status + language + per-language rotation + event log (auto-committed)
@@ -154,6 +161,8 @@ data/
 scripts/
   gh-agent.mjs         the agent (plain Node ≥18, zero npm installs)
   normalize-photos.js  converts/crops any image you drop in data/photos/
+  gemini-selftest.mjs  one-click Google Gemini key check (Actions → Run
+                       workflow → tick "gemini-test")
   check-live-posts.mjs read-only: compares the live page feed + Meta's
                        scheduled queue against data/state.json
 .github/workflows/
@@ -175,12 +184,13 @@ token (committed on purpose, same model as the sister repo).
 
 ## Status of this setup
 
-- Content pool: **27 verse images** — 18 English (6 previous VOTD days
-  2026-09-15…20, 6 designs of the 2026-09-21 VOTD, plus 6 clean verse
-  graphics from the web) and **9 Swahili** (YouVersion "Fungu la Siku"
-  2026-09-16…22, collected 2026-09-22 from the Swahili VOTD page) — every
-  image VLM-verified as a clean scripture graphic, Swahili verse texts
-  cross-checked against bible.com (BHN/SUV wording).
+- Content pool: **100 verse images** — 55 English (previous VOTD days
+  2026-09-15…22 including 7 designs of the 09-22 VOTD, clean web verse
+  graphics, and 30 verse cards on AI backgrounds with NIV text) and
+  **45 Kiswahili** (YouVersion "Fungu la Siku" graphics 2026-09-16…22 plus
+  verse cards with SUV text from bible.com) — every image VLM-verified as a
+  clean scripture graphic in its language; card verse texts fetched
+  verbatim from bible.com (NIV / SUV).
 - Language rule live: caption language = image language, alternating daily
   (EN/SW) since 2026-09-22.
 - Page confirmed via Graph API: *"Biblia Tafsiri Mbalimbali"*, 100 fans;

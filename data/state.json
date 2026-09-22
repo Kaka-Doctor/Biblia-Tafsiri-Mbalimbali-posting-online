@@ -45,8 +45,8 @@
     }
   },
   "rotation": {
-    "en": 1,
-    "sw": 1
+    "en": 2,
+    "sw": 2
   },
   "events": [
     {
@@ -90,6 +90,13 @@
       "date": "2026-09-24",
       "slot": "09:00",
       "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-22T13:30:00.000Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "LIBRARY EXPANSION (owner request): 33 → 100 images (55 EN / 45 SW). +7 YouVersion VOTD designs (Gal 1:10, 22 Sep), +60 verse cards (30 EN on NIV text + 30 SW on SUV text from bible.com, AI backgrounds, VLM-verified). New entries inserted at pool position 2; rotation pointers advanced to the new block, so the 09-25 (SW) and 09-26 (EN) slots are the first to use new images. GEMINI self-test button added (Actions → Run workflow → gemini-test); GEMINI_API_KEY secret not yet visible on the repo — Swahili captions use the stored text until it is saved."
     }
   ]
 }
