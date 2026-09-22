@@ -35,6 +35,9 @@ name: Bible Verse Agent
 # ⟶ To POST RIGHT NOW (or rescue a MISSED slot the same day): Actions tab →
 #    "Bible Verse Agent" → "Run workflow" → tick "force".
 # ⟶ To TEST without publishing: same, but tick "dryRun".
+# ⟶ To TEST THE GEMINI KEY without publishing: tick "gemini-test" — runs
+#    scripts/gemini-selftest.mjs with the GEMINI_API_KEY secret and skips the
+#    agent entirely (no posts, no state changes).
 # ⟶ To PAUSE: set "autoPost": false in data/config.json — the next landed
 #    run also deletes any pending Meta-scheduled posts.
 #
@@ -55,6 +58,10 @@ on:
         default: false
       force:
         description: "Force — post the most recent unposted slot right now (rescues a missed slot the same day)"
+        type: boolean
+        default: false
+      gemini-test:
+        description: "Gemini self-test — verify the GEMINI_API_KEY secret works for Swahili captions (posts nothing)"
         type: boolean
         default: false
 
@@ -80,7 +87,15 @@ jobs:
       # Any file dropped into data/photos/ (phone PNG, huge export, too-small
       # image) is auto-converted/cropped/scaled to platform-safe JPEG and the
       # fix is committed back to the repo.
+      - name: Gemini self-test (optional)
+        if: inputs.gemini-test == true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: node scripts/gemini-selftest.mjs
+
       - name: Normalize photos
+        if: inputs.gemini-test != true
         run: |
           mkdir -p /tmp/norm && cd /tmp/norm
           npm init -y >/dev/null 2>&1
@@ -90,6 +105,7 @@ jobs:
             || echo "normalize skipped (non-fatal — the agent posts files as-is)"
 
       - name: Run the agent
+        if: inputs.gemini-test != true
         env:
           INPUT_DRY_RUN: ${{ inputs.dryRun }}
           INPUT_FORCE: ${{ inputs.force }}
@@ -108,6 +124,7 @@ jobs:
           node scripts/gh-agent.mjs $FLAGS
 
       - name: Persist state + normalized photos
+        if: inputs.gemini-test != true
         run: |
           git config user.name "verse-agent-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
