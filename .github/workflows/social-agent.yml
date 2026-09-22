@@ -1,9 +1,11 @@
 name: Bible Verse Agent
 
 # ─────────────────────────────────────────────────────────────────────────────
-#  Biblia Tafsiri Mbalimbali — posts one YouVersion Verse-of-the-Day image +
-#  its Swahili SUV caption to the Facebook page AND the connected Instagram
-#  account (@biblia_tafsiri_mbalimbali) every day at 09:00 EAT.
+#  Biblia Tafsiri Mbalimbali — posts one verse-of-the-day image + a caption
+#  in the SAME language as the scripture on that image to the Facebook page
+#  AND the connected Instagram account (@biblia_tafsiri_mbalimbali) every day
+#  at 09:00 EAT — alternating daily: English one day, Kiswahili the next
+#  (owner rule 2026-09-22).
 #
 #  GitHub's cron fires this workflow every 30 minutes around the clock at
 #  :13/:43 — but the timing barely matters. Every run that lands PRE-SCHEDULES
@@ -91,6 +93,14 @@ jobs:
         env:
           INPUT_DRY_RUN: ${{ inputs.dryRun }}
           INPUT_FORCE: ${{ inputs.force }}
+          # Optional Google Gemini (owner request 2026-09-22): with this secret
+          # set, Swahili captions are rewritten by Gemini at posting time;
+          # without it the stored captions in data/posts.json are used.
+          # Create a free key at aistudio.google.com/apikey → repo Settings →
+          # Secrets and variables → Actions → New repository secret →
+          # name: GEMINI_API_KEY
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: |
           FLAGS=""
           if [ "$INPUT_DRY_RUN" = "true" ]; then FLAGS="$FLAGS --dry-run"; fi

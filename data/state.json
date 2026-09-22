@@ -1,30 +1,6 @@
 {
   "version": 1,
   "days": {
-    "2026-09-23": {
-      "09:00": {
-        "status": "scheduled",
-        "publishTime": "2026-09-23T06:00:00.000Z",
-        "at": "2026-09-22T05:54:41.400Z",
-        "photo": "votd-2026-09-15.jpg",
-        "fb": {
-          "id": "122205160424587338"
-        },
-        "caption": "Maombolezo 3:22 (SUV)\n\n\"Fadhili za BWANA hazijapotea, maana rehema zake hazina mwisho.\"\n\nKila siku mpya ni ushuhuda wa fadhili mpya za Mungu; hazijawahi koma japo safari yako igumu. Utulie moyoni leo, kwa maana rehema zake zinakufikia asubuhi hii pia.\n\n#Maombolezo #FadhiliZaMungu #Rehema #Matumaini #BibliaTafsiriMbalimbali"
-      }
-    },
-    "2026-09-24": {
-      "09:00": {
-        "status": "scheduled",
-        "publishTime": "2026-09-24T06:00:00.000Z",
-        "at": "2026-09-22T05:54:58.612Z",
-        "photo": "votd-2026-09-16.jpg",
-        "fb": {
-          "id": "122205160550587338"
-        },
-        "caption": "Isaya 41:13 (SUV)\n\n\"Kwa maana mimi BWANA, Mungu wako, nashika mkono wako wa kuambia: Usiogopa, mimi nikusaidia.\"\n\nMungu mwenyewe anashika mkono wako; hii si ahadi ya mbali, bali ya karibu na ya kila siku. Ukiogopa au kuwa na wasiwasi, kumbuka kwamba Yeye aliyekuumba yu pembeni yako kukusaidia.\n\n#Isaya #Usiogope #MunguWako #Imani #BibliaTafsiriMbalimbali"
-      }
-    },
     "2026-09-22": {
       "09:00": {
         "status": "published",
@@ -37,13 +13,14 @@
         "fb": {
           "id": "447560908444853_122205161444587338",
           "permalink": "https://www.facebook.com/122205160346587338/posts/122205161444587338"
-        }
+        },
+        "lang": "en"
       }
     }
   },
   "rotation": {
-    "photoIndex": 3,
-    "captionIndex": 3
+    "en": 0,
+    "sw": 0
   },
   "events": [
     {
@@ -51,21 +28,28 @@
       "level": "info",
       "date": "2026-09-23",
       "slot": "09:00",
-      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z) \u2014 \"votd-2026-09-15.jpg\" | IG \u2713 | FB \u2713"
+      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z) — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
     },
     {
       "ts": "2026-09-22T05:54:58.612Z",
       "level": "info",
       "date": "2026-09-24",
       "slot": "09:00",
-      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z) \u2014 \"votd-2026-09-16.jpg\" | IG \u2713 | FB \u2713"
+      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z) — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
     },
     {
       "ts": "2026-09-22T06:05:19.508Z",
       "level": "success",
       "date": "2026-09-22",
       "slot": "09:00",
-      "message": "09:00 Auto: published \u2014 \"votd-2026-09-17.jpg\" | IG \u2713 | FB \u2713"
+      "message": "09:00 Auto: published — \"votd-2026-09-17.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-22T09:40:00.000Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "LANGUAGE RULE (owner request): caption language must match the image language (English image -> English caption, Swahili image -> Swahili caption) with daily EN/SW alternation. 9 Swahili YouVersion VOTD images added; all 18 English captions rewritten in English. Removed the 2 Meta-scheduled 09-23/09-24 posts (they had EN images + SW captions); they will be re-booked language-correct by the next run: 09-23 Kiswahili, 09-24 English. Optional GEMINI_API_KEY secret enables Google Gemini rewriting of Swahili captions."
     }
   ]
 }

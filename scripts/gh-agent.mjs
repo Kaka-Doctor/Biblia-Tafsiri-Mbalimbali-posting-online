@@ -8,11 +8,17 @@
  *  (`.github/workflows/social-agent.yml`), triggered by GitHub's cron.
  *  No web server, no database, no npm installs — plain Node (>= 18).
  *
- *  CONTENT: data/posts.json pairs each YouVersion Verse-of-the-Day image
- *  (collected in data/photos/) with a caption written for that exact verse:
- *  the scripture in SUV (Swahili Union Version), two sentences of explanation
- *  and encouragement, and 5 hashtags ending with #BibliaTafsiriMbalimbali.
- *  The agent rotates through the pairs in manifest order, then cycles.
+ *  CONTENT: data/posts.json pairs each verse image (collected in data/photos/)
+ *  with a caption written IN THE SAME LANGUAGE as the scripture on the image
+ *  (owner rule 2026-09-22): English image → English caption, Swahili image →
+ *  Swahili caption ("lang": "en"|"sw" on every entry). Posts alternate daily:
+ *  English one day, Kiswahili the next ("if today you use english tomorrow
+ *  use swahili"). Each caption = the scripture (verbatim as written on the
+ *  image) + two sentences of explanation/encouragement + 5 hashtags ending
+ *  with #BibliaTafsiriMbalimbali. With the GEMINI_API_KEY secret set, the
+ *  Swahili encouragement sentences are rewritten by Google Gemini at posting
+ *  time (stored caption = the fallback). The agent rotates through each
+ *  language's pairs in manifest order, then cycles.
  *
  *  RELIABILITY MODEL: GitHub silently drops most scheduled runs on young
  *  accounts (observed live on the sister repo: 1 run per 5-11 hours, regardless
@@ -236,9 +242,10 @@ function parseSlots(str) {
 }
 
 // ── Content: photo+caption pairs from data/posts.json ───────────────────────
-// Each manifest entry pairs a YouVersion Verse-of-the-Day image with a caption
-// written for the exact scripture on that image (SUV text + 2 sentences + 5
-// hashtags). Rotation walks the pairs in manifest order, then cycles.
+// Each manifest entry pairs a verse image with a caption IN THE SAME LANGUAGE
+// as the scripture on that image ("lang": "en"|"sw"). The owner's rule
+// (2026-09-22): alternate daily — English one day, Kiswahili the next. Each
+// language has its own rotation index; pools are walked in manifest order.
 async function loadLibrary() {
   let manifest = { posts: [] }
   try {
@@ -246,20 +253,25 @@ async function loadLibrary() {
   } catch {
     throw new Error('data/posts.json is missing or unreadable — the content pool lives there')
   }
-  const entries = (manifest.posts ?? []).filter((p) => p && p.photo && p.caption)
-  const photos = []
-  const captions = []
-  for (const e of entries) {
-    const exists = await fs.stat(path.join(PHOTOS_DIR, e.photo)).then(() => true).catch(() => false)
+  const entries = []
+  const seenPhotos = []
+  for (const p of (manifest.posts ?? [])) {
+    if (!p || !p.photo || !p.caption) continue
+    const exists = await fs.stat(path.join(PHOTOS_DIR, p.photo)).then(() => true).catch(() => false)
     if (exists) {
-      photos.push(e.photo)
-      captions.push(String(e.caption))
+      entries.push({
+        photo: p.photo,
+        caption: String(p.caption),
+        lang: String(p.lang ?? 'en').toLowerCase() === 'sw' ? 'sw' : 'en',
+        reference: String(p.reference ?? ''),
+      })
+      seenPhotos.push(p.photo)
     } else {
-      log(`[library] note: manifest entry "${e.id ?? e.photo}" has no photo file in data/photos/ — skipped`)
+      log(`[library] note: manifest entry "${p.id ?? p.photo}" has no photo file in data/photos/ — skipped`)
     }
   }
   const inDir = (await fs.readdir(PHOTOS_DIR).catch(() => [])).filter((f) => /\.jpe?g$/i.test(f))
-  const orphans = inDir.filter((f) => !photos.includes(f))
+  const orphans = inDir.filter((f) => !seenPhotos.includes(f))
   if (orphans.length > 0) {
     log(`[library] note: ${orphans.length} photo(s) in data/photos/ are not in data/posts.json — not posted (${orphans.join(', ')})`)
   }
@@ -267,15 +279,125 @@ async function loadLibrary() {
   if (nonJpg.length > 0) {
     log(`[library] note: ${nonJpg.length} non-JPEG file(s) present (${nonJpg.join(', ')}) — the workflow's normalize step converts them to JPEG before posting`)
   }
-  return { photos, captions }
+  return { entries }
+}
+
+// ── Language alternation (owner rule: English today, Kiswahili tomorrow) ────
+/** Most recent slot's language ('en'|'sw'), scanning state newest-first.
+ *  Legacy records without a lang field infer it from the photo filename
+ *  (Swahili images are named votd-sw-*). Returns null when no history. */
+function lastPostedLang(state) {
+  const dayKeys = Object.keys(state.days ?? {}).sort().reverse()
+  for (const dk of dayKeys) {
+    const slots = Object.entries(state.days[dk]).sort((a, b) => b[0].localeCompare(a[0]))
+    for (const [, rec] of slots) {
+      if (rec?.lang === 'en' || rec?.lang === 'sw') return rec.lang
+      if (rec?.photo) return /^votd-sw-/i.test(rec.photo) ? 'sw' : 'en'
+    }
+  }
+  return null
+}
+function oppositeLang(lang) { return lang === 'sw' ? 'en' : 'sw' }
+
+/** Next slot's language: opposite of the most recent slot's language.
+ *  A fresh repo starts with English. */
+function nextSlotLang(state) {
+  return oppositeLang(lastPostedLang(state) ?? 'sw')
+}
+
+/** Peek the photo+caption entry for the given language WITHOUT advancing the
+ *  rotation (rotation advances only on successful post/schedule). Falls back
+ *  to the other language pool when the requested one is empty. */
+function peekEntry(state, entriesByLang, lang) {
+  let pool = entriesByLang[lang] ?? []
+  if (pool.length === 0) {
+    const fb = oppositeLang(lang)
+    log(`[pick] no ${lang === 'sw' ? 'Swahili' : 'English'} entries in data/posts.json — falling back to ${fb === 'sw' ? 'Swahili' : 'English'} entries (add more "lang": "${lang}" entries to keep the alternation)`)
+    lang = fb
+    pool = entriesByLang[lang] ?? []
+  }
+  const idx = Number(state.rotation[lang] ?? 0) % Math.max(1, pool.length)
+  return { entry: pool[idx], lang, index: idx, poolSize: pool.length }
+}
+
+/** Advance the per-language rotation after a successful post/schedule. */
+function advanceRotation(state, entriesByLang, lang) {
+  const pool = entriesByLang[lang] ?? []
+  if (pool.length === 0) return
+  state.rotation[lang] = (Number(state.rotation[lang] ?? 0) + 1) % pool.length
+}
+
+// ── Google Gemini (optional) — Swahili caption quality ─────────────────────
+/** When the GEMINI_API_KEY secret is configured, ask Google Gemini to rewrite
+ *  the two encouragement sentences of a Swahili caption in fresh, native
+ *  Kiswahili — keeping the reference line, the scripture quote, and the
+ *  hashtags intact. Any failure returns null → the stored caption is used, so
+ *  posting never depends on Gemini being reachable. (Owner request 2026-09-22:
+ *  "use google ai (gemini) to create caption of swahili images".) */
+async function geminiRewriteSwCaption(caption) {
+  const key = String(process.env.GEMINI_API_KEY ?? '').trim()
+  if (!key) return null
+  const model = String(process.env.GEMINI_MODEL ?? 'gemini-2.5-flash').trim() || 'gemini-2.5-flash'
+  const prompt =
+    'Wewe ni mtaalamu wa Kiswahili sanifu na mwandishi mashuhuri wa taarifa za kiroho za kila siku. ' +
+    'Andika upya sentensi MBILI za kueleza na kuhamasisha katika machapisho yafuatayo kwa Kiswahili asili, sanifu na laini ' +
+    'kama waandishi wazawa wa Tanzania — kila sentensi iwe na maneno 12-24. Mstari wa rejea, nukuu ya maandiko, na hashtags ' +
+    'ZIBAKI HAKUNA mabadiliko kabisa. Jibu kwa machapisho yote yaliyokamilika pekee (rejea + nukuu + sentensi mbili mpya + ' +
+    'hashtags), bila maelezo mengine yoyote kabla au baada.\n\n' + caption
+  try {
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(key)}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+        signal: AbortSignal.timeout(45000),
+      }
+    )
+    const json = await res.json().catch(() => ({}))
+    const text = String(json?.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? '').trim()
+    if (!res.ok || !text) throw new Error(json?.error?.message ?? `HTTP ${res.status}`)
+    // validation: the verse quote, the brand hashtag and a sane size must survive
+    const brand = '#BibliaTafsiriMbalimbali'
+    const q1 = caption.indexOf('"')
+    const q2 = q1 >= 0 ? caption.indexOf('"', q1 + 1) : -1
+    const quote = q1 >= 0 && q2 > q1 ? caption.slice(q1, q2 + 1) : ''
+    if (!text.includes(brand) || (quote && !text.includes(quote)) || text.length < 120 || text.length > 2200) {
+      throw new Error('output failed validation (quote/hashtag/length)')
+    }
+    log(`[gemini] Swahili caption rewritten with Google Gemini (${model})`)
+    return text
+  } catch (e) {
+    log(`[gemini] rewrite failed (${e.message}) — using the stored caption`)
+    return null
+  }
+}
+
+/** Final caption for a slot: Gemini-refreshed when enabled + Swahili, else the
+ *  stored library caption. */
+async function captionForSlot(entry) {
+  if (entry.lang === 'sw') {
+    const rewritten = await geminiRewriteSwCaption(entry.caption)
+    if (rewritten) return rewritten
+  }
+  return entry.caption
 }
 
 // ── State (data/state.json, committed back by the workflow) ─────────────────
-const EMPTY_STATE = { version: 1, days: {}, rotation: { photoIndex: 0, captionIndex: 0 }, events: [] }
+// rotation: one index per language pool ({ en: n, sw: n }); a legacy flat
+// rotation { photoIndex, captionIndex } from before the alternation is reset.
+const EMPTY_STATE = { version: 1, days: {}, rotation: { en: 0, sw: 0 }, events: [] }
 async function readState() {
   try {
     const s = JSON.parse(await fs.readFile(STATE_FILE, 'utf-8'))
-    return { ...EMPTY_STATE, ...s, rotation: { ...EMPTY_STATE.rotation, ...(s.rotation ?? {}) } }
+    const rotation = { ...EMPTY_STATE.rotation }
+    if (s.rotation && typeof s.rotation.photoIndex !== 'number') {
+      for (const k of ['en', 'sw']) {
+        const v = Number(s.rotation[k])
+        if (Number.isFinite(v) && v >= 0) rotation[k] = Math.floor(v)
+      }
+    }
+    return { ...EMPTY_STATE, ...s, rotation }
   } catch {
     return JSON.parse(JSON.stringify(EMPTY_STATE))
   }
@@ -600,14 +722,21 @@ async function main() {
     return
   }
 
-  const { photos, captions } = await loadLibrary()
-  if (photos.length === 0 || captions.length === 0) {
+  const library = await loadLibrary()
+  if (library.entries.length === 0) {
     const why = 'no usable photo+caption pairs in data/posts.json (each entry needs photo + caption, and the photo must exist in data/photos/)'
     recordEvent(state, { level: 'error', date: now.date, slot: '', message: `Nothing to post: ${why}` })
     await writeState(state)
     throw new Error(`Nothing to post: ${why}`)
   }
-  log(`[library] ${photos.length} verse-image pair(s) from data/posts.json`)
+  const entriesByLang = {
+    en: library.entries.filter((e) => e.lang === 'en'),
+    sw: library.entries.filter((e) => e.lang === 'sw'),
+  }
+  log(`[library] ${library.entries.length} verse-image pair(s) from data/posts.json — ${entriesByLang.en.length} English, ${entriesByLang.sw.length} Swahili; next slot language: ${nextSlotLang(state) === 'sw' ? 'Kiswahili' : 'English'} (daily alternation)`)
+  if (entriesByLang.en.length === 0 || entriesByLang.sw.length === 0) {
+    log('[library] note: one language pool is empty — the alternation will fall back to the available pool until more images are added')
+  }
 
   // ---- reconcile: confirm Meta-scheduled slots that have gone live ----
   if (!ARG_DRY) {
@@ -676,28 +805,28 @@ async function main() {
   const horizon = scheduleDays >= 2 ? buildHorizon(state, slots, now, tz, scheduleDays) : []
 
   if (ARG_DRY) {
-    let pi = state.rotation.photoIndex
     if (target) {
       const rec = state.days[target.date ?? now.date]?.[target.label]
       if (target.igOnly) {
-        log(`[pick] slot ${target.label} on ${target.date ?? now.date} → IG half only (FB already booked on Meta, photo "${rec?.photo ?? '?'}")`)
+        log(`[pick] slot ${target.label} on ${target.date ?? now.date} → IG half only (FB already booked on Meta, photo "${rec?.photo ?? '?'}", lang ${rec?.lang ?? '?'})`)
         if (page.igUserId) log('[dry-run] would publish Instagram only right now:')
         if (page.igUserId) log(`  Instagram (@${page.igUsername}): hidden FB photo → CDN url → container → media_publish`)
       } else {
-        const dPhoto = photos[pi % photos.length]
-        log(`[pick] slot ${target.label} on ${target.date ?? now.date} → photo: ${dPhoto} (rotation index ${pi % photos.length} of ${photos.length})`)
-        pi++
+        const pick = peekEntry(state, entriesByLang, nextSlotLang(state))
+        log(`[pick] slot ${target.label} on ${target.date ?? now.date} → language: ${pick.lang === 'sw' ? 'Kiswahili' : 'English'} → photo: ${pick.entry.photo} (rotation index ${pick.index} of ${pick.poolSize})`)
         log('[dry-run] would publish now:')
         log(`  Facebook (${page.pageName || 'Biblia Tafsiri Mbalimbali'}): binary upload with caption`)
         if (page.igUserId) log(`  Instagram (@${page.igUsername}): hidden FB photo → CDN url → container → media_publish`)
       }
     }
     if (horizon.length > 0) {
-      log(`[dry-run] would pre-schedule ${horizon.length} slot(s) — FB via Meta exactly on time; IG posted later by landed catch-up runs:`)
+      log(`[dry-run] would pre-schedule ${horizon.length} slot(s) — FB via Meta exactly on time; IG posted later by landed catch-up runs:`
+        + (String(process.env.GEMINI_API_KEY ?? '').trim() ? ' (Swahili slots: caption re-written with Google Gemini)' : ''))
+      let dryLang = nextSlotLang(state)
       for (const h of horizon) {
-        const ph = photos[pi % photos.length]
-        pi++
-        log(`  ${h.dk} ${h.slot.label} → "${ph}" → FB at ${new Date(h.slotUnix).toISOString()} + IG on the next landed run after that`)
+        const pick = peekEntry(state, entriesByLang, dryLang)
+        dryLang = oppositeLang(dryLang)
+        log(`  ${h.dk} ${h.slot.label} → ${pick.lang === 'sw' ? 'Kiswahili' : 'English'} → "${pick.entry.photo}" → FB at ${new Date(h.slotUnix).toISOString()} + IG on the next landed run after that`)
       }
     }
     log('[dry-run] nothing published or scheduled, state unchanged')
@@ -713,16 +842,19 @@ async function main() {
     // IG-catch-up (slot was pre-booked on Meta): reuse the slot's OWN photo and
     // caption recorded at booking time — the FB half is already live/live-soon
     // with exactly this content; IG must match it, not advance the rotation.
-    // Fresh catch-up: rotation picks, both platforms, as always.
-    let photoFile, captionText
+    // Fresh catch-up: language-alternated rotation picks, both platforms.
+    let photoFile, captionText, postLang
     if (target.igOnly && existing?.photo && existing?.caption) {
       photoFile = existing.photo
       captionText = existing.caption
-      log(`[pick] slot ${slotLabel} on ${dateKey} → IG half of pre-booked slot (photo "${photoFile}" pinned at booking time)`)
+      postLang = existing?.lang ?? (/^votd-sw-/i.test(photoFile) ? 'sw' : 'en')
+      log(`[pick] slot ${slotLabel} on ${dateKey} → IG half of pre-booked slot (photo "${photoFile}", lang ${postLang} — pinned at booking time)`)
     } else {
-      photoFile = photos[state.rotation.photoIndex % photos.length]
-      captionText = captions[state.rotation.captionIndex % captions.length]
-      log(`[pick] slot ${slotLabel} on ${dateKey} → photo: ${photoFile} (rotation index ${state.rotation.photoIndex % photos.length} of ${photos.length})`)
+      const pick = peekEntry(state, entriesByLang, nextSlotLang(state))
+      postLang = pick.lang
+      photoFile = pick.entry.photo
+      captionText = await captionForSlot(pick.entry)
+      log(`[pick] slot ${slotLabel} on ${dateKey} → language: ${postLang === 'sw' ? 'Kiswahili' : 'English'} (daily alternation) → photo: ${photoFile} (rotation index ${pick.index} of ${pick.poolSize})`)
     }
     const photoPath = path.join(PHOTOS_DIR, photoFile)
     log(`[pick] caption: "${captionText.slice(0, 70).replace(/\n/g, ' ')}…" (${captionText.length} chars)`)
@@ -770,6 +902,7 @@ async function main() {
         publishTime: existing?.publishTime,
         photo: photoFile,
         caption: captionText,
+        lang: postLang,
         ig: igOk ? { id: igResult.postId, permalink: igResult.permalink } : { error: igResult.error },
         fb: target.igOnly
           ? (existing?.fb ?? { error: 'booking lost' })
@@ -778,10 +911,7 @@ async function main() {
       state.days[dateKey] = day
       if (status !== 'failed') {
         // rotation advanced at booking time for pre-booked slots — not here
-        if (!target.igOnly) {
-          state.rotation.photoIndex = (state.rotation.photoIndex + 1) % photos.length
-          state.rotation.captionIndex = (state.rotation.captionIndex + 1) % captions.length
-        }
+        if (!target.igOnly) advanceRotation(state, entriesByLang, postLang)
       }
       recordEvent(state, {
         level: status === 'published' ? 'success' : 'error',
@@ -806,11 +936,13 @@ async function main() {
   if (horizon.length > 0) log(`[schedule] pre-scheduling ${horizon.length} upcoming slot(s) on Facebook via Meta …`)
   let scheduledCount = 0
   for (const h of horizon) {
-    const hPhoto = photos[state.rotation.photoIndex % photos.length]
-    const hCaption = captions[state.rotation.captionIndex % captions.length]
+    const pick = peekEntry(state, entriesByLang, nextSlotLang(state))
+    const hPhoto = pick.entry.photo
+    const hLang = pick.lang
+    const hCaption = await captionForSlot(pick.entry)
     const hPhotoPath = path.join(PHOTOS_DIR, hPhoto)
     const hISO = new Date(h.slotUnix).toISOString()
-    log(`[schedule] ${h.dk} ${h.slot.label} → "${hPhoto}" → FB publishes at ${hISO}; IG half on the next landed run after that`)
+    log(`[schedule] ${h.dk} ${h.slot.label} → language: ${hLang === 'sw' ? 'Kiswahili' : 'English'} → "${hPhoto}" → FB publishes at ${hISO}; IG half on the next landed run after that`)
     const fbS = await scheduleFacebookPost(page, hPhotoPath, hCaption, Math.floor(h.slotUnix / 1000))
     if (fbS.ok) {
       const day = state.days[h.dk] ?? {}
@@ -820,12 +952,12 @@ async function main() {
         at: new Date().toISOString(),
         photo: hPhoto,
         caption: hCaption,
+        lang: hLang,
         fb: { id: fbS.postId },
       }
       state.days[h.dk] = day
-      state.rotation.photoIndex = (state.rotation.photoIndex + 1) % photos.length
-      state.rotation.captionIndex = (state.rotation.captionIndex + 1) % captions.length
-      recordEvent(state, { level: 'info', date: h.dk, slot: h.slot.label, message: `${h.slot.label} FB half pre-scheduled via Meta (publishes ${hISO}) — "${hPhoto}"; IG half to be posted by a landed run in the catch-up window` })
+      advanceRotation(state, entriesByLang, hLang)
+      recordEvent(state, { level: 'info', date: h.dk, slot: h.slot.label, message: `${h.slot.label} FB half pre-scheduled via Meta (publishes ${hISO}, ${hLang === 'sw' ? 'Kiswahili' : 'English'}) — "${hPhoto}"; IG half to be posted by a landed run in the catch-up window` })
       scheduledCount++
     } else {
       recordEvent(state, { level: 'error', date: h.dk, slot: h.slot.label, message: `${h.slot.label} FB scheduling FAILED — ${fbS.error} (next run retries)` })

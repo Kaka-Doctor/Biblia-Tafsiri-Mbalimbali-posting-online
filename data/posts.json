@@ -1,134 +1,223 @@
 {
-  "version": 1,
-  "description": "Verse-of-the-Day pool: each entry pairs a YouVersion VOTD image with its Swahili SUV caption (scripture + two sentences + 5 hashtags). The agent rotates through these in order.",
+  "version": 2,
+  "description": "Content library for the Biblia Tafsiri Mbalimbali agent. RULE (owner-set, 2026-09-22): the caption language MUST match the language of the scripture on the image — English image -> English caption, Swahili image -> Swahili caption ('lang' field on every entry). The agent alternates daily: one day English, the next Swahili. English images: YouVersion Verse of the Day + web verse graphics. Swahili images: YouVersion 'Fungu la Siku' (Swahili VOTD, collected from bible.com/sw/verse-of-the-day); their verse text is quoted verbatim as written on each image (BHN/SUV wording, verified against bible.com). Captions: verse + two sentences of explanation and encouragement + five hashtags ending with #BibliaTafsiriMbalimbali. With a GEMINI_API_KEY secret configured, the agent re-writes the Swahili encouragement sentences with Google Gemini at posting time (stored caption = fallback).",
   "generated": "2026-09-22",
-  "translation": "SUV (Swahili Union Version)",
   "posts": [
     {
       "id": "votd-2026-09-15",
       "photo": "votd-2026-09-15.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 15 Sep 2026",
-      "reference": "Maombolezo 3:22",
-      "caption": "Maombolezo 3:22 (SUV)\n\n\"Fadhili za BWANA hazijapotea, maana rehema zake hazina mwisho.\"\n\nKila siku mpya ni ushuhuda wa fadhili mpya za Mungu; hazijawahi koma japo safari yako igumu. Utulie moyoni leo, kwa maana rehema zake zinakufikia asubuhi hii pia.\n\n#Maombolezo #FadhiliZaMungu #Rehema #Matumaini #BibliaTafsiriMbalimbali"
+      "reference": "Lamentations 3:22",
+      "caption": "Lamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-16",
       "photo": "votd-2026-09-16.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 16 Sep 2026",
-      "reference": "Isaya 41:13",
-      "caption": "Isaya 41:13 (SUV)\n\n\"Kwa maana mimi BWANA, Mungu wako, nashika mkono wako wa kuambia: Usiogopa, mimi nikusaidia.\"\n\nMungu mwenyewe anashika mkono wako; hii si ahadi ya mbali, bali ya karibu na ya kila siku. Ukiogopa au kuwa na wasiwasi, kumbuka kwamba Yeye aliyekuumba yu pembeni yako kukusaidia.\n\n#Isaya #Usiogope #MunguWako #Imani #BibliaTafsiriMbalimbali"
+      "reference": "Isaiah 41:13",
+      "caption": "Isaiah 41:13\n\n\"Fear not, for I am the one who helps you.\"\n\nThe God who formed you does not shout this from a distance — He holds your right hand as He says it. Whatever fear you carry today, put it down; your Helper is already beside you.\n\n#Isaiah #FearNot #GodIsMyHelper #FaithOverFear #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-17",
       "photo": "votd-2026-09-17.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 17 Sep 2026",
-      "reference": "Warumi 8:6",
-      "caption": "Warumi 8:6 (SUV)\n\n\"Maana mawazo ya mwili ni mauti, bali mawazo ya Roho ni uzima na amani.\"\n\nMawazo tunayoyaruhusu kuongoza moyo wetu huamua amani tunayoipata; mawazo ya Roho hutuletea uzima na utulivu wa ndani. Chagua leo kulishughulikia moyo wako kwa Neno la Mungu, na amani yake itakufunika.\n\n#Warumi #RohoMtakatifu #Amani #Mawazo #BibliaTafsiriMbalimbali"
+      "reference": "Romans 8:6",
+      "caption": "Romans 8:6\n\n\"The mind governed by the flesh is death, but the mind governed by the Spirit is life and peace.\"\n\nPeace is not produced by perfect circumstances but by a mind surrendered to God's Spirit. Feed your thoughts with His Word today, and watch life and calm follow.\n\n#Romans #MindOfTheSpirit #LifeAndPeace #WalkByTheSpirit #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-18",
       "photo": "votd-2026-09-18.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 18 Sep 2026",
-      "reference": "Mithali 3:7",
-      "caption": "Mithali 3:7 (SUV)\n\n\"Usiwe na hekima machoni pako mwenyewe; umwogope BWANA, ukengeue uovu.\"\n\nHekima ya kweli huanza kwa kumwogopa Mungu, si kwa kujivunia ufahamu wetu wenyewe. Unapoinama mbele yake, Yeye anakuongoza katika njia safi, na baraka zake zinakufuatia.\n\n#Mithali #Hekima #KumwogopaMungu #Maisha #BibliaTafsiriMbalimbali"
+      "reference": "Proverbs 3:7",
+      "caption": "Proverbs 3:7\n\n\"Do not be wise in your own eyes; fear the LORD and shun evil.\"\n\nTrue wisdom begins with humility — admitting we do not see everything. When you honor God first, He keeps your feet on a clean and steady path.\n\n#Proverbs #Wisdom #FearOfTheLord #Humility #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-19",
       "photo": "votd-2026-09-19.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 19 Sep 2026",
-      "reference": "Wafilipi 1:3",
-      "caption": "Wafilipi 1:3 (SUV)\n\n\"Namshukuru Mungu wangu kila nikikumbuka ninyi.\"\n\nShukrani ni dalili ya moyo unaotambua wema wa Mungu na wa watu waliotuzunguka. Mfanye shukrani kuwa tabia ya kila siku, nakuona neema nyingi zaidi za kushukuru.\n\n#Wafilipi #Shukrani #MoyoWaShukrani #Neema #BibliaTafsiriMbalimbali"
+      "reference": "Philippians 1:3",
+      "caption": "Philippians 1:3\n\n\"I thank my God every time I remember you.\"\n\nGratitude turns ordinary relationships into evidence of God's kindness. Thank God today for the people He has placed in your life — each one is a gift.\n\n#Philippians #Gratitude #ThankfulHeart #ThankGod #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-20",
       "photo": "votd-2026-09-20.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 20 Sep 2026",
-      "reference": "Zaburi 9:1",
-      "caption": "Zaburi 9:1 (SUV)\n\n\"Nitamtukuza BWANA kwa moyo wangu wote; nitasimulia ajabu zake zote.\"\n\nKumtukuza Mungu kwa moyo wote kunatoka kwa kumbukumbu ya yale aliyotenda kwetu. Kumbuka ajabu zake za mwisho na kumwonyesha shukrani yako kwa nguvu zote; Yeye anastahili sifa kila siku.\n\n#Zaburi #KumtukuzaBwana #Sifa #Shukrani #BibliaTafsiriMbalimbali"
+      "reference": "Psalm 9:1",
+      "caption": "Psalm 9:1\n\n\"I will give thanks to you, LORD, with all my heart; I will tell of all your wonderful deeds.\"\n\nPraise flows naturally from a heart that remembers what God has done. Count His faithfulness from your past days, and let your mouth tell of it today.\n\n#Psalm #Praise #Thanksgiving #WonderfulDeeds #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-21-a",
       "photo": "votd-2026-09-21-a.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 21 Sep 2026 (design A)",
-      "reference": "Kumbakumbu la Torati 7:9",
-      "caption": "Kumbakumbu la Torati 7:9 (SUV)\n\n\"Utajua ya kuwa BWANA, Mungu wako, ndiye Mungu aliyeaminifu, anayeshika agano lake na rehema kwa wampendao na wazishikao amri zake, hata kwa elfu ya vizazi.\"\n\nMungu wetu si Mungu wa jana tu; Yeye ni Mwamini wa agano kwa vizazi elfu. Ahadi zake hazishiki hewani, bali zinashikwa kwa usahihi wa milele; weka imani yako juu yake.\n\n#KumbakumbuLaTorati #MunguMwaminifu #Agano #Ahadi #BibliaTafsiriMbalimbali"
+      "reference": "Deuteronomy 7:9",
+      "caption": "Deuteronomy 7:9\n\n\"Know therefore that the LORD your God is God; he is the faithful God, keeping his covenant of love to a thousand generations of those who love him and keep his commandments.\"\n\nGod's faithfulness is not measured in moods or moments but in generations. Build your life on His covenant — it will still be standing when everything else fades.\n\n#Deuteronomy #FaithfulGod #Covenant #Generations #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-21-b",
       "photo": "votd-2026-09-21-b.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 21 Sep 2026 (design B)",
-      "reference": "Kumbakumbu la Torati 7:9",
-      "caption": "Kumbakumbu la Torati 7:9 (SUV)\n\n\"Utajua ya kuwa BWANA, Mungu wako, ndiye Mungu aliyeaminifu, anayeshika agano lake na rehema kwa wampendao na wazishikao amri zake, hata kwa elfu ya vizazi.\"\n\nAmani ya moyo inapatikana tunapomwamini Mungu ambaye halali ahadi zake hata kwa maelfu ya vizazi. Ahadi yake ni imara kuliko mazingira yako; jizoeshe kuzikumbuka kila asubuhi.\n\n#MunguMwaminifu #RehemaZaMungu #Agano #Imani #BibliaTafsiriMbalimbali"
+      "reference": "Deuteronomy 7:9",
+      "caption": "Deuteronomy 7:9\n\n\"He is the faithful God, keeping his covenant of love to a thousand generations.\"\n\nIn a world of broken promises, God keeps His word to a thousand generations. Trust the One whose covenant outlasts time itself.\n\n#FaithfulGod #Covenant #Promises #TrustGod #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-21-c",
       "photo": "votd-2026-09-21-c.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 21 Sep 2026 (design C)",
-      "reference": "Kumbakumbu la Torati 7:9",
-      "caption": "Kumbakumbu la Torati 7:9 (SUV)\n\n\"Utajua ya kuwa BWANA, Mungu wako, ndiye Mungu aliyeaminifu, anayeshika agano lake na rehema kwa wampendao na wazishikao amri zake, hata kwa elfu ya vizazi.\"\n\nKatika ulimwengu wa ahadi zinazovunjika, Mungu ndiye pekee aliyebaki mwaminifu milele. Weka matumaini yako kwake, maana hata vizazi vijavyo vitamshuhudia uaminifu wake huo huo.\n\n#Uaminifu #MunguWaAgano #Matumaini #NenoLaMungu #BibliaTafsiriMbalimbali"
+      "reference": "Deuteronomy 7:9",
+      "caption": "Deuteronomy 7:9\n\n\"He is the faithful God, keeping his covenant of love to a thousand generations.\"\n\nThe foundation of a stable life is not luck but a faithful God. Rest your hopes today on the One who never fails.\n\n#Faithful #GodOfCovenant #Foundation #Hope #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-21-d",
       "photo": "votd-2026-09-21-d.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 21 Sep 2026 (design D)",
-      "reference": "Kumbakumbu la Torati 7:9",
-      "caption": "Kumbakumbu la Torati 7:9 (SUV)\n\n\"Utajua ya kuwa BWANA, Mungu wako, ndiye Mungu aliyeaminifu, anayeshika agano lake na rehema kwa wampendao na wazishikao amri zake, hata kwa elfu ya vizazi.\"\n\nRehema za Mungu si za muda mfupi; zinavuka vizazi na zinamfikia kila anayempenda na kuzishika amri zake. Katika kila tsimu ya maisha, kumbuka: Mungu wako hafichi, anashika agano lake daima.\n\n#Rehema #UaminifuWaMungu #Agano #Baraka #BibliaTafsiriMbalimbali"
+      "reference": "Deuteronomy 7:9",
+      "caption": "Deuteronomy 7:9\n\n\"He is the faithful God, keeping his covenant of love to a thousand generations.\"\n\nHis mercy does not expire with a season — it reaches forward to your children's children. Live today in a way that passes faith to the next generation.\n\n#Mercy #Generations #Legacy #Faith #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-21-e",
       "photo": "votd-2026-09-21-e.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 21 Sep 2026 (design E)",
-      "reference": "Kumbakumbu la Torati 7:9",
-      "caption": "Kumbakumbu la Torati 7:9 (SUV)\n\n\"Utajua ya kuwa BWANA, Mungu wako, ndiye Mungu aliyeaminifu, anayeshika agano lake na rehema kwa wampendao na wazishikao amri zake, hata kwa elfu ya vizazi.\"\n\nUaminifu wa Mungu ni msingi imara unaoweza kujenga maisha yako yote juu yake. Muda unabadilika na watu wanaobadilika, lakini agano lake la rehema linabaki milele; tegemea hilo.\n\n#MsingiImara #Uaminifu #AganoLaMungu #Matumaini #BibliaTafsiriMbalimbali"
+      "reference": "Deuteronomy 7:9",
+      "caption": "Deuteronomy 7:9\n\n\"He is the faithful God, keeping his covenant of love to a thousand generations.\"\n\nTimes change and people change, but God's covenant of love stands unchanged. Anchor your soul where the storm cannot reach.\n\n#Anchor #UnchangingGod #Covenant #SteadfastLove #BibliaTafsiriMbalimbali"
     },
     {
       "id": "votd-2026-09-21-f",
       "photo": "votd-2026-09-21-f.jpg",
+      "lang": "en",
       "source": "YouVersion Verse of the Day, 21 Sep 2026 (design F)",
-      "reference": "Kumbakumbu la Torati 7:9",
-      "caption": "Kumbakumbu la Torati 7:9 (SUV)\n\n\"Utajua ya kuwa BWANA, Mungu wako, ndiye Mungu aliyeaminifu, anayeshika agano lake na rehema kwa wampendao na wazishikao amri zake, hata kwa elfu ya vizazi.\"\n\nFamilia zinazoimika ni zile zinazoijenga kwenye uaminifu wa Mungu, si kwenye mafanikio ya muda. Mfundishe kizazi chako kuamin, maana agano lake la rehema limeandaliwa hata kwa maelfu ya vizazi.\n\n#UaminifuWaMungu #Familia #Vizazi #Rehema #BibliaTafsiriMbalimbali"
+      "reference": "Deuteronomy 7:9",
+      "caption": "Deuteronomy 7:9\n\n\"He is the faithful God, keeping his covenant of love to a thousand generations.\"\n\nFamilies that build on God's faithfulness stand firmer than those built on success. Teach the next generation to trust His promises.\n\n#Family #FaithfulGod #NextGeneration #Legacy #BibliaTafsiriMbalimbali"
     },
     {
       "id": "web-votd-03",
       "photo": "web-votd-03.jpg",
-      "source": "YouVersion-style verse graphic (web), Jeremiah 29:11",
-      "reference": "Yeremia 29:11",
-      "caption": "Yeremia 29:11 (SUV)\n\n\"Kwa maana mimi najua mawazo niyonayo kuhusu ninyi, asema BWANA, mawazo ya amani, wala si ya uovu, ili kuwapa ninyi tumaini na mwisho mwema.\"\n\nHata pale maisha yanapoonekana kama mateka, Mungu ana mawazo ya amani kuhusu wewe; sio ya uovu. Safari yako haiishi kwenye tsimu; mwisho wake u mikononi mwa Mungu mwaminifu.\n\n#Yeremia #MawazoYaAmani #Tumaini #MwishoMwema #BibliaTafsiriMbalimbali"
+      "lang": "en",
+      "source": "Verse graphic (web), Jeremiah 29:11",
+      "reference": "Jeremiah 29:11",
+      "caption": "Jeremiah 29:11\n\n\"For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.\"\n\nEven in unfamiliar seasons, God's plans for you have never left His hands. Your story does not end in the waiting — it ends in hope.\n\n#Jeremiah #Hope #Future #GodsPlan #BibliaTafsiriMbalimbali"
     },
     {
       "id": "web-votd-06",
       "photo": "web-votd-06.jpg",
-      "source": "YouVersion-style verse graphic (web), James 1:2-4",
-      "reference": "Yakobo 1:2-4",
-      "caption": "Yakobo 1:2-4 (SUV)\n\n\"Ndugu zangu, ihesabuni furaha tupu mtakapoyapata majaribu mbalimbali; mkijua ya kwamba kujaribiwa kwa imani yenu hunifanya uvumilivu; na uvumilivu na uwe na kazi timilifu, ili muwe timilifu na kamili kabisa, hamsikose neno.\"\n\nMajaribu hayatumii kwa kutuondoa kwa maana; hubana imani yetu hadi inakuwa imara na yenye uvumilivu. Usikate tamaa; kila jaribu linalopita linakuweka hatua moja karibu na utimilifu wa utukufu wa Mungu.\n\n#Yakobo #Majaribu #Uvumilivu #Imani #BibliaTafsiriMbalimbali"
+      "lang": "en",
+      "source": "Verse graphic (web), James 1:2-4 (NKJV)",
+      "reference": "James 1:2-4",
+      "caption": "James 1:2-4\n\n\"Count it all joy when you fall into various trials, knowing that the testing of your faith produces patience. But let patience have its perfect work, that you may be perfect and complete, lacking nothing.\"\n\nTrials are not sent to break your faith but to strengthen it into something durable. Don't give up — every test you pass brings you one step closer to completeness.\n\n#James #Trials #Patience #Faith #BibliaTafsiriMbalimbali"
     },
     {
       "id": "web-votd-07",
       "photo": "web-votd-07.jpg",
-      "source": "YouVersion-style verse graphic (web), 2 Corinthians 5:7",
-      "reference": "2 Wakorintho 5:7",
-      "caption": "2 Wakorintho 5:7 (SUV)\n\n\"Kwa maana tunaenda kwa imani, wala si kwa kuona.\"\n\nKuwa mwokozi kunatutuma kwenda njia isiyooonekana machoni; imani huamini kabla ya kuona. Endelea kutembea kwa imani hata kabla ya majibu kuonekana; hatua zako za imani hazitaachwa bila thawabu.\n\n#Wakorintho #Imani #KutembeaKwaImani #NenoLaMungu #BibliaTafsiriMbalimbali"
+      "lang": "en",
+      "source": "Verse graphic (web), 2 Corinthians 5:7",
+      "reference": "2 Corinthians 5:7",
+      "caption": "2 Corinthians 5:7\n\n\"For we walk by faith, not by sight.\"\n\nFaith moves you forward even when the answer is not yet visible. Keep walking — the steps you take in faith are never wasted.\n\n#Faith #WalkByFaith #Corinthians #TrustGod #BibliaTafsiriMbalimbali"
     },
     {
       "id": "web-votd-08",
       "photo": "web-votd-08.jpg",
-      "source": "YouVersion-style verse graphic (web), 1 Peter 4:8",
-      "reference": "1 Petro 4:8",
-      "caption": "1 Petro 4:8 (SUV)\n\n\"Na juu ya vitu vyote, iweni na upendo wa dhati kati yenu; kwa maana upendo hufunika wingi wa dhambi.\"\n\nUpendo wa dhati si hisia tu, bali uamuzi wa kila siku wa kuwahurumia wengine kama Kristo alivyotufanyia sisi. Penye upendo wa kweli, makosa mengi yanafunikwa, na mahusiano yanapona.\n\n#Petro #Upendo #UpendoWaDhati #Msamaha #BibliaTafsiriMbalimbali"
+      "lang": "en",
+      "source": "Verse graphic (web), 1 Peter 4:8",
+      "reference": "1 Peter 4:8",
+      "caption": "1 Peter 4:8\n\n\"Above all, love each other deeply, because love covers over a multitude of sins.\"\n\nReal love is a daily choice to extend the same mercy Christ showed us. Where love is genuine, many offenses lose their power to divide.\n\n#Love #DeepLove #Forgiveness #1Peter #BibliaTafsiriMbalimbali"
     },
     {
       "id": "web-votd-09",
       "photo": "web-votd-09.jpg",
-      "source": "YouVersion-style verse graphic (web), Matthew 5:3",
-      "reference": "Mathayo 5:3",
-      "caption": "Mathayo 5:3 (SUV)\n\n\"Heri mafukara wa roho, maana ufalme wa mbingu ni wao.\"\n\nUfukara wa roho ni kutambua kila mara kwamba tunamtegemea Mungu kwa kila kitu. Mtie moyo wako wazi mbele yake, maana ufalme wake umeandaliwa kwa walio tayari kupokea.\n\n#Mathayo #HeriZaNane #UfalmeWaMbingu #Unyenyekevu #BibliaTafsiriMbalimbali"
+      "lang": "en",
+      "source": "Verse graphic (web), Matthew 5:3",
+      "reference": "Matthew 5:3",
+      "caption": "Matthew 5:3\n\n\"Blessed are the poor in spirit, for theirs is the kingdom of heaven.\"\n\nBeing poor in spirit means knowing we depend on God for everything. Come to Him with an open heart today — His kingdom is prepared for the ready.\n\n#Beatitudes #KingdomOfHeaven #Humility #Blessed #BibliaTafsiriMbalimbali"
     },
     {
       "id": "web-votd-11",
       "photo": "web-votd-11.jpg",
-      "source": "YouVersion-style verse graphic (web), Psalm 21:7",
-      "reference": "Zaburi 21:7",
-      "caption": "Zaburi 21:7 (SUV)\n\n\"Kwa maana mfalme anamtegemea BWANA, na kwa fadhili za Aliye Juu sana hatatatikisika.\"\n\nWanaotegemea BWANA hawatatikisika, japo ngome za wafalme zitatikisika. Fadhili za Aliye Juu ndiyo nguzo imara kuliko ngome zote; jenga juu yake.\n\n#Zaburi #KumtegemeaBwana #FadhiliZaMungu #NguzoImara #BibliaTafsiriMbalimbali"
+      "lang": "en",
+      "source": "Verse graphic (web), Psalm 21:7",
+      "reference": "Psalm 21:7",
+      "caption": "Psalm 21:7\n\n\"For the king trusts in the LORD; through the unfailing love of the Most High he will not be shaken.\"\n\nThose who trust in the LORD stand unshaken even when everything else trembles. His unfailing love is a pillar stronger than any fortress.\n\n#Psalm #Trust #UnfailingLove #Unshaken #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-16",
+      "photo": "votd-sw-2026-09-16.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 16 Sep 2026 (Kiswahili)",
+      "reference": "Isaya 41:13",
+      "caption": "Isaya 41:13\n\n\"Usiogope, nitakusaidia.\"\n\nManeno haya BWANA mwenyewe anayatamka kwako — si ahadi ya mbali, bali ya karibu mno. Kama hofu inakufinya leo, jua kwamba Yeye aliyekuumba yu pembeni yako, tayari kushika mkono wako na kukusaidia.\n\n#Isaya #Usiogope #MunguMsaidizi #Imani #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-17",
+      "photo": "votd-sw-2026-09-17.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 17 Sep 2026 (Kiswahili)",
+      "reference": "Warumi 8:6",
+      "caption": "Warumi 8:6\n\n\"Kwa kuwa nia ya mwili ni mauti; bali nia ya roho ni uzima na amani.\"\n\nAmani ya kweli haitokani na mazingira, bali na nia inayomruhusu Roho wa Mungu kuiongoza. Leo, lishughulikie moyo wako kwa Neno lake, na uzima na amani vitakufunika.\n\n#Warumi #AmaniYaMungu #RohoWaMungu #Uzima #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-18",
+      "photo": "votd-sw-2026-09-18.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 18 Sep 2026 (Kiswahili)",
+      "reference": "Mithali 3:7",
+      "caption": "Mithali 3:7\n\n\"Usiwe na hekima machoni pako mwenyewe; Mche BWANA, ukajiepushe na uovu.\"\n\nHekima ya kweli huanza kwa kumcha Mungu, si kwa kujiamini ufahamu wetu wenyewe. Unapoinama mbele yake, Yeye anakuelekeza njia safi na kukuepusha na mitego ya uovu.\n\n#Mithali #Hekima #KumchaMungu #NjiaSafi #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-19",
+      "photo": "votd-sw-2026-09-19.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 19 Sep 2026 (Kiswahili)",
+      "reference": "Wafilipi 1:3",
+      "caption": "Wafilipi 1:3\n\n\"Namshukuru Mungu wangu kila ninapowakumbukeni.\"\n\nShukrani ni dalili ya moyo unaotambua wema wa Mungu unaofika kwa watu walio maishani mwetu. Fanya leo kuwa siku ya kumshukuru Mungu kwa kila mtu aliyekuweka njiani — utaona baraka nyingi za kuzishukuru.\n\n#Wafilipi #Shukrani #MoyoWaShukrani #Baraka #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-20",
+      "photo": "votd-sw-2026-09-20.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 20 Sep 2026 (Kiswahili)",
+      "reference": "Zaburi 9:1",
+      "caption": "Zaburi 9:1\n\n\"Nitakushukuru Mungu kwa moyo wangu wote; nitayasimulia matendo yake yote ya ajabu.\"\n\nKumtukuza Mungu kwa moyo wote hutoka kwa kumbukumbu ya ajabu zake alizotenda kwetu. Kumbuka mara moja moja matendo yake mema, na asubuhi hii mpe sifa anayostahili.\n\n#Zaburi #Sifa #KumshukuruMungu #MatendoYaAjabu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-21",
+      "photo": "votd-sw-2026-09-21.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 21 Sep 2026 (Kiswahili)",
+      "reference": "Kumbukumbu la Sheria 7:9",
+      "caption": "Kumbukumbu la Sheria 7:9\n\n\"Basi, jueni kwamba Mwenyezi-Mungu, Mungu wenu, ndiye Mungu; ni Mungu mwaminifu, anayeshika agano lake na huwaonesha fadhili kwa vizazi vingi vya wale wanaoshika amri zake.\"\n\nKatika ulimwengu wa ahadi zinazovunjika, Mungu ndiye pekee anayeshika agano lake kwa maelfu ya vizazi. Weka matumaini yako kwake; uaminifu wake hauishi na wakati.\n\n#Uaminifu #AganoLaMungu #MunguMwaminifu #Matumaini #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-22-a",
+      "photo": "votd-sw-2026-09-22-a.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 22 Sep 2026 (Kiswahili, design A)",
+      "reference": "Wagalatia 1:10",
+      "caption": "Wagalatia 1:10\n\n\"Sasa nataka kibali cha nani: Cha binadamu, ama cha Mungu? Au je, nataka kuwapendeza watu? Kama ningefanya hivyo, mimi singekuwa kamwe mtumishi wa Kristo.\"\n\nSwali la Paulo linagusa kila moyo: tunatafuta kibali cha nani — cha watu au cha Mungu? Chagua leo kumpendeza Mungu kuliko watu, na utaishi huru moyoni.\n\n#Wagalatia #KibaliChaMungu #UhuruWaMoyo #Utumishi #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-22-b",
+      "photo": "votd-sw-2026-09-22-b.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 22 Sep 2026 (Kiswahili, design B)",
+      "reference": "Wagalatia 1:10",
+      "caption": "Wagalatia 1:10\n\n\"Sasa nataka kibali cha nani: Cha binadamu, ama cha Mungu?\"\n\nMoyo unaotafuta kibali cha watu unabaki mtumwa wa maoni yao. Tafuta kwanza kibali cha Mungu — ndilo linalobaki hata watu wakibadilika.\n\n#Wagalatia #KibaliChaMungu #MaoniYaWatu #Imani #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "votd-sw-2026-09-22-c",
+      "photo": "votd-sw-2026-09-22-c.jpg",
+      "lang": "sw",
+      "source": "YouVersion Fungu la Siku, 22 Sep 2026 (Kiswahili, design C)",
+      "reference": "Wagalatia 1:10",
+      "caption": "Wagalatia 1:10\n\n\"Kama ningefanya hivyo, mimi singekuwa kamwe mtumishi wa Kristo.\"\n\nUtumishi wa kweli wa Kristo hautegemei umaarufu, bali uaminifu kwa yeye aliyetuita. Mtumikie kwa moyo safi hata usipoonekana; Mungu anaona na kutakujali.\n\n#Utumishi #Kristo #Uaminifu #MoyoSafi #BibliaTafsiriMbalimbali"
     }
   ]
 }

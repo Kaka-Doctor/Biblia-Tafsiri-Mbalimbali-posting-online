@@ -9,14 +9,36 @@ GitHub Actions. No server, no database, no cost. The same verse image + caption
 goes to both platforms in one run: Facebook gets a direct photo upload, Instagram
 gets the image via a container (hidden-FB-photo → CDN URL → media_publish).
 
-The images are **YouVersion Verse of the Day** graphics (previous days),
-collected into `data/photos/`. Each image is paired in `data/posts.json` with a
-caption written for **the exact scripture on that image**:
+The images are **YouVersion Verse of the Day** graphics (previous days) in
+two languages — English images collected from
+`https://www.bible.com/verse-of-the-day`, **Swahili images from
+`https://www.bible.com/sw/verse-of-the-day`** ("Fungu la Siku"). Each image is
+paired in `data/posts.json` with a caption written **in the same language as
+the scripture on that image** (owner rule, 2026-09-22):
 
-- the verse in the **SUV** (Swahili Union Version / Biblia ya Kiswahili),
-- **two sentences** of explanation and encouragement in Swahili,
+- the verse **verbatim as written on the image** (Swahili images quote the
+  YouVersion Swahili text — BHN/Union wording, verified against bible.com;
+  English images quote the English verse),
+- **two sentences** of explanation and encouragement in that same language,
 - **5 hashtags** related to the verse, always ending with
   `#BibliaTafsiriMbalimbali`.
+
+**Daily language alternation (owner rule, 2026-09-22):** English one day,
+Kiswahili the next — "if today you use english tomorrow use swahili". The
+agent tracks the language of the most recent post in `data/state.json` and
+always schedules the opposite language for the next slot, with a separate
+rotation index per language (18 English images, 9 Swahili images).
+
+**Google Gemini (optional, owner request 2026-09-22):** if a
+`GEMINI_API_KEY` repo secret is configured
+(Settings → Secrets and variables → Actions), the agent asks **Google
+Gemini** to rewrite the two encouragement sentences of each **Swahili**
+caption in fresh, native Kiswahili at posting time — keeping the scripture
+quote and hashtags intact. Without the key (or on any Gemini error) the
+stored captions in `data/posts.json` are used, so posting never depends on
+Gemini being reachable. Create a free key at
+[aistudio.google.com/apikey](https://aistudio.google.com/apikey). Optional
+`GEMINI_MODEL` repo **variable** overrides the default `gemini-2.5-flash`.
 
 Sister repo: [Kaka-Doctor/Posting-to-social-medias](https://github.com/Kaka-Doctor/Posting-to-social-medias)
 runs the same engine for the Teacher's Lesson Plan page + Instagram
@@ -100,24 +122,34 @@ Until the token exists, the workflow runs end-to-end in plan mode; use
 
 ## Content rotation
 
-`data/posts.json` lists the pairs in order; `data/state.json` tracks
-`rotation.photoIndex` (and `captionIndex`, always in lockstep). After the last
-pair the cycle restarts — with 18 collected images that is ~18 days per cycle.
-To extend the pool: download more previous-days images from
-`https://www.bible.com/verse-of-the-day` (the gallery at the bottom lists the
-last 6 days; the image URLs are
-`https://s3.amazonaws.com/static-youversionapi-com/images/base/{id}/1280x1280.jpg`),
-drop them in `data/photos/`, and append entries to `data/posts.json` — the
-verse on each image must be read and its caption written for it.
+`data/posts.json` lists the pairs in order, each tagged `"lang": "en"` or
+`"lang": "sw"`. `data/state.json` tracks one rotation index **per language**
+(`rotation.en`, `rotation.sw`) plus the language of every posted slot, and the
+agent alternates the slot language daily. After the last pair of a language
+the cycle restarts — 18 English images ≈ 36 days, 9 Swahili images ≈ 18 days
+per full cycle (each language posts every second day).
+To extend a pool:
+
+- **English:** download more previous-days images from
+  `https://www.bible.com/verse-of-the-day` (gallery at the bottom).
+- **Swahili:** same page in Swahili —
+  `https://www.bible.com/sw/verse-of-the-day` — the gallery lists the last
+  6 days in Kiswahili; today's designs are also downloadable.
+
+The image URLs are
+`https://s3.amazonaws.com/static-youversionapi-com/images/base/{id}/1280x1280.jpg`.
+Drop them in `data/photos/`, append entries to `data/posts.json` (read the
+verse on each image and write a matching-language caption for it), push —
+done.
 
 ## Repo layout
 
 ```
 data/
-  photos/          18 YouVersion Verse-of-the-Day images (JPEG)
-  posts.json       the content pool: image ↔ caption pairs (SUV + 2 sentences + 5 hashtags)
+  photos/          27 verse images (18 English + 9 Kiswahili YouVersion VOTD JPEGs)
+  posts.json       the content pool: image ↔ caption pairs, lang-tagged, alternate daily
   config.json      the switch file: page, slots (09:00), timezone, grace, tokens
-  state.json       which slot is done/scheduled per day + rotation + event log (auto-committed)
+  state.json       per-slot status + language + per-language rotation + event log (auto-committed)
   meta-token.txt   one-time token paste file (auto-cleared after minting)
 scripts/
   gh-agent.mjs         the agent (plain Node ≥18, zero npm installs)
@@ -143,11 +175,18 @@ token (committed on purpose, same model as the sister repo).
 
 ## Status of this setup
 
-- Content pool: **18 verse images** collected (6 previous VOTD days
-  2026-09-15…20, 6 designs of the 2026-09-21 VOTD, plus 6 clean
-  YouVersion-style verse graphics from the web) — each VLM-verified as a clean
-  scripture graphic and paired with its own SUV caption.
-- Page confirmed via Graph API: *"Biblia Tafsiri Mbalimbali"*, 100 fans.
+- Content pool: **27 verse images** — 18 English (6 previous VOTD days
+  2026-09-15…20, 6 designs of the 2026-09-21 VOTD, plus 6 clean verse
+  graphics from the web) and **9 Swahili** (YouVersion "Fungu la Siku"
+  2026-09-16…22, collected 2026-09-22 from the Swahili VOTD page) — every
+  image VLM-verified as a clean scripture graphic, Swahili verse texts
+  cross-checked against bible.com (BHN/SUV wording).
+- Language rule live: caption language = image language, alternating daily
+  (EN/SW) since 2026-09-22.
+- Page confirmed via Graph API: *"Biblia Tafsiri Mbalimbali"*, 100 fans;
+  IG @biblia_tafsiri_mbalimbali linked and posting.
 - Engine: identical to the sister repo's production code (three-day
-  Meta-side scheduling, reconcile, catch-up, force-rescue, state commit-back).
-- Pending: the one-time token paste described above.
+  Meta-side scheduling, reconcile, catch-up, force-rescue, state commit-back)
+  plus the language-alternation and optional Gemini caption modules.
+- Optional: add the `GEMINI_API_KEY` secret to have Google Gemini write the
+  Swahili encouragement sentences live (see above).
