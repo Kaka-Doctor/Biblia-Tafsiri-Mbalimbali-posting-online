@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "description": "Content library for the Biblia Tafsiri Mbalimbali agent. RULE (owner-set, 2026-09-22): the caption language MUST match the language of the scripture on the image — English image -> English caption, Swahili image -> Swahili caption ('lang' field on every entry). The agent alternates daily: one day English, the next Swahili. English images: YouVersion Verse of the Day + web verse graphics. Swahili images: YouVersion 'Fungu la Siku' (Swahili VOTD, collected from bible.com/sw/verse-of-the-day); their verse text is quoted verbatim as written on each image (BHN/SUV wording, verified against bible.com). Captions: verse + two sentences of explanation and encouragement + five hashtags ending with #BibliaTafsiriMbalimbali. With a GEMINI_API_KEY secret configured, the agent re-writes the Swahili encouragement sentences with Google Gemini at posting time (stored caption = fallback).",
+  "description": "Content library for the Biblia Tafsiri Mbalimbali agent. RULE (owner-set, 2026-09-22): the caption language MUST match the language of the scripture on the image — English image -> English caption, Swahili image -> Swahili caption ('lang' field on every entry). The agent alternates daily: one day English, the next Swahili. English images: YouVersion Verse of the Day + web verse graphics. Swahili images: YouVersion 'Fungu la Siku' (Swahili VOTD, collected from bible.com/sw/verse-of-the-day); their verse text is quoted verbatim as written on each image (BHN/SUV wording, verified against bible.com). Captions: verse + two sentences of explanation and encouragement + five hashtags ending with #BibliaTafsiriMbalimbali. With a GEMINI_API_KEY secret configured, the agent re-writes the Swahili encouragement sentences with Google Gemini at posting time (stored caption = fallback). Additionally 6 Swahili verse cards (SUV text fetched from bible.com, composed on AI-generated backgrounds) extend the Swahili pool to 15 images.",
   "generated": "2026-09-22",
   "posts": [
     {
@@ -218,6 +218,54 @@
       "source": "YouVersion Fungu la Siku, 22 Sep 2026 (Kiswahili, design C)",
       "reference": "Wagalatia 1:10",
       "caption": "Wagalatia 1:10\n\n\"Kama ningefanya hivyo, mimi singekuwa kamwe mtumishi wa Kristo.\"\n\nUtumishi wa kweli wa Kristo hautegemei umaarufu, bali uaminifu kwa yeye aliyetuita. Mtumikie kwa moyo safi hata usipoonekana; Mungu anaona na kutakujali.\n\n#Utumishi #Kristo #Uaminifu #MoyoSafi #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-zaburi23",
+      "photo": "sw-card-zaburi23.jpg",
+      "lang": "sw",
+      "source": "Swahili verse card — SUV text (Zaburi 23:1) composed on a generated background",
+      "reference": "Zaburi 23:1",
+      "caption": "Zaburi 23:1\n\n\"BWANA ndiye mchungaji wangu; Sitapungukiwa na kitu.\"\n\nMchungaji mwema huwajali kondoo zake kila siku — huwaongoza, kuwalinda na kuwalisha. Kwa kuwa BWANA ndiye mchungaji wako, utulie moyoni; hakuna kitu cha msingi kitaachwa nyuma kwako.\n\n#Zaburi #MchungajiMwema #BWANA #Utulivu #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-isaya40",
+      "photo": "sw-card-isaya40.jpg",
+      "lang": "sw",
+      "source": "Swahili verse card — SUV text (Isaya 40:31) composed on a generated background",
+      "reference": "Isaya 40:31",
+      "caption": "Isaya 40:31\n\n\"Bali wao wamngojeao BWANA watapata nguvu mpya; watapanda juu kwa mbawa kama tai; watapiga mbio, wala hawatachoka; watakwenda kwa miguu, wala hawatazimia.\"\n\nNguvu za kumngojea BWANA hazichoki kama nguvu za binadamu. Hata umechoka au kulemewa, rudi kwake — Yeye anawajaza nguvu mpya wanaomsubiri kila siku.\n\n#Isaya #NguvuMpya #KumngojeaBWANA #Matumaini #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yohana3",
+      "photo": "sw-card-yohana3.jpg",
+      "lang": "sw",
+      "source": "Swahili verse card — SUV text (Yohana 3:16) composed on a generated background",
+      "reference": "Yohana 3:16",
+      "caption": "Yohana 3:16\n\n\"Kwa maana jinsi hii Mungu aliupenda ulimwengu, hata akamtoa Mwanawe pekee, ili kila mtu amwaminiye asipotee, bali awe na uzima wa milele.\"\n\nUpendo wa Mungu haukubaki katika maneno tu; aliutoa uthibitisho wa juu kabisa kwa kutoa Mwanawe pekee. Mwamini Yeye leo, na ahadi ya uzima wa milele inakuwa yako pia.\n\n#Yohana #UpendoWaMungu #UzimaWaMilele #Imani #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-wafilipi4",
+      "photo": "sw-card-wafilipi4.jpg",
+      "lang": "sw",
+      "source": "Swahili verse card — SUV text (Wafilipi 4:13) composed on a generated background",
+      "reference": "Wafilipi 4:13",
+      "caption": "Wafilipi 4:13\n\n\"Nayaweza mambo yote katika yeye anitiaye nguvu.\"\n\nKila uwezo wako wa kweli hauishi kwenye nguvu zako binafsi. Katika Kristo kuna nguvu ya kutosha ya siku ya leo — jifunge naye, nawe utaweza.\n\n#Wafilipi #NguvuKatikaKristo #Uwezo #Imani #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-mithali3",
+      "photo": "sw-card-mithali3.jpg",
+      "lang": "sw",
+      "source": "Swahili verse card — SUV text (Mithali 3:5-6) composed on a generated background",
+      "reference": "Mithali 3:5-6",
+      "caption": "Mithali 3:5-6\n\n\"Mtumaini BWANA kwa moyo wako wote, wala usizitegemee akili zako mwenyewe; katika njia zako zote mkiri yeye, naye atayanyosha mapito yako.\"\n\nSafari ya maisha ina makutano mengi yanayofadhaisha akili yetu. Mtegemee BWANA kwa moyo wote na utoe maamuzi yako mbele yake; naye ataionyosha njia yako.\n\n#Mithali #MtegemeeBWANA #NjiaYaMaisha #Hekima #BibliaTafsiriMbalimbali"
+    },
+    {
+      "id": "sw-card-yeremia29",
+      "photo": "sw-card-yeremia29.jpg",
+      "lang": "sw",
+      "source": "Swahili verse card — SUV text (Yeremia 29:11) composed on a generated background",
+      "reference": "Yeremia 29:11",
+      "caption": "Yeremia 29:11\n\n\"Maana nayajua mawazo ninayowawazia ninyi, asema BWANA, ni mawazo ya amani wala si ya mabaya, kuwapa ninyi tumaini siku zenu za mwisho.\"\n\nHata ukiwa katika kiangazi kisichojulikana, Mungu tayari anawaza mawazo ya amani kuhusu wewe. Safari yako haiishii kwenye tsimu; mwisho wake ni tumaini.\n\n#Yeremia #MawazoYaAmani #Tumaini #MwishoMwema #BibliaTafsiriMbalimbali"
     }
   ]
 }
