@@ -42,11 +42,24 @@
           "id": "122205176360587338"
         }
       }
+    },
+    "2026-09-25": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-25T06:00:00.000Z",
+        "at": "2026-09-22T13:29:48.927Z",
+        "photo": "sw-card-yohana-14-1.jpg",
+        "caption": "Yohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nYesu anatambua kwamba mioyo yetu hufadhaika kwa urahisi, ndiyo anatanguliza amani yake kabla ya matatizo kuja. Weka imani yako kwake leo, na moyo wako utapata utulivu usio na kifani.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205200444587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 2,
-    "sw": 2
+    "sw": 3
   },
   "events": [
     {
@@ -97,6 +110,13 @@
       "date": "",
       "slot": "",
       "message": "LIBRARY EXPANSION (owner request): 33 → 100 images (55 EN / 45 SW). +7 YouVersion VOTD designs (Gal 1:10, 22 Sep), +60 verse cards (30 EN on NIV text + 30 SW on SUV text from bible.com, AI backgrounds, VLM-verified). New entries inserted at pool position 2; rotation pointers advanced to the new block, so the 09-25 (SW) and 09-26 (EN) slots are the first to use new images. GEMINI self-test button added (Actions → Run workflow → gemini-test); GEMINI_API_KEY secret not yet visible on the repo — Swahili captions use the stored text until it is saved."
+    },
+    {
+      "ts": "2026-09-22T13:29:48.927Z",
+      "level": "info",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
