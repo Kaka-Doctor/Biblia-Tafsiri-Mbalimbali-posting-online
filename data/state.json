@@ -16,11 +16,37 @@
         },
         "lang": "en"
       }
+    },
+    "2026-09-23": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-23T06:00:00.000Z",
+        "at": "2026-09-22T09:14:10.356Z",
+        "photo": "votd-sw-2026-09-16.jpg",
+        "caption": "Isaya 41:13\n\n\"Usiogope, nitakusaidia.\"\n\nManeno haya BWANA mwenyewe anayatamka kwako — si ahadi ya mbali, bali ya karibu mno. Kama hofu inakufinya leo, jua kwamba Yeye aliyekuumba yu pembeni yako, tayari kushika mkono wako na kukusaidia.\n\n#Isaya #Usiogope #MunguMsaidizi #Imani #BibliaTafsiriMbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205176312587338"
+        }
+      }
+    },
+    "2026-09-24": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-24T06:00:00.000Z",
+        "at": "2026-09-22T09:14:13.078Z",
+        "photo": "votd-2026-09-15.jpg",
+        "caption": "Lamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122205176360587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 0,
-    "sw": 0
+    "en": 1,
+    "sw": 1
   },
   "events": [
     {
@@ -50,6 +76,20 @@
       "date": "",
       "slot": "",
       "message": "LANGUAGE RULE (owner request): caption language must match the image language (English image -> English caption, Swahili image -> Swahili caption) with daily EN/SW alternation. 9 Swahili YouVersion VOTD images added; all 18 English captions rewritten in English. Removed the 2 Meta-scheduled 09-23/09-24 posts (they had EN images + SW captions); they will be re-booked language-correct by the next run: 09-23 Kiswahili, 09-24 English. Optional GEMINI_API_KEY secret enables Google Gemini rewriting of Swahili captions."
+    },
+    {
+      "ts": "2026-09-22T09:14:10.356Z",
+      "level": "info",
+      "date": "2026-09-23",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z, Kiswahili) — \"votd-sw-2026-09-16.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-22T09:14:13.078Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
