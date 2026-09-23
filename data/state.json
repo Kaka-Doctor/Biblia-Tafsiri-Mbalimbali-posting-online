@@ -34,11 +34,37 @@
           "permalink": "https://www.facebook.com/photo.php?fbid=122205176312587338&set=a.122189068466587338&type=3"
         }
       }
+    },
+    "2026-09-24": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-24T06:00:00.000Z",
+        "at": "2026-09-23T07:36:04.162Z",
+        "photo": "votd-2026-09-15.jpg",
+        "caption": "𝗚𝗢𝗗'𝗦 𝗠𝗘𝗥𝗖𝗬 𝗡𝗘𝗩𝗘𝗥 𝗥𝗨𝗡𝗦 𝗢𝗨𝗧\n\nLamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122205290834587338"
+        }
+      }
+    },
+    "2026-09-25": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-25T06:00:00.000Z",
+        "at": "2026-09-23T07:36:13.841Z",
+        "photo": "sw-card-yohana-14-1.jpg",
+        "caption": "𝗠𝗦𝗜𝗙𝗔𝗗𝗛𝗔𝗜𝗞𝗘 — 𝗪𝗘𝗞𝗔 𝗜𝗠𝗔𝗡𝗜 𝗞𝗪𝗔𝗞𝗘\n\nYohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nAkifahamu kabisa jinsi mioyo yetu inavyoweza kufadhaika kirahisi, Yesu hututangulizia amani yake ya ndani hata kabla ya majaribu. Mkabidhi Bwana Yesu imani yako kamili leo, na moyo wako utafurahia amani isiyoelezeka inayopita ufahamu wote.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205290882587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 0,
-    "sw": 2
+    "en": 1,
+    "sw": 3
   },
   "events": [
     {
@@ -131,6 +157,20 @@
       "date": "",
       "slot": "",
       "message": "FORMAT CHANGE (owner request 2026-09-23): app promo line \"Download Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali\" added below the hashtags of every post (FB + IG). Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked without the promo); next landed run re-books the same verses (rotation reset en→0/sw→2) with the full format: bold heading → verse → explanation → hashtags → app promo."
+    },
+    {
+      "ts": "2026-09-23T07:36:04.162Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T07:36:13.841Z",
+      "level": "info",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
