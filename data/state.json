@@ -19,14 +19,19 @@
     },
     "2026-09-23": {
       "09:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-09-23T06:41:30.429Z",
         "publishTime": "2026-09-23T06:00:00.000Z",
-        "at": "2026-09-22T09:14:10.356Z",
         "photo": "votd-sw-2026-09-16.jpg",
         "caption": "Isaya 41:13\n\n\"Usiogope, nitakusaidia.\"\n\nManeno haya BWANA mwenyewe anayatamka kwako — si ahadi ya mbali, bali ya karibu mno. Kama hofu inakufinya leo, jua kwamba Yeye aliyekuumba yu pembeni yako, tayari kushika mkono wako na kukusaidia.\n\n#Isaya #Usiogope #MunguMsaidizi #Imani #BibliaTafsiriMbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18125663891503104",
+          "permalink": "https://www.instagram.com/p/DdnsJ0WjVON/"
+        },
         "fb": {
-          "id": "122205176312587338"
+          "id": "447560908444853_122205176312587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205176312587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -117,6 +122,13 @@
       "date": "2026-09-25",
       "slot": "09:00",
       "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T06:41:30.429Z",
+      "level": "success",
+      "date": "2026-09-23",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"votd-sw-2026-09-16.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
