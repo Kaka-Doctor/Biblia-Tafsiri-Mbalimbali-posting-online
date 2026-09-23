@@ -16,12 +16,30 @@ two languages — English images collected from
 paired in `data/posts.json` with a caption written **in the same language as
 the scripture on that image** (owner rule, 2026-09-22):
 
+- **a short HEADING in capital letters + bold** (owner rule, 2026-09-23) —
+  3-6 words, related to the verse on the image or the explanation, in the
+  entry's language. FB and IG captions have no native bold formatting, so the
+  agent renders it in **Unicode bold capitals** (𝗕𝗢𝗟𝗗 𝗧𝗘𝗫𝗧) — the standard
+  bold style on both platforms. Stored per entry as `"heading"` in
+  `data/posts.json`; leave it empty/missing to post without a heading,
 - the verse **verbatim as written on the image** (Swahili images quote the
   YouVersion Swahili text — BHN/Union wording, verified against bible.com;
   English images quote the English verse),
 - **two sentences** of explanation and encouragement in that same language,
 - **5 hashtags** related to the verse, always ending with
   `#BibliaTafsiriMbalimbali`.
+
+So a published post reads:
+
+> **𝗚𝗢𝗗'𝗦 𝗠𝗘𝗥𝗖𝗬 𝗡𝗘𝗩𝗘𝗥 𝗥𝗨𝗡𝗦 𝗢𝗨𝗧**
+>
+> Lamentations 3:22
+>
+> "The faithful love of the LORD never ends! His mercies never cease."
+>
+> Every new morning is quiet proof that God's mercy has not run out on you…
+>
+> #Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali
 
 **Daily language alternation (owner rule, 2026-09-22):** English one day,
 Kiswahili the next — "if today you use english tomorrow use swahili". The
@@ -142,7 +160,8 @@ To extend a pool:
 The image URLs are
 `https://s3.amazonaws.com/static-youversionapi-com/images/base/{id}/1280x1280.jpg`.
 Drop them in `data/photos/`, add entries to `data/posts.json` (read the
-verse on each image and write a matching-language caption for it), push —
+verse on each image and write a short matching-language `heading` — bold
+capitals, 3-6 words — plus a caption for it), push —
 done. New entries can be appended anywhere AFTER position 2 of their
 language pool without disturbing the rotation pointers (`rotation.en` /
 `rotation.sw` in state.json); entries placed BEFORE the current pointer
@@ -154,7 +173,7 @@ shift what posts next.
 data/
   photos/          100 verse images (55 English + 45 Kiswahili: YouVersion VOTD
                     graphics + AI-background verse cards + web verse graphics)
-  posts.json       the content pool: image ↔ caption pairs, lang-tagged, alternate daily
+  posts.json       the content pool: image ↔ heading + caption pairs, lang-tagged, alternate daily
   config.json      the switch file: page, slots (09:00), timezone, grace, tokens
   state.json       per-slot status + language + per-language rotation + event log (auto-committed)
   meta-token.txt   one-time token paste file (auto-cleared after minting)

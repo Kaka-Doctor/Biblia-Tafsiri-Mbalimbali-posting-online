@@ -13,11 +13,15 @@
  *  (owner rule 2026-09-22): English image → English caption, Swahili image →
  *  Swahili caption ("lang": "en"|"sw" on every entry). Posts alternate daily:
  *  English one day, Kiswahili the next ("if today you use english tomorrow
- *  use swahili"). Each caption = the scripture (verbatim as written on the
+ *  use swahili"). POST STRUCTURE (owner rule 2026-09-23): a short HEADING in
+ *  capital letters + bold (Unicode Mathematical Bold — FB/IG have no native
+ *  bold in captions), related to the verse on the image or the explanation;
+ *  then the scripture (reference + verse text, verbatim as written on the
  *  image) + two sentences of explanation/encouragement + 5 hashtags ending
  *  with #BibliaTafsiriMbalimbali. With the GEMINI_API_KEY secret set, the
  *  Swahili encouragement sentences are rewritten by Google Gemini at posting
- *  time (stored caption = the fallback). The agent rotates through each
+ *  time (stored caption = the fallback; the heading is prepended AFTER the
+ *  rewrite so Gemini never touches it). The agent rotates through each
  *  language's pairs in manifest order, then cycles.
  *
  *  RELIABILITY MODEL: GitHub silently drops most scheduled runs on young
@@ -262,6 +266,7 @@ async function loadLibrary() {
       entries.push({
         photo: p.photo,
         caption: String(p.caption),
+        heading: String(p.heading ?? '').trim(),
         lang: String(p.lang ?? 'en').toLowerCase() === 'sw' ? 'sw' : 'en',
         reference: String(p.reference ?? ''),
       })
@@ -373,14 +378,36 @@ async function geminiRewriteSwCaption(caption) {
   }
 }
 
-/** Final caption for a slot: Gemini-refreshed when enabled + Swahili, else the
- *  stored library caption. */
+/** Heading in CAPITAL LETTERS + bold (owner rule 2026-09-23). Facebook and
+ *  Instagram captions have no native bold formatting, so the heading is
+ *  rendered with Unicode MATHEMATICAL SANS-SERIF BOLD glyphs (𝗔-𝗭, 𝟬-𝟵) —
+ *  the standard way bold text is produced on FB/IG. Punctuation and spaces
+ *  stay as-is. Falls back to the plain text if a glyph is unmappable. */
+function toBoldCaps(text) {
+  const map = (ch) => {
+    const code = ch.codePointAt(0)
+    if (code >= 65 && code <= 90) return String.fromCodePoint(0x1d5d4 + (code - 65)) // A-Z → 𝗔-𝗭
+    if (code >= 97 && code <= 122) return String.fromCodePoint(0x1d5ee + (code - 97)) // a-z → 𝗮-𝘇
+    if (code >= 48 && code <= 57) return String.fromCodePoint(0x1d7ec + (code - 48)) // 0-9 → 𝟬-𝟵
+    return ch
+  }
+  return [...String(text).toUpperCase()].map(map).join('')
+}
+
+/** Final caption for a slot: bold CAPS heading first (owner rule 2026-09-23:
+ *  "post created with a heading capital letters and bold, then verse of
+ *  scripture will follow and other things like previous"), then the caption
+ *  body. The heading is prepended AFTER the optional Gemini rewrite so the
+ *  rewrite never mangles it. Entry without a heading → body unchanged. */
 async function captionForSlot(entry) {
+  let body = entry.caption
   if (entry.lang === 'sw') {
     const rewritten = await geminiRewriteSwCaption(entry.caption)
-    if (rewritten) return rewritten
+    if (rewritten) body = rewritten
   }
-  return entry.caption
+  const heading = String(entry.heading ?? '').trim()
+  if (heading) return `${toBoldCaps(heading)}\n\n${body}`
+  return body
 }
 
 // ── State (data/state.json, committed back by the workflow) ─────────────────

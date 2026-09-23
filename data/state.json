@@ -34,37 +34,11 @@
           "permalink": "https://www.facebook.com/photo.php?fbid=122205176312587338&set=a.122189068466587338&type=3"
         }
       }
-    },
-    "2026-09-24": {
-      "09:00": {
-        "status": "scheduled",
-        "publishTime": "2026-09-24T06:00:00.000Z",
-        "at": "2026-09-22T09:14:13.078Z",
-        "photo": "votd-2026-09-15.jpg",
-        "caption": "Lamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali",
-        "lang": "en",
-        "fb": {
-          "id": "122205176360587338"
-        }
-      }
-    },
-    "2026-09-25": {
-      "09:00": {
-        "status": "scheduled",
-        "publishTime": "2026-09-25T06:00:00.000Z",
-        "at": "2026-09-22T13:29:48.927Z",
-        "photo": "sw-card-yohana-14-1.jpg",
-        "caption": "Yohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nYesu anatambua kwamba mioyo yetu hufadhaika kwa urahisi, ndiyo anatanguliza amani yake kabla ya matatizo kuja. Weka imani yako kwake leo, na moyo wako utapata utulivu usio na kifani.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali",
-        "lang": "sw",
-        "fb": {
-          "id": "122205200444587338"
-        }
-      }
     }
   },
   "rotation": {
-    "en": 2,
-    "sw": 3
+    "en": 0,
+    "sw": 2
   },
   "events": [
     {
@@ -129,6 +103,13 @@
       "date": "2026-09-23",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"votd-sw-2026-09-16.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-23T06:56:25.085Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "FORMAT CHANGE (owner request 2026-09-23): every post now starts with a short HEADING in capital letters + bold (Unicode bold — FB/IG have no native bold), then the scripture verse, then explanation + hashtags as before. Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked with old no-heading captions); next landed run re-books the same verses (rotation reset en→0/sw→2) with the new format."
     }
   ]
 }
