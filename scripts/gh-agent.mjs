@@ -18,7 +18,10 @@
  *  bold in captions), related to the verse on the image or the explanation;
  *  then the scripture (reference + verse text, verbatim as written on the
  *  image) + two sentences of explanation/encouragement + 5 hashtags ending
- *  with #BibliaTafsiriMbalimbali. With the GEMINI_API_KEY secret set, the
+ *  with #BibliaTafsiriMbalimbali, then — owner rule 2026-09-23 (b) — a fixed
+ *  app promo line below the hashtags: "Download Our App from PlayStore with
+ *  this link: https://play.google.com/store/apps/details?id=com.biblia.
+ *  tafsiri.mbalimbali". With the GEMINI_API_KEY secret set, the
  *  Swahili encouragement sentences are rewritten by Google Gemini at posting
  *  time (stored caption = the fallback; the heading is prepended AFTER the
  *  rewrite so Gemini never touches it). The agent rotates through each
@@ -394,11 +397,20 @@ function toBoldCaps(text) {
   return [...String(text).toUpperCase()].map(map).join('')
 }
 
+/** Fixed app promo line appended BELOW the hashtags of every post (owner rule
+ *  2026-09-23: "add the following instructions below the hashtags in the
+ *  posts"). Appended AFTER the optional Gemini rewrite so Gemini never touches
+ *  it; identical on English and Kiswahili days (verbatim owner wording). */
+const APP_PROMO =
+  'Download Our App from PlayStore with this link: ' +
+  'https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali'
+
 /** Final caption for a slot: bold CAPS heading first (owner rule 2026-09-23:
  *  "post created with a heading capital letters and bold, then verse of
  *  scripture will follow and other things like previous"), then the caption
- *  body. The heading is prepended AFTER the optional Gemini rewrite so the
- *  rewrite never mangles it. Entry without a heading → body unchanged. */
+ *  body, then the app promo line below the hashtags. The heading is prepended
+ *  AFTER the optional Gemini rewrite so the rewrite never mangles it. Entry
+ *  without a heading → body + promo. */
 async function captionForSlot(entry) {
   let body = entry.caption
   if (entry.lang === 'sw') {
@@ -406,8 +418,8 @@ async function captionForSlot(entry) {
     if (rewritten) body = rewritten
   }
   const heading = String(entry.heading ?? '').trim()
-  if (heading) return `${toBoldCaps(heading)}\n\n${body}`
-  return body
+  const head = heading ? `${toBoldCaps(heading)}\n\n` : ''
+  return `${head}${body}\n\n${APP_PROMO}`
 }
 
 // ── State (data/state.json, committed back by the workflow) ─────────────────

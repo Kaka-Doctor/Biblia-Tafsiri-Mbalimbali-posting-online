@@ -27,7 +27,11 @@ the scripture on that image** (owner rule, 2026-09-22):
   English images quote the English verse),
 - **two sentences** of explanation and encouragement in that same language,
 - **5 hashtags** related to the verse, always ending with
-  `#BibliaTafsiriMbalimbali`.
+  `#BibliaTafsiriMbalimbali`,
+- **an app promo line below the hashtags** (owner rule, 2026-09-23):
+  `Download Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali`
+  — identical on English and Kiswahili days (verbatim owner wording), appended
+  by the agent after the optional Gemini rewrite so Gemini never touches it.
 
 So a published post reads:
 
@@ -40,6 +44,8 @@ So a published post reads:
 > Every new morning is quiet proof that God's mercy has not run out on you…
 >
 > #Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali
+>
+> Download Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali
 
 **Daily language alternation (owner rule, 2026-09-22):** English one day,
 Kiswahili the next — "if today you use english tomorrow use swahili". The
