@@ -34,11 +34,37 @@
           "permalink": "https://www.facebook.com/photo.php?fbid=122205176312587338&set=a.122189068466587338&type=3"
         }
       }
+    },
+    "2026-09-24": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-24T06:00:00.000Z",
+        "at": "2026-09-23T06:57:43.169Z",
+        "photo": "votd-2026-09-15.jpg",
+        "caption": "𝗚𝗢𝗗'𝗦 𝗠𝗘𝗥𝗖𝗬 𝗡𝗘𝗩𝗘𝗥 𝗥𝗨𝗡𝗦 𝗢𝗨𝗧\n\nLamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122205288122587338"
+        }
+      }
+    },
+    "2026-09-25": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-25T06:00:00.000Z",
+        "at": "2026-09-23T06:57:52.790Z",
+        "photo": "sw-card-yohana-14-1.jpg",
+        "caption": "𝗠𝗦𝗜𝗙𝗔𝗗𝗛𝗔𝗜𝗞𝗘 — 𝗪𝗘𝗞𝗔 𝗜𝗠𝗔𝗡𝗜 𝗞𝗪𝗔𝗞𝗘\n\nYohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nAkijua jinsi mioyo yetu huathirika na fadhaa haraka, Yesu anatujalia amani yake kabla ya matatizo kutufikia. Mkabidhi Bwana Yesu imani yako leo, nawe utapokea amani ya ajabu isiyoelezeka moyoni mwako.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205288182587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 0,
-    "sw": 2
+    "en": 1,
+    "sw": 3
   },
   "events": [
     {
@@ -110,6 +136,20 @@
       "date": "",
       "slot": "",
       "message": "FORMAT CHANGE (owner request 2026-09-23): every post now starts with a short HEADING in capital letters + bold (Unicode bold — FB/IG have no native bold), then the scripture verse, then explanation + hashtags as before. Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked with old no-heading captions); next landed run re-books the same verses (rotation reset en→0/sw→2) with the new format."
+    },
+    {
+      "ts": "2026-09-23T06:57:43.169Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T06:57:52.790Z",
+      "level": "info",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
