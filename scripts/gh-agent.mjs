@@ -1088,7 +1088,7 @@ async function mutualRescue() {
   }
   let cfg
   try { cfg = JSON.parse(await fs.readFile(CONFIG_FILE, 'utf8')) } catch { return }
-  const token = String(process.env.DISPATCH_TOKEN ?? cfg.dispatchToken ?? '').trim()
+  const token = String(process.env.DISPATCH_TOKEN || cfg.dispatchToken || '').trim()
   const self = String(process.env.GITHUB_REPOSITORY ?? 'local-run')
   const siblings = String(cfg.siblings ?? '')
     .split(',').map((x) => x.trim()).filter((x) => x && x.includes('/') && x !== self)
