@@ -93,12 +93,21 @@ does not rely on that:
    `graceMinutes` (240) of 09:00, it posts directly as a catch-up.
    Anything later is marked `missed` once, and the **force** button
    (Actions → *Bible Verse Agent* → Run workflow → tick `force`) rescues it
-   the same day.
+   the same day — including a FB-only `partial` slot, where force posts just
+   the missing IG half (2026-09-24).
+5. **Mutual rescue (2026-09-24).** This page is the reliable anchor of the
+   three-page family, so every landed run here ALSO checks the sibling pages
+   (Ladies of Destiny, Teacher's Lesson Plan) through the GitHub API and
+   dispatches their workflow when a sibling has an IG half due but no landed
+   run of its own (API dispatches are 100% reliable, unlike cron). Needs the
+   `DISPATCH_TOKEN` repo secret; dispatched runs skip their own sibling check
+   (one hop, no ping-pong).
 
 Net effect: **one landed GitHub run every ~2 days is enough** for perfect
 09:00 punctuality on Facebook; the IG post follows on the first landed run
 after 09:00 (exact-to-minutes-late depending on GitHub, force-button rescue
-for the rest).
+for the rest) — and this page's reliable run landings now keep the sibling
+pages posting on both platforms too.
 
 ## One-time setup — ✅ DONE (2026-09-22)
 

@@ -30,6 +30,15 @@ name: Bible Verse Agent
 #  token into data/meta-token.txt and push — the next landed run re-mints it
 #  and clears the file.
 #
+#  MUTUAL RESCUE (owner rule 2026-09-24): every landed run also checks the
+#  sibling pages (data/config.json "siblings" — Ladies of Destiny +
+#  Teacher's Lesson Plan) via the GitHub API and dispatches a sibling whose
+#  IG half is due but has no landed run of its own — API dispatches are 100%
+#  reliable, unlike cron schedules. Needs the DISPATCH_TOKEN repo secret
+#  (fine-grained PAT: contents:read + actions:write on the sibling repos).
+#  Dispatched runs carry input rescuedBy and skip their own sibling check
+#  (one hop, no ping-pong).
+#
 #  ⟶ To CHANGE posting time: edit "slots" (and "timezone") in data/config.json
 #    only — this file never needs to change.
 # ⟶ To POST RIGHT NOW (or rescue a MISSED slot the same day): Actions tab →
@@ -64,6 +73,10 @@ on:
         description: "Gemini self-test — verify the GEMINI_API_KEY secret works for Swahili captions (posts nothing)"
         type: boolean
         default: false
+      rescuedBy:
+        description: "Internal — set automatically when a sibling page's agent dispatched this run (mutual rescue); skips this run's own sibling check"
+        type: string
+        default: ""
 
 # Never let two runs race on data/state.json
 concurrency:
@@ -109,6 +122,12 @@ jobs:
         env:
           INPUT_DRY_RUN: ${{ inputs.dryRun }}
           INPUT_FORCE: ${{ inputs.force }}
+          INPUT_RESCUED_BY: ${{ inputs.rescuedBy }}
+          # Mutual rescue (owner rule 2026-09-24): lets this agent check the
+          # sibling pages' repos and dispatch their workflows when a sibling
+          # has an IG half due but no landed run of its own. Fine-grained PAT
+          # with contents:read + actions:write on the sibling repos.
+          DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
           # Optional Google Gemini (owner request 2026-09-22): with this secret
           # set, Swahili captions are rewritten by Gemini at posting time;
           # without it the stored captions in data/posts.json are used.

@@ -35,7 +35,18 @@
  *  Meta then publishes them exactly at 09:00 EAT from Meta's servers. One
  *  landed run every ~2 days is enough. Landed runs also reconcile state once
  *  scheduled posts go live; late direct posting remains as the catch-up
- *  fallback.
+ *  fallback (graceMinutes 240 in data/config.json).
+ *
+ *  MUTUAL RESCUE (owner rule 2026-09-24, "post like Biblia Tafsiri
+ *  Mbalimbali"): every landed run also checks the sibling pages ("siblings"
+ *  in data/config.json — Ladies of Destiny + Teacher's Lesson Plan) through
+ *  the GitHub API and dispatches a sibling's workflow when that sibling has
+ *  an IG half due but no landed run of its own — API workflow_dispatches are
+ *  100% reliable, unlike cron schedules. This page's reliable 06:4x-UTC run
+ *  landings now wake the sibling pages too. Needs the DISPATCH_TOKEN repo
+ *  secret (fine-grained PAT, contents:read + actions:write on the sibling
+ *  repos). A dispatched run (input rescuedBy) skips its own sibling check —
+ *  one hop, no ping-pong.
  *
  *  Everything configurable lives in data/config.json (the switch file):
  *    pageId              → which page to post to (Biblia Tafsiri Mbalimbali)
@@ -797,9 +808,15 @@ async function main() {
     for (const s of [...slots].reverse()) {
       if (s.minutes > now.minutesOfDay) continue
       const done = state.days[now.date]?.[s.label]
-      if (done && ['published', 'partial', 'guarded', 'missed', 'cancelled'].includes(done.status)) continue
-      if (done && done.status === 'scheduled' && done.ig?.id) continue // both halves done
-      target = { ...s, date: now.date, igOnly: Boolean(done && done.status === 'scheduled' && !done.ig?.id) }
+      if (done && ['published', 'guarded', 'cancelled'].includes(done.status)) continue
+      if (done && done.ig?.id) continue // IG half already live/adopted
+      // Force also rescues slots the auto path already closed (owner rule
+      // 2026-09-24): 'partial' = FB live via Meta but the IG half never went
+      // out (window lapsed) → force posts JUST the IG half with the slot's
+      // pinned photo+caption; 'missed' = nothing was booked at all → both
+      // halves fresh. This is what the rescue button always promised.
+      const igOnly = Boolean(done && done.fb?.id && ['scheduled', 'partial'].includes(done.status))
+      target = { ...s, date: now.date, igOnly }
       break
     }
     // otherwise the next future slot (today, else tomorrow)
@@ -1015,5 +1032,111 @@ function addDaysKey(dateKey, days) {
   return d.toISOString().slice(0, 10)
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+//  MUTUAL RESCUE — the "post like Biblia Tafsiri Mbalimbali" backstop (owner
+//  rule 2026-09-24). GitHub drops most scheduled fires; landed runs arrive in
+//  bursts with multi-hour gaps, so a page waiting for "the next landed run"
+//  to publish its IG half can starve for a whole day even with a 4-hour
+//  window. Fix: whenever this agent lands a run, it ALSO checks the sibling
+//  pages (config "siblings", full "owner/repo" names) through the GitHub API
+//  and dispatches a sibling's workflow directly when that sibling has
+//  unfinished business — an API workflow_dispatch is 100% reliable, unlike
+//  cron schedules. The dispatched run receives input rescuedBy=<this repo>
+//  and skips its own sibling check (one hop, no dispatch ping-pong). Needs
+//  the DISPATCH_TOKEN repo secret (a fine-grained PAT with contents:read +
+//  actions:write on the sibling repos); silently disabled when the secret or
+//  the "siblings" config is absent. Never dispatches on dry-runs and never
+//  fails the run it lives in.
+// ─────────────────────────────────────────────────────────────────────────────
+function ghHeaders(token) {
+  return {
+    Authorization: `Bearer ${token}`,
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'User-Agent': 'social-agent-mutual-rescue',
+  }
+}
+
+async function fetchRepoText(full, filePath, token) {
+  const parts = filePath.split('/').map(encodeURIComponent).join('/')
+  const res = await fetch(`https://api.github.com/repos/${full}/contents/${parts}?ref=main`, { headers: ghHeaders(token) })
+  if (!res.ok) return null
+  const j = await res.json().catch(() => null)
+  if (!j || j.encoding !== 'base64' || !j.content) return null
+  return Buffer.from(j.content, 'base64').toString('utf8')
+}
+
+async function dispatchSiblingWorkflow(full, token, rescuedBy) {
+  const res = await fetch(`https://api.github.com/repos/${full}/actions/workflows/social-agent.yml/dispatches`, {
+    method: 'POST',
+    headers: { ...ghHeaders(token), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ref: 'main', inputs: { rescuedBy } }),
+  })
+  if (res.ok) return { ok: true }
+  const detail = await res.text().catch(() => '')
+  return { ok: false, detail: `HTTP ${res.status} ${detail.slice(0, 140)}` }
+}
+
+async function mutualRescue() {
+  if (ARG_DRY) return // never trigger dispatches from a dry run
+  const rescuedBy = String(process.env.INPUT_RESCUED_BY ?? '').trim()
+  if (rescuedBy) {
+    log(`[rescue] this run was dispatched by "${rescuedBy}" — sibling check skipped (one hop)`)
+    return
+  }
+  let cfg
+  try { cfg = JSON.parse(await fs.readFile(CONFIG_FILE, 'utf8')) } catch { return }
+  const token = String(process.env.DISPATCH_TOKEN ?? '').trim()
+  const self = String(process.env.GITHUB_REPOSITORY ?? 'local-run')
+  const siblings = String(cfg.siblings ?? '')
+    .split(',').map((x) => x.trim()).filter((x) => x && x.includes('/') && x !== self)
+  if (!token || siblings.length === 0) return // not configured — silently off
+  for (const full of siblings) {
+    try {
+      const [cfgTxt, stateTxt] = await Promise.all([
+        fetchRepoText(full, 'data/config.json', token),
+        fetchRepoText(full, 'data/state.json', token),
+      ])
+      if (!cfgTxt || !stateTxt) { log(`[rescue] ${full}: state/config unreadable — skipped`); continue }
+      const cfgS = JSON.parse(cfgTxt)
+      const stateS = JSON.parse(stateTxt)
+      const tzS = cfgS.timezone || 'Africa/Dar_es_Salaam'
+      const slotsS = parseSlots(String(cfgS.slots ?? ''))
+      const graceS = Number(cfgS.graceMinutes ?? 60)
+      const nowS = localNow(tzS)
+      const days = stateS.days ?? {}
+      let why = null
+      // (a) a slot that is due RIGHT NOW (inside the sibling's own catch-up
+      //     window) whose IG half is still missing — the dispatched run will
+      //     publish it immediately
+      for (const s of slotsS) {
+        const since = nowS.minutesOfDay - s.minutes
+        if (since < 0 || since > graceS) continue
+        const rec = days[nowS.date]?.[s.label]
+        if (!rec) { why = `today's ${s.label} slot never booked (catch-up due)`; break }
+        if (rec.status === 'scheduled' && !rec.ig?.id) { why = `today's ${s.label} IG half still missing (${since} min after slot time)`; break }
+      }
+      // (b) FB horizon empty — no Meta-scheduled slot at all for the next 2
+      //     days (the sibling's own runs have not landed for ~2 days)
+      if (!why && slotsS.length > 0) {
+        const booked = [addDaysKey(nowS.date, 1), addDaysKey(nowS.date, 2)]
+          .some((dk) => Object.values(days[dk] ?? {}).some((r) => r && r.status === 'scheduled'))
+        if (!booked) why = 'no Meta-scheduled slots for the next 2 days (FB horizon empty)'
+      }
+      if (why) {
+        const res = await dispatchSiblingWorkflow(full, token, self)
+        log(res.ok
+          ? `[rescue] dispatched ${full} — ${why}`
+          : `[rescue] could NOT dispatch ${full} (${res.detail}) — ${why}`)
+      } else {
+        log(`[rescue] ${full} healthy — no dispatch needed`)
+      }
+    } catch (e) {
+      log(`[rescue] ${full}: check failed (${e.message}) — skipped`)
+    }
+  }
+}
+
 main()
-  .catch((e) => { console.error(`[agent] FAILED: ${e.message}`); process.exit(1) })
+  .catch((e) => { console.error(`[agent] FAILED: ${e.message}`); process.exitCode = 1 })
+  .finally(() => mutualRescue().catch((e) => console.error(`[rescue] FAILED: ${e.message}`)))
