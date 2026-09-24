@@ -99,9 +99,10 @@ does not rely on that:
    three-page family, so every landed run here ALSO checks the sibling pages
    (Ladies of Destiny, Teacher's Lesson Plan) through the GitHub API and
    dispatches their workflow when a sibling has an IG half due but no landed
-   run of its own (API dispatches are 100% reliable, unlike cron). Needs the
-   `DISPATCH_TOKEN` repo secret; dispatched runs skip their own sibling check
-   (one hop, no ping-pong).
+   run of its own (API dispatches are 100% reliable, unlike cron). Token:
+   `dispatchToken` in `data/config.json` (already configured; a
+   `DISPATCH_TOKEN` repo secret would override it). Dispatched runs skip
+   their own sibling check (one hop, no ping-pong).
 
 Net effect: **one landed GitHub run every ~2 days is enough** for perfect
 09:00 punctuality on Facebook; the IG post follows on the first landed run

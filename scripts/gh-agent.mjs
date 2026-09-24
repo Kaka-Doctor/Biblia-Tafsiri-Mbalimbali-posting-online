@@ -43,9 +43,10 @@
  *  the GitHub API and dispatches a sibling's workflow when that sibling has
  *  an IG half due but no landed run of its own — API workflow_dispatches are
  *  100% reliable, unlike cron schedules. This page's reliable 06:4x-UTC run
- *  landings now wake the sibling pages too. Needs the DISPATCH_TOKEN repo
- *  secret (fine-grained PAT, contents:read + actions:write on the sibling
- *  repos). A dispatched run (input rescuedBy) skips its own sibling check —
+ *  landings now wake the sibling pages too. Needs the dispatch token
+ *  (data/config.json "dispatchToken" — fine-grained PAT, contents:read +
+ *  actions:write on the sibling repos; a DISPATCH_TOKEN repo secret would
+ *  override it). A dispatched run (input rescuedBy) skips its own sibling check —
  *  one hop, no ping-pong.
  *
  *  Everything configurable lives in data/config.json (the switch file):
@@ -1043,9 +1044,10 @@ function addDaysKey(dateKey, days) {
 //  unfinished business — an API workflow_dispatch is 100% reliable, unlike
 //  cron schedules. The dispatched run receives input rescuedBy=<this repo>
 //  and skips its own sibling check (one hop, no dispatch ping-pong). Needs
-//  the DISPATCH_TOKEN repo secret (a fine-grained PAT with contents:read +
-//  actions:write on the sibling repos); silently disabled when the secret or
-//  the "siblings" config is absent. Never dispatches on dry-runs and never
+//  a dispatch token (fine-grained PAT, contents:read + actions:write on the
+//  sibling repos) — stored in data/config.json "dispatchToken"; the
+//  DISPATCH_TOKEN repo secret overrides it if ever set; silently disabled
+//  when it or the "siblings" config is absent. Never dispatches on dry-runs and never
 //  fails the run it lives in.
 // ─────────────────────────────────────────────────────────────────────────────
 function ghHeaders(token) {
@@ -1086,7 +1088,7 @@ async function mutualRescue() {
   }
   let cfg
   try { cfg = JSON.parse(await fs.readFile(CONFIG_FILE, 'utf8')) } catch { return }
-  const token = String(process.env.DISPATCH_TOKEN ?? '').trim()
+  const token = String(process.env.DISPATCH_TOKEN ?? cfg.dispatchToken ?? '').trim()
   const self = String(process.env.GITHUB_REPOSITORY ?? 'local-run')
   const siblings = String(cfg.siblings ?? '')
     .split(',').map((x) => x.trim()).filter((x) => x && x.includes('/') && x !== self)

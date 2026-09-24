@@ -34,8 +34,9 @@ name: Bible Verse Agent
 #  sibling pages (data/config.json "siblings" — Ladies of Destiny +
 #  Teacher's Lesson Plan) via the GitHub API and dispatches a sibling whose
 #  IG half is due but has no landed run of its own — API dispatches are 100%
-#  reliable, unlike cron schedules. Needs the DISPATCH_TOKEN repo secret
-#  (fine-grained PAT: contents:read + actions:write on the sibling repos).
+#  reliable, unlike cron schedules. Needs the dispatch token (data/config.json
+#  "dispatchToken" — fine-grained PAT: contents:read + actions:write on the
+#  sibling repos; a DISPATCH_TOKEN repo secret would override it).
 #  Dispatched runs carry input rescuedBy and skip their own sibling check
 #  (one hop, no ping-pong).
 #
@@ -125,8 +126,9 @@ jobs:
           INPUT_RESCUED_BY: ${{ inputs.rescuedBy }}
           # Mutual rescue (owner rule 2026-09-24): lets this agent check the
           # sibling pages' repos and dispatch their workflows when a sibling
-          # has an IG half due but no landed run of its own. Fine-grained PAT
-          # with contents:read + actions:write on the sibling repos.
+          # has an IG half due but no landed run of its own. Token: data/config
+          # "dispatchToken" (fine-grained PAT, contents:read + actions:write
+          # on the sibling repos); this secret, if set, overrides it.
           DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
           # Optional Google Gemini (owner request 2026-09-22): with this secret
           # set, Swahili captions are rewritten by Gemini at posting time;
