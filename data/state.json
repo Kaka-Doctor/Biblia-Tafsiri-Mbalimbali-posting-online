@@ -78,11 +78,24 @@
           "id": "122205364160587338"
         }
       }
+    },
+    "2026-09-27": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-27T06:00:00.000Z",
+        "at": "2026-09-24T21:31:45.680Z",
+        "photo": "sw-card-mathayo-6-33.jpg",
+        "caption": "𝗧𝗔𝗙𝗨𝗧𝗔 𝗞𝗪𝗔𝗡𝗭𝗔 𝗨𝗙𝗔𝗟𝗠𝗘 𝗪𝗔𝗞𝗘\n\nMathayo 6:33\n\n\"Bali utafuteni kwanza ufalme wake, na haki yake; na hayo yote mtazidishiwa.\"\n\nMungu huyafahamu mahitaji yako yote, huku akiweka kipaumbele chake kwanza, mengine yatafuata kwa mpangilio.\nUkiutafuta ufalme wake leo, utashuhudia mambo mengine ya maisha yakikaa mahali pake pasipo hofu.\n\n#Mathayo #UfalmeWaMungu #TafuteniKwanza #MaadamuYaMungu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205470510587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 2,
-    "sw": 3
+    "sw": 4
   },
   "events": [
     {
@@ -203,6 +216,13 @@
       "date": "2026-09-24",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-24T21:31:45.680Z",
+      "level": "info",
+      "date": "2026-09-27",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-27T06:00:00.000Z, Kiswahili) — \"sw-card-mathayo-6-33.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
