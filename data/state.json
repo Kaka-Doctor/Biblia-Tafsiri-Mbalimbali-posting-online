@@ -55,14 +55,19 @@
     },
     "2026-09-25": {
       "09:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-09-25T07:47:26.841Z",
         "publishTime": "2026-09-25T06:00:00.000Z",
-        "at": "2026-09-23T07:36:13.841Z",
         "photo": "sw-card-yohana-14-1.jpg",
         "caption": "𝗠𝗦𝗜𝗙𝗔𝗗𝗛𝗔𝗜𝗞𝗘 — 𝗪𝗘𝗞𝗔 𝗜𝗠𝗔𝗡𝗜 𝗞𝗪𝗔𝗞𝗘\n\nYohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nAkifahamu kabisa jinsi mioyo yetu inavyoweza kufadhaika kirahisi, Yesu hututangulizia amani yake ya ndani hata kabla ya majaribu. Mkabidhi Bwana Yesu imani yako kamili leo, na moyo wako utafurahia amani isiyoelezeka inayopita ufahamu wote.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18471612970115689",
+          "permalink": "https://www.instagram.com/p/Dds9SlpnXnD/"
+        },
         "fb": {
-          "id": "122205290882587338"
+          "id": "447560908444853_122205290882587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205290882587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -223,6 +228,13 @@
       "date": "2026-09-27",
       "slot": "09:00",
       "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-27T06:00:00.000Z, Kiswahili) — \"sw-card-mathayo-6-33.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-25T07:47:26.841Z",
+      "level": "success",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-yohana-14-1.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
