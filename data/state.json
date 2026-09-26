@@ -114,11 +114,24 @@
           "id": "122205594734587338"
         }
       }
+    },
+    "2026-09-29": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-29T06:00:00.000Z",
+        "at": "2026-09-26T22:12:45.260Z",
+        "photo": "sw-card-zaburi-55-22.jpg",
+        "caption": "𝗠𝗧𝗪𝗜𝗞𝗘 𝗕𝗪𝗔𝗡𝗔 𝗠𝗭𝗜𝗚𝗢 𝗪𝗔𝗞𝗢\n\nZaburi 55:22\n\n\"Umtwike BWANA mzigo wako naye atakutegemeza, Hatamwacha mwenye haki aondoshwe milele.\"\n\nKamwe haukupangiwa kubeba mzigo wa maisha peke yako; Bwana mwenyewe anakualika umkabidhi. Mkabidhi leo kila kinachokulemea, naye atakushika mkono na kukutegemeza daima kwa uwezo wake mkuu.\n\n#Zaburi #MzigoWako #MtwikeBWANA #Tegemezo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205705710587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 3,
-    "sw": 4
+    "sw": 5
   },
   "events": [
     {
@@ -267,6 +280,13 @@
       "date": "2026-09-26",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-26T22:12:45.260Z",
+      "level": "info",
+      "date": "2026-09-29",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-29T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-55-22.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
