@@ -132,10 +132,23 @@
           "id": "122205705710587338"
         }
       }
+    },
+    "2026-09-30": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-09-30T06:00:00.000Z",
+        "at": "2026-09-27T23:04:17.023Z",
+        "photo": "en-card-matthew-11-28.jpg",
+        "caption": "𝗖𝗢𝗠𝗘 𝗧𝗢 𝗝𝗘𝗦𝗨𝗦 𝗔𝗡𝗗 𝗥𝗘𝗦𝗧\n\nMatthew 11:28\n\n\"Come to me, all you who are weary and burdened, and I will give you rest.\"\n\nJesus does not demand that you carry your load one more step before inviting you in. Whatever has drained you this week, lay it at His feet and receive the rest He promises.\n\n#Matthew #ComeToMe #RestForTheWeary #BurdenBearer #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122205830072587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 3,
+    "en": 4,
     "sw": 5
   },
   "events": [
@@ -299,6 +312,13 @@
       "date": "2026-09-27",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"sw-card-mathayo-6-33.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-27T23:04:17.024Z",
+      "level": "info",
+      "date": "2026-09-30",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-30T06:00:00.000Z, English) — \"en-card-matthew-11-28.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
