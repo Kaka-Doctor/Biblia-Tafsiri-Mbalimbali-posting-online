@@ -150,11 +150,24 @@
           "id": "122205830072587338"
         }
       }
+    },
+    "2026-10-01": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-01T06:00:00.000Z",
+        "at": "2026-09-28T22:01:26.863Z",
+        "photo": "sw-card-zaburi-62-1.jpg",
+        "caption": "𝗧𝗨𝗟𝗜𝗔 𝗠𝗕𝗘𝗟𝗘 𝗭𝗔 𝗠𝗨𝗡𝗚𝗨\n\nZaburi 62:1\n\n\"Nafsi yangu yamngoja Mungu peke yake kwa kimya, Wokovu wangu hutoka kwake.\"\n\nKatika makelele na mivurugo ya dunia, roho zetu hupata utulivu wa kweli tukitulia mbele za Mungu.\nLeo, mwelekee Yeye kwa utulivu, kwani wokovu wako umetoka kwake, wala si kutokana na juhudi za mwanadamu.\n\n#Zaburi #NafsiYangu #KimyaMbeleZaMungu #Wokovu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122205950438587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 4,
-    "sw": 5
+    "sw": 6
   },
   "events": [
     {
@@ -331,6 +344,13 @@
       "date": "2026-09-28",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"en-card-john-14-27.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-28T22:01:26.863Z",
+      "level": "info",
+      "date": "2026-10-01",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-01T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-62-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
