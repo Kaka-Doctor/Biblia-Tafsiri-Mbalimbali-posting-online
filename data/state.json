@@ -109,14 +109,19 @@
     },
     "2026-09-28": {
       "09:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-09-28T06:57:36.971Z",
         "publishTime": "2026-09-28T06:00:00.000Z",
-        "at": "2026-09-25T22:49:56.573Z",
         "photo": "en-card-john-14-27.jpg",
         "caption": "𝗧𝗛𝗘 𝗣𝗘𝗔𝗖𝗘 𝗝𝗘𝗦𝗨𝗦 𝗚𝗜𝗩𝗘𝗦\n\nJohn 14:27\n\n\"Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.\"\n\nJesus does not hand out peace like the world does — conditional, temporary, easily lost. His peace guards the heart that stays close to Him, so keep your grip on His words today.\n\n#John #PeaceOfChrist #DoNotBeAfraid #UntroubledHeart #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18144365752598582",
+          "permalink": "https://www.instagram.com/p/Dd0l-FtE9eF/"
+        },
         "fb": {
-          "id": "122205594734587338"
+          "id": "447560908444853_122205594734587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205594734587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -319,6 +324,13 @@
       "date": "2026-09-30",
       "slot": "09:00",
       "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-30T06:00:00.000Z, English) — \"en-card-matthew-11-28.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-28T06:57:36.971Z",
+      "level": "success",
+      "date": "2026-09-28",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"en-card-john-14-27.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
