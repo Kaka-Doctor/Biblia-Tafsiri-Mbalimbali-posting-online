@@ -168,10 +168,23 @@
           "id": "122205950438587338"
         }
       }
+    },
+    "2026-10-02": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-02T06:00:00.000Z",
+        "at": "2026-09-29T23:44:00.792Z",
+        "photo": "en-card-psalm-46-1.jpg",
+        "caption": "𝗚𝗢𝗗 𝗜𝗦 𝗢𝗨𝗥 𝗥𝗘𝗙𝗨𝗚𝗘\n\nPsalm 46:1\n\n\"God is our refuge and strength, an ever-present help in trouble.\"\n\nTrouble has a way of making everything feel unstable — except God. Run into Him as your refuge today; He is not a distant help but an ever-present one.\n\n#Psalm #GodIsMyRefuge #EverPresentHelp #StrengthForToday #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122206072412587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 4,
+    "en": 5,
     "sw": 6
   },
   "events": [
@@ -363,6 +376,13 @@
       "date": "2026-09-29",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"sw-card-zaburi-55-22.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-29T23:44:00.792Z",
+      "level": "info",
+      "date": "2026-10-02",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-02T06:00:00.000Z, English) — \"en-card-psalm-46-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
