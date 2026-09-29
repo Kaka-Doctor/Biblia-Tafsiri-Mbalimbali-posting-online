@@ -1068,11 +1068,13 @@ async function fetchRepoText(full, filePath, token) {
   return Buffer.from(j.content, 'base64').toString('utf8')
 }
 
-async function dispatchSiblingWorkflow(full, token, rescuedBy) {
+async function dispatchSiblingWorkflow(full, token, rescuedBy, force = false) {
+  const inputs = { rescuedBy }
+  if (force) inputs.force = 'true' // boolean-typed workflow input: API takes the string "true"
   const res = await fetch(`https://api.github.com/repos/${full}/actions/workflows/social-agent.yml/dispatches`, {
     method: 'POST',
     headers: { ...ghHeaders(token), 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ref: 'main', inputs: { rescuedBy } }),
+    body: JSON.stringify({ ref: 'main', inputs }),
   })
   if (res.ok) return { ok: true }
   const detail = await res.text().catch(() => '')
@@ -1108,6 +1110,7 @@ async function mutualRescue() {
       const nowS = localNow(tzS)
       const days = stateS.days ?? {}
       let why = null
+      let forceRescue = false
       // (a) a slot that is due RIGHT NOW (inside the sibling's own catch-up
       //     window) whose IG half is still missing — the dispatched run will
       //     publish it immediately
@@ -1125,10 +1128,31 @@ async function mutualRescue() {
           .some((dk) => Object.values(days[dk] ?? {}).some((r) => r && r.status === 'scheduled'))
         if (!booked) why = 'no Meta-scheduled slots for the next 2 days (FB horizon empty)'
       }
+      // (c) TODAY's slot already closed 'partial' (FB live via Meta, IG half
+      //     missing — the sibling's catch-up window lapsed before ANY run
+      //     landed; exactly the 2026-09-29 TLP failure: earliest slot of the
+      //     three pages + GitHub's 03:00-07:00 UTC dead zone) or 'missed'
+      //     (nothing booked at all). Still within the RESCUE EXTENSION
+      //     (slot + grace + 120 min, same calendar afternoon in the sibling's
+      //     timezone): dispatch with force=true — the sibling's force path
+      //     posts JUST the missing IG half right now (both halves for
+      //     'missed'). Past the extension the day stays skipped (manual force
+      //     button only) — IG still never posts at arbitrary times of day.
+      if (!why) {
+        for (const s of slotsS) {
+          const rec = days[nowS.date]?.[s.label]
+          if (!rec || rec.ig?.id || !['partial', 'missed'].includes(rec.status)) continue
+          const since = nowS.minutesOfDay - s.minutes
+          if (since < 0 || since > graceS + 120) continue
+          why = `today's ${s.label} slot is ${rec.status} with the IG half missing (${Math.max(since - graceS, 0)} min past its window) — force rescue`
+          forceRescue = true
+          break
+        }
+      }
       if (why) {
-        const res = await dispatchSiblingWorkflow(full, token, self)
+        const res = await dispatchSiblingWorkflow(full, token, self, forceRescue)
         log(res.ok
-          ? `[rescue] dispatched ${full} — ${why}`
+          ? `[rescue] dispatched ${full}${forceRescue ? ' (FORCE)' : ''} — ${why}`
           : `[rescue] could NOT dispatch ${full} (${res.detail}) — ${why}`)
       } else {
         log(`[rescue] ${full} healthy — no dispatch needed`)
