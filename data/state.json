@@ -186,11 +186,24 @@
           "id": "122206072412587338"
         }
       }
+    },
+    "2026-10-03": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-03T06:00:00.000Z",
+        "at": "2026-09-30T21:25:51.683Z",
+        "photo": "sw-card-zaburi-91-1-2.jpg",
+        "caption": "𝗕𝗪𝗔𝗡𝗔 𝗡𝗗𝗜𝗬𝗘 𝗞𝗜𝗠𝗕𝗜𝗟𝗜𝗢 𝗟𝗔𝗡𝗚𝗨\n\nZaburi 91:1-2\n\n\"Aketiye mahali pa siri pake Aliye juu Atakaa katika uvuli wake Mwenyezi. Nitasema, BWANA ndiye kimbilio langu na ngome yangu, Mungu wangu nitakayemtumaini.\"\n\nAnayekaa katika uvuli wa Mwenyezi Mungu hupata kimbilio kamili, lisilofikiwa na hatari yoyote. Tamka leo kuwa BWANA ndiye kimbilio lako imara, nawe utaishi kwa ujasiri mkuu ukimtegemea peke yake.\n\n#Zaburi #Kimbilio #UvuliWakeMwenyezi #Ujasiri #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122206178336587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 5,
-    "sw": 6
+    "sw": 7
   },
   "events": [
     {
@@ -395,6 +408,13 @@
       "date": "2026-09-30",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"en-card-matthew-11-28.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-30T21:25:51.683Z",
+      "level": "info",
+      "date": "2026-10-03",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-03T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-91-1-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
