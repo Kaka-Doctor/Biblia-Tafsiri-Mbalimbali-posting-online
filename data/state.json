@@ -204,10 +204,23 @@
           "id": "122206178336587338"
         }
       }
+    },
+    "2026-10-04": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-04T06:00:00.000Z",
+        "at": "2026-10-01T23:52:58.110Z",
+        "photo": "en-card-psalm-34-8.jpg",
+        "caption": "𝗧𝗔𝗦𝗧𝗘 𝗔𝗡𝗗 𝗦𝗘𝗘 𝗛𝗜𝗦 𝗚𝗢𝗢𝗗𝗡𝗘𝗦𝗦\n\nPsalm 34:8\n\n\"Taste and see that the LORD is good; blessed is the one who takes refuge in him.\"\n\nGod's goodness is not a theory to debate but a taste to experience. Take one step of trust today, and you will find Him sweeter than anything else you have been feeding on.\n\n#Psalm #TasteAndSee #GodIsGood #BlessedRefuge #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122206311794587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 5,
+    "en": 6,
     "sw": 7
   },
   "events": [
@@ -427,6 +440,13 @@
       "date": "2026-10-01",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"sw-card-zaburi-62-1.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-01T23:52:58.111Z",
+      "level": "info",
+      "date": "2026-10-04",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-04T06:00:00.000Z, English) — \"en-card-psalm-34-8.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
