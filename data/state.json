@@ -163,14 +163,19 @@
     },
     "2026-10-01": {
       "09:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-01T07:11:49.253Z",
         "publishTime": "2026-10-01T06:00:00.000Z",
-        "at": "2026-09-28T22:01:26.863Z",
         "photo": "sw-card-zaburi-62-1.jpg",
         "caption": "𝗧𝗨𝗟𝗜𝗔 𝗠𝗕𝗘𝗟𝗘 𝗭𝗔 𝗠𝗨𝗡𝗚𝗨\n\nZaburi 62:1\n\n\"Nafsi yangu yamngoja Mungu peke yake kwa kimya, Wokovu wangu hutoka kwake.\"\n\nKatika makelele na mivurugo ya dunia, roho zetu hupata utulivu wa kweli tukitulia mbele za Mungu.\nLeo, mwelekee Yeye kwa utulivu, kwani wokovu wako umetoka kwake, wala si kutokana na juhudi za mwanadamu.\n\n#Zaburi #NafsiYangu #KimyaMbeleZaMungu #Wokovu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "17907475758328103",
+          "permalink": "https://www.instagram.com/p/Dd8V-q9F3Gu/"
+        },
         "fb": {
-          "id": "122205950438587338"
+          "id": "447560908444853_122205950438587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205950438587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -415,6 +420,13 @@
       "date": "2026-10-03",
       "slot": "09:00",
       "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-03T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-91-1-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-01T07:11:49.253Z",
+      "level": "success",
+      "date": "2026-10-01",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-zaburi-62-1.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
