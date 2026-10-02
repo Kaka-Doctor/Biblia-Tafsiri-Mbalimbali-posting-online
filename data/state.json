@@ -222,11 +222,24 @@
           "id": "122206311794587338"
         }
       }
+    },
+    "2026-10-05": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-05T06:00:00.000Z",
+        "at": "2026-10-02T21:20:37.297Z",
+        "photo": "sw-card-isaya-43-19.jpg",
+        "caption": "𝗠𝗨𝗡𝗚𝗨 𝗔𝗡𝗔𝗧𝗘𝗡𝗗𝗔 𝗡𝗘𝗡𝗢 𝗝𝗜𝗣𝗬𝗔\n\nIsaya 43:19\n\n\"Tazama, nitatenda neno jipya; sasa litachipuka; je! Hamtalijua sasa? Nitafanya njia hata jangwani, na mito ya maji nyikani.\"\n\nMungu si tu anarejea yaliyopita, bali anatenda mambo makuu mapya hata katika nyanja kame za maisha yako.\nFungua macho yako ya kiroho leo, kwa maana njia hii mpya anayoitengeneza nyikani imekusudiwa kukupitisha wewe.\n\n#Isaya #NenoJipya #NjiaJangwani #MatumainiMapya #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122206426088587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 6,
-    "sw": 7
+    "sw": 8
   },
   "events": [
     {
@@ -459,6 +472,13 @@
       "date": "2026-10-02",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"en-card-psalm-46-1.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-02T21:20:37.297Z",
+      "level": "info",
+      "date": "2026-10-05",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-05T06:00:00.000Z, Kiswahili) — \"sw-card-isaya-43-19.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
