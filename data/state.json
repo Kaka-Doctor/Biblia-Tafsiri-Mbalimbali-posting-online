@@ -240,10 +240,23 @@
           "id": "122206426088587338"
         }
       }
+    },
+    "2026-10-06": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-06T06:00:00.000Z",
+        "at": "2026-10-03T22:26:29.883Z",
+        "photo": "votd-2026-09-22-a.jpg",
+        "caption": "𝗟𝗜𝗩𝗘 𝗙𝗢𝗥 𝗚𝗢𝗗'𝗦 𝗔𝗣𝗣𝗥𝗢𝗩𝗔𝗟\n\nGalatians 1:10\n\n\"Am I now trying to win the approval of human beings, or of God? Or am I trying to please people? If I were still trying to please people, I would not be a servant of Christ.\"\n\nWhose applause are you living for? When the fear of people's opinions loosens its grip, serving Christ becomes simple and free — aim today at the one audience who already delights in you.\n\n#Galatians #PleaseGodNotPeople #ServantOfChrist #FreedomInChrist #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122206547732587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 6,
+    "en": 7,
     "sw": 8
   },
   "events": [
@@ -491,6 +504,13 @@
       "date": "2026-10-03",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"sw-card-zaburi-91-1-2.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-03T22:26:29.883Z",
+      "level": "info",
+      "date": "2026-10-06",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-06T06:00:00.000Z, English) — \"votd-2026-09-22-a.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
