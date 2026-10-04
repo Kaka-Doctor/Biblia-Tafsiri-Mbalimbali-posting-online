@@ -9,10 +9,21 @@ GitHub Actions. No server, no database, no cost. The same verse image + caption
 goes to both platforms in one run: Facebook gets a direct photo upload, Instagram
 gets the image via a container (hidden-FB-photo → CDN URL → media_publish).
 
-The images are **YouVersion Verse of the Day** graphics (previous days) in
-two languages — English images collected from
-`https://www.bible.com/verse-of-the-day`, **Swahili images from
-`https://www.bible.com/sw/verse-of-the-day`** ("Fungu la Siku"). Each image is
+The images come from **three curated sources** in two languages:
+
+- **YouVersion Verse of the Day** graphics (previous days) — English from
+  `https://www.bible.com/verse-of-the-day`, **Swahili from
+  `https://www.bible.com/sw/verse-of-the-day`** ("Fungu la Siku"),
+- **self-made verse cards** (`en-card-*` / `sw-card-*`) on NIV/SUV text with
+  designed backgrounds,
+- **web-sourced verse graphics** (`web-en-*` / `web-sw-*`, owner request
+  2026-10-04) — collected via web image search from **many different sites**
+  (Pinterest, bible.com, DailyVerses, Etsy/Scribd verse cards, Tanzanian
+  Christian sites, and more — each entry records its source). Every one was
+  **machine-vision verified**: the verse text and language on the image were
+  read and checked, and each caption quotes what the image actually shows.
+
+Each image is
 paired in `data/posts.json` with a caption written **in the same language as
 the scripture on that image** (owner rule, 2026-09-22):
 
@@ -51,7 +62,7 @@ So a published post reads:
 Kiswahili the next — "if today you use english tomorrow use swahili". The
 agent tracks the language of the most recent post in `data/state.json` and
 always schedules the opposite language for the next slot, with a separate
-rotation index per language (55 English images, 45 Kiswahili images).
+rotation index per language.
 
 **Google Gemini (optional, owner request 2026-09-22):** if a
 `GEMINI_API_KEY` repo secret is configured
@@ -160,35 +171,43 @@ Until the token exists, the workflow runs end-to-end in plan mode; use
 `"lang": "sw"`. `data/state.json` tracks one rotation index **per language**
 (`rotation.en`, `rotation.sw`) plus the language of every posted slot, and the
 agent alternates the slot language daily. After the last pair of a language
-the cycle restarts — the library holds **100 images (55 English + 45
+the cycle restarts — the library holds **156 images (70 English + 86
 Kiswahili)**: YouVersion VOTD graphics from both language pages, verse cards
 composed on AI backgrounds (NIV text for English, SUV text for Kiswahili,
-fetched from bible.com), and web verse graphics. That is ~200 days of unique
+fetched from bible.com), and **web-sourced verse graphics from many different
+sites** (machine-vision verified, language-matched captions). That is ~300
+days of unique
 content before any image repeats (each language posts every second day).
 To extend a pool:
 
 - **English:** download more previous-days images from
-  `https://www.bible.com/verse-of-the-day` (gallery at the bottom).
+  `https://www.bible.com/verse-of-the-day` (gallery at the bottom), or run a
+  web image search for `"<Book Ch:V> bible verse image"` and verify the text.
 - **Swahili:** same page in Swahili —
   `https://www.bible.com/sw/verse-of-the-day` — the gallery lists the last
-  6 days in Kiswahili; today's designs are also downloadable.
+  6 days in Kiswahili; today's designs are also downloadable. Web image
+  searches for `"mistari ya biblia picha"` / `"<Kitabu S:M> picha"` also
+  yield good Kiswahili verse graphics (verify the language of the text!).
 
 The image URLs are
 `https://s3.amazonaws.com/static-youversionapi-com/images/base/{id}/1280x1280.jpg`.
 Drop them in `data/photos/`, add entries to `data/posts.json` (read the
 verse on each image and write a short matching-language `heading` — bold
 capitals, 3-6 words — plus a caption for it), push —
-done. New entries can be appended anywhere AFTER position 2 of their
+done. New entries can be appended anywhere AFTER the current rotation
+pointer of their
 language pool without disturbing the rotation pointers (`rotation.en` /
 `rotation.sw` in state.json); entries placed BEFORE the current pointer
-shift what posts next.
+shift what posts next. (The web-sourced blocks were inserted exactly AT the
+pointers so the new images start posting at the next unbooked slot.)
 
 ## Repo layout
 
 ```
 data/
-  photos/          100 verse images (55 English + 45 Kiswahili: YouVersion VOTD
-                    graphics + AI-background verse cards + web verse graphics)
+  photos/          156 verse images (70 English + 86 Kiswahili: YouVersion VOTD
+                    graphics + verse cards + VLM-verified web-sourced graphics
+                    from many different sites)
   posts.json       the content pool: image ↔ heading + caption pairs, lang-tagged, alternate daily
   config.json      the switch file: page, slots (09:00), timezone, grace, tokens
   state.json       per-slot status + language + per-language rotation + event log (auto-committed)
