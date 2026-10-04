@@ -258,11 +258,24 @@
           "id": "122206547732587338"
         }
       }
+    },
+    "2026-10-07": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-07T06:00:00.000Z",
+        "at": "2026-10-04T21:57:49.677Z",
+        "photo": "sw-card-isaya-12-2.jpg",
+        "caption": "𝗠𝗨𝗡𝗚𝗨 𝗡𝗗𝗜𝗬𝗘 𝗪𝗢𝗞𝗢𝗩𝗨 𝗪𝗔𝗡𝗚𝗨\n\nIsaya 12:2\n\n\"Tazama, Mungu ndiye wokovu wangu; Nitatumaini wala sitaogopa; Maana BWANA YEHOVA ni nguvu zangu na wimbo wangu; Naye amekuwa wokovu wangu.\"\n\nWokovu si tunachojitahidi kuulinda wenyewe, bali ni Mungu mwenyewe anayetukomboa kwa upendo wake mkuu. Mtumainie BWANA leo, na hofu haitaweza kukaa kwako; yeye atakuimbia wimbo wa ushindi mkamilifu.\n\n#Isaya #WokovuWangu #Sitaogopa #NguvuZangu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122206695182587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 7,
-    "sw": 8
+    "sw": 9
   },
   "events": [
     {
@@ -523,6 +536,13 @@
       "date": "2026-10-04",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"en-card-psalm-34-8.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-04T21:57:49.677Z",
+      "level": "info",
+      "date": "2026-10-07",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-07T06:00:00.000Z, Kiswahili) — \"sw-card-isaya-12-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
