@@ -1,555 +1,567 @@
 {
- "version": 1,
- "days": {
-  "2026-09-22": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-22T06:05:19.508Z",
-    "photo": "votd-2026-09-17.jpg",
-    "ig": {
-     "id": "18086709827274230",
-     "permalink": "https://www.instagram.com/p/DdlDM5Tjrcu/"
+  "version": 1,
+  "days": {
+    "2026-09-22": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-22T06:05:19.508Z",
+        "photo": "votd-2026-09-17.jpg",
+        "ig": {
+          "id": "18086709827274230",
+          "permalink": "https://www.instagram.com/p/DdlDM5Tjrcu/"
+        },
+        "fb": {
+          "id": "447560908444853_122205161444587338",
+          "permalink": "https://www.facebook.com/122205160346587338/posts/122205161444587338"
+        },
+        "lang": "en"
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205161444587338",
-     "permalink": "https://www.facebook.com/122205160346587338/posts/122205161444587338"
+    "2026-09-23": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-23T06:41:30.429Z",
+        "publishTime": "2026-09-23T06:00:00.000Z",
+        "photo": "votd-sw-2026-09-16.jpg",
+        "caption": "Isaya 41:13\n\n\"Usiogope, nitakusaidia.\"\n\nManeno haya BWANA mwenyewe anayatamka kwako — si ahadi ya mbali, bali ya karibu mno. Kama hofu inakufinya leo, jua kwamba Yeye aliyekuumba yu pembeni yako, tayari kushika mkono wako na kukusaidia.\n\n#Isaya #Usiogope #MunguMsaidizi #Imani #BibliaTafsiriMbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "18125663891503104",
+          "permalink": "https://www.instagram.com/p/DdnsJ0WjVON/"
+        },
+        "fb": {
+          "id": "447560908444853_122205176312587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205176312587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "lang": "en"
-   }
-  },
-  "2026-09-23": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-23T06:41:30.429Z",
-    "publishTime": "2026-09-23T06:00:00.000Z",
-    "photo": "votd-sw-2026-09-16.jpg",
-    "caption": "Isaya 41:13\n\n\"Usiogope, nitakusaidia.\"\n\nManeno haya BWANA mwenyewe anayatamka kwako — si ahadi ya mbali, bali ya karibu mno. Kama hofu inakufinya leo, jua kwamba Yeye aliyekuumba yu pembeni yako, tayari kushika mkono wako na kukusaidia.\n\n#Isaya #Usiogope #MunguMsaidizi #Imani #BibliaTafsiriMbalimbali",
-    "lang": "sw",
-    "ig": {
-     "id": "18125663891503104",
-     "permalink": "https://www.instagram.com/p/DdnsJ0WjVON/"
+    "2026-09-24": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-24T06:47:13.079Z",
+        "publishTime": "2026-09-24T06:00:00.000Z",
+        "photo": "votd-2026-09-15.jpg",
+        "caption": "𝗚𝗢𝗗'𝗦 𝗠𝗘𝗥𝗖𝗬 𝗡𝗘𝗩𝗘𝗥 𝗥𝗨𝗡𝗦 𝗢𝗨𝗧\n\nLamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "18183528136415260",
+          "permalink": "https://www.instagram.com/p/DdqRmaCjEYB/"
+        },
+        "fb": {
+          "id": "447560908444853_122205290834587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205290834587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205176312587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205176312587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-24": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-24T06:47:13.079Z",
-    "publishTime": "2026-09-24T06:00:00.000Z",
-    "photo": "votd-2026-09-15.jpg",
-    "caption": "𝗚𝗢𝗗'𝗦 𝗠𝗘𝗥𝗖𝗬 𝗡𝗘𝗩𝗘𝗥 𝗥𝗨𝗡𝗦 𝗢𝗨𝗧\n\nLamentations 3:22\n\n\"The faithful love of the LORD never ends! His mercies never cease.\"\n\nEvery new morning is quiet proof that God's mercy has not run out on you. Whatever yesterday held, His compassion meets you fresh today — great is His faithfulness.\n\n#Lamentations #MercyOfGod #FaithfulLove #NewMercies #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "ig": {
-     "id": "18183528136415260",
-     "permalink": "https://www.instagram.com/p/DdqRmaCjEYB/"
+    "2026-09-25": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-25T07:47:26.841Z",
+        "publishTime": "2026-09-25T06:00:00.000Z",
+        "photo": "sw-card-yohana-14-1.jpg",
+        "caption": "𝗠𝗦𝗜𝗙𝗔𝗗𝗛𝗔𝗜𝗞𝗘 — 𝗪𝗘𝗞𝗔 𝗜𝗠𝗔𝗡𝗜 𝗞𝗪𝗔𝗞𝗘\n\nYohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nAkifahamu kabisa jinsi mioyo yetu inavyoweza kufadhaika kirahisi, Yesu hututangulizia amani yake ya ndani hata kabla ya majaribu. Mkabidhi Bwana Yesu imani yako kamili leo, na moyo wako utafurahia amani isiyoelezeka inayopita ufahamu wote.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "18471612970115689",
+          "permalink": "https://www.instagram.com/p/Dds9SlpnXnD/"
+        },
+        "fb": {
+          "id": "447560908444853_122205290882587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205290882587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205290834587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205290834587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-25": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-25T07:47:26.841Z",
-    "publishTime": "2026-09-25T06:00:00.000Z",
-    "photo": "sw-card-yohana-14-1.jpg",
-    "caption": "𝗠𝗦𝗜𝗙𝗔𝗗𝗛𝗔𝗜𝗞𝗘 — 𝗪𝗘𝗞𝗔 𝗜𝗠𝗔𝗡𝗜 𝗞𝗪𝗔𝗞𝗘\n\nYohana 14:1\n\n\"Msifadhaike mioyoni mwenu; mnamwamini Mungu, niaminini na mimi.\"\n\nAkifahamu kabisa jinsi mioyo yetu inavyoweza kufadhaika kirahisi, Yesu hututangulizia amani yake ya ndani hata kabla ya majaribu. Mkabidhi Bwana Yesu imani yako kamili leo, na moyo wako utafurahia amani isiyoelezeka inayopita ufahamu wote.\n\n#Yohana #Msifadhaike #Imani #AmaniYaKristo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "ig": {
-     "id": "18471612970115689",
-     "permalink": "https://www.instagram.com/p/Dds9SlpnXnD/"
+    "2026-09-26": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-26T06:37:06.448Z",
+        "publishTime": "2026-09-26T06:00:00.000Z",
+        "photo": "votd-2026-09-16.jpg",
+        "caption": "𝗚𝗢𝗗 𝗜𝗦 𝗬𝗢𝗨𝗥 𝗛𝗘𝗟𝗣𝗘𝗥\n\nIsaiah 41:13\n\n\"Fear not, for I am the one who helps you.\"\n\nThe God who formed you does not shout this from a distance — He holds your right hand as He says it. Whatever fear you carry today, put it down; your Helper is already beside you.\n\n#Isaiah #FearNot #GodIsMyHelper #FaithOverFear #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "18129649555828177",
+          "permalink": "https://www.instagram.com/p/DdvaBs0IByX/"
+        },
+        "fb": {
+          "id": "447560908444853_122205364160587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205364160587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205290882587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205290882587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-26": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-26T06:37:06.448Z",
-    "publishTime": "2026-09-26T06:00:00.000Z",
-    "photo": "votd-2026-09-16.jpg",
-    "caption": "𝗚𝗢𝗗 𝗜𝗦 𝗬𝗢𝗨𝗥 𝗛𝗘𝗟𝗣𝗘𝗥\n\nIsaiah 41:13\n\n\"Fear not, for I am the one who helps you.\"\n\nThe God who formed you does not shout this from a distance — He holds your right hand as He says it. Whatever fear you carry today, put it down; your Helper is already beside you.\n\n#Isaiah #FearNot #GodIsMyHelper #FaithOverFear #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "ig": {
-     "id": "18129649555828177",
-     "permalink": "https://www.instagram.com/p/DdvaBs0IByX/"
+    "2026-09-27": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-27T09:10:31.817Z",
+        "publishTime": "2026-09-27T06:00:00.000Z",
+        "photo": "sw-card-mathayo-6-33.jpg",
+        "caption": "𝗧𝗔𝗙𝗨𝗧𝗔 𝗞𝗪𝗔𝗡𝗭𝗔 𝗨𝗙𝗔𝗟𝗠𝗘 𝗪𝗔𝗞𝗘\n\nMathayo 6:33\n\n\"Bali utafuteni kwanza ufalme wake, na haki yake; na hayo yote mtazidishiwa.\"\n\nMungu huyafahamu mahitaji yako yote, huku akiweka kipaumbele chake kwanza, mengine yatafuata kwa mpangilio.\nUkiutafuta ufalme wake leo, utashuhudia mambo mengine ya maisha yakikaa mahali pake pasipo hofu.\n\n#Mathayo #UfalmeWaMungu #TafuteniKwanza #MaadamuYaMungu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "18002451663005465",
+          "permalink": "https://www.instagram.com/p/DdyQYcdltLa/"
+        },
+        "fb": {
+          "id": "447560908444853_122205470510587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205470510587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205364160587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205364160587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-27": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-27T09:10:31.817Z",
-    "publishTime": "2026-09-27T06:00:00.000Z",
-    "photo": "sw-card-mathayo-6-33.jpg",
-    "caption": "𝗧𝗔𝗙𝗨𝗧𝗔 𝗞𝗪𝗔𝗡𝗭𝗔 𝗨𝗙𝗔𝗟𝗠𝗘 𝗪𝗔𝗞𝗘\n\nMathayo 6:33\n\n\"Bali utafuteni kwanza ufalme wake, na haki yake; na hayo yote mtazidishiwa.\"\n\nMungu huyafahamu mahitaji yako yote, huku akiweka kipaumbele chake kwanza, mengine yatafuata kwa mpangilio.\nUkiutafuta ufalme wake leo, utashuhudia mambo mengine ya maisha yakikaa mahali pake pasipo hofu.\n\n#Mathayo #UfalmeWaMungu #TafuteniKwanza #MaadamuYaMungu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "ig": {
-     "id": "18002451663005465",
-     "permalink": "https://www.instagram.com/p/DdyQYcdltLa/"
+    "2026-09-28": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-28T06:57:36.971Z",
+        "publishTime": "2026-09-28T06:00:00.000Z",
+        "photo": "en-card-john-14-27.jpg",
+        "caption": "𝗧𝗛𝗘 𝗣𝗘𝗔𝗖𝗘 𝗝𝗘𝗦𝗨𝗦 𝗚𝗜𝗩𝗘𝗦\n\nJohn 14:27\n\n\"Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.\"\n\nJesus does not hand out peace like the world does — conditional, temporary, easily lost. His peace guards the heart that stays close to Him, so keep your grip on His words today.\n\n#John #PeaceOfChrist #DoNotBeAfraid #UntroubledHeart #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "18144365752598582",
+          "permalink": "https://www.instagram.com/p/Dd0l-FtE9eF/"
+        },
+        "fb": {
+          "id": "447560908444853_122205594734587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205594734587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205470510587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205470510587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-28": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-28T06:57:36.971Z",
-    "publishTime": "2026-09-28T06:00:00.000Z",
-    "photo": "en-card-john-14-27.jpg",
-    "caption": "𝗧𝗛𝗘 𝗣𝗘𝗔𝗖𝗘 𝗝𝗘𝗦𝗨𝗦 𝗚𝗜𝗩𝗘𝗦\n\nJohn 14:27\n\n\"Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.\"\n\nJesus does not hand out peace like the world does — conditional, temporary, easily lost. His peace guards the heart that stays close to Him, so keep your grip on His words today.\n\n#John #PeaceOfChrist #DoNotBeAfraid #UntroubledHeart #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "ig": {
-     "id": "18144365752598582",
-     "permalink": "https://www.instagram.com/p/Dd0l-FtE9eF/"
+    "2026-09-29": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-29T07:32:05.532Z",
+        "publishTime": "2026-09-29T06:00:00.000Z",
+        "photo": "sw-card-zaburi-55-22.jpg",
+        "caption": "𝗠𝗧𝗪𝗜𝗞𝗘 𝗕𝗪𝗔𝗡𝗔 𝗠𝗭𝗜𝗚𝗢 𝗪𝗔𝗞𝗢\n\nZaburi 55:22\n\n\"Umtwike BWANA mzigo wako naye atakutegemeza, Hatamwacha mwenye haki aondoshwe milele.\"\n\nKamwe haukupangiwa kubeba mzigo wa maisha peke yako; Bwana mwenyewe anakualika umkabidhi. Mkabidhi leo kila kinachokulemea, naye atakushika mkono na kukutegemeza daima kwa uwezo wake mkuu.\n\n#Zaburi #MzigoWako #MtwikeBWANA #Tegemezo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "18193076155392450",
+          "permalink": "https://www.instagram.com/p/Dd3OtQ-FNEz/"
+        },
+        "fb": {
+          "id": "447560908444853_122205705710587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205705710587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205594734587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205594734587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-29": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-29T07:32:05.532Z",
-    "publishTime": "2026-09-29T06:00:00.000Z",
-    "photo": "sw-card-zaburi-55-22.jpg",
-    "caption": "𝗠𝗧𝗪𝗜𝗞𝗘 𝗕𝗪𝗔𝗡𝗔 𝗠𝗭𝗜𝗚𝗢 𝗪𝗔𝗞𝗢\n\nZaburi 55:22\n\n\"Umtwike BWANA mzigo wako naye atakutegemeza, Hatamwacha mwenye haki aondoshwe milele.\"\n\nKamwe haukupangiwa kubeba mzigo wa maisha peke yako; Bwana mwenyewe anakualika umkabidhi. Mkabidhi leo kila kinachokulemea, naye atakushika mkono na kukutegemeza daima kwa uwezo wake mkuu.\n\n#Zaburi #MzigoWako #MtwikeBWANA #Tegemezo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "ig": {
-     "id": "18193076155392450",
-     "permalink": "https://www.instagram.com/p/Dd3OtQ-FNEz/"
+    "2026-09-30": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-09-30T08:36:13.621Z",
+        "publishTime": "2026-09-30T06:00:00.000Z",
+        "photo": "en-card-matthew-11-28.jpg",
+        "caption": "𝗖𝗢𝗠𝗘 𝗧𝗢 𝗝𝗘𝗦𝗨𝗦 𝗔𝗡𝗗 𝗥𝗘𝗦𝗧\n\nMatthew 11:28\n\n\"Come to me, all you who are weary and burdened, and I will give you rest.\"\n\nJesus does not demand that you carry your load one more step before inviting you in. Whatever has drained you this week, lay it at His feet and receive the rest He promises.\n\n#Matthew #ComeToMe #RestForTheWeary #BurdenBearer #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "17975047935036587",
+          "permalink": "https://www.instagram.com/p/Dd561TFmIiG/"
+        },
+        "fb": {
+          "id": "447560908444853_122205830072587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205830072587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205705710587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205705710587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-09-30": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-09-30T08:36:13.621Z",
-    "publishTime": "2026-09-30T06:00:00.000Z",
-    "photo": "en-card-matthew-11-28.jpg",
-    "caption": "𝗖𝗢𝗠𝗘 𝗧𝗢 𝗝𝗘𝗦𝗨𝗦 𝗔𝗡𝗗 𝗥𝗘𝗦𝗧\n\nMatthew 11:28\n\n\"Come to me, all you who are weary and burdened, and I will give you rest.\"\n\nJesus does not demand that you carry your load one more step before inviting you in. Whatever has drained you this week, lay it at His feet and receive the rest He promises.\n\n#Matthew #ComeToMe #RestForTheWeary #BurdenBearer #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "ig": {
-     "id": "17975047935036587",
-     "permalink": "https://www.instagram.com/p/Dd561TFmIiG/"
+    "2026-10-01": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-10-01T07:11:49.253Z",
+        "publishTime": "2026-10-01T06:00:00.000Z",
+        "photo": "sw-card-zaburi-62-1.jpg",
+        "caption": "𝗧𝗨𝗟𝗜𝗔 𝗠𝗕𝗘𝗟𝗘 𝗭𝗔 𝗠𝗨𝗡𝗚𝗨\n\nZaburi 62:1\n\n\"Nafsi yangu yamngoja Mungu peke yake kwa kimya, Wokovu wangu hutoka kwake.\"\n\nKatika makelele na mivurugo ya dunia, roho zetu hupata utulivu wa kweli tukitulia mbele za Mungu.\nLeo, mwelekee Yeye kwa utulivu, kwani wokovu wako umetoka kwake, wala si kutokana na juhudi za mwanadamu.\n\n#Zaburi #NafsiYangu #KimyaMbeleZaMungu #Wokovu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "17907475758328103",
+          "permalink": "https://www.instagram.com/p/Dd8V-q9F3Gu/"
+        },
+        "fb": {
+          "id": "447560908444853_122205950438587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122205950438587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205830072587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205830072587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-10-01": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-10-01T07:11:49.253Z",
-    "publishTime": "2026-10-01T06:00:00.000Z",
-    "photo": "sw-card-zaburi-62-1.jpg",
-    "caption": "𝗧𝗨𝗟𝗜𝗔 𝗠𝗕𝗘𝗟𝗘 𝗭𝗔 𝗠𝗨𝗡𝗚𝗨\n\nZaburi 62:1\n\n\"Nafsi yangu yamngoja Mungu peke yake kwa kimya, Wokovu wangu hutoka kwake.\"\n\nKatika makelele na mivurugo ya dunia, roho zetu hupata utulivu wa kweli tukitulia mbele za Mungu.\nLeo, mwelekee Yeye kwa utulivu, kwani wokovu wako umetoka kwake, wala si kutokana na juhudi za mwanadamu.\n\n#Zaburi #NafsiYangu #KimyaMbeleZaMungu #Wokovu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "ig": {
-     "id": "17907475758328103",
-     "permalink": "https://www.instagram.com/p/Dd8V-q9F3Gu/"
+    "2026-10-02": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-10-02T09:01:04.765Z",
+        "publishTime": "2026-10-02T06:00:00.000Z",
+        "photo": "en-card-psalm-46-1.jpg",
+        "caption": "𝗚𝗢𝗗 𝗜𝗦 𝗢𝗨𝗥 𝗥𝗘𝗙𝗨𝗚𝗘\n\nPsalm 46:1\n\n\"God is our refuge and strength, an ever-present help in trouble.\"\n\nTrouble has a way of making everything feel unstable — except God. Run into Him as your refuge today; He is not a distant help but an ever-present one.\n\n#Psalm #GodIsMyRefuge #EverPresentHelp #StrengthForToday #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "18112815802991498",
+          "permalink": "https://www.instagram.com/p/Dd_HRooHelu/"
+        },
+        "fb": {
+          "id": "447560908444853_122206072412587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122206072412587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122205950438587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122205950438587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-10-02": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-10-02T09:01:04.765Z",
-    "publishTime": "2026-10-02T06:00:00.000Z",
-    "photo": "en-card-psalm-46-1.jpg",
-    "caption": "𝗚𝗢𝗗 𝗜𝗦 𝗢𝗨𝗥 𝗥𝗘𝗙𝗨𝗚𝗘\n\nPsalm 46:1\n\n\"God is our refuge and strength, an ever-present help in trouble.\"\n\nTrouble has a way of making everything feel unstable — except God. Run into Him as your refuge today; He is not a distant help but an ever-present one.\n\n#Psalm #GodIsMyRefuge #EverPresentHelp #StrengthForToday #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "ig": {
-     "id": "18112815802991498",
-     "permalink": "https://www.instagram.com/p/Dd_HRooHelu/"
+    "2026-10-03": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-10-03T06:33:52.705Z",
+        "publishTime": "2026-10-03T06:00:00.000Z",
+        "photo": "sw-card-zaburi-91-1-2.jpg",
+        "caption": "𝗕𝗪𝗔𝗡𝗔 𝗡𝗗𝗜𝗬𝗘 𝗞𝗜𝗠𝗕𝗜𝗟𝗜𝗢 𝗟𝗔𝗡𝗚𝗨\n\nZaburi 91:1-2\n\n\"Aketiye mahali pa siri pake Aliye juu Atakaa katika uvuli wake Mwenyezi. Nitasema, BWANA ndiye kimbilio langu na ngome yangu, Mungu wangu nitakayemtumaini.\"\n\nAnayekaa katika uvuli wa Mwenyezi Mungu hupata kimbilio kamili, lisilofikiwa na hatari yoyote. Tamka leo kuwa BWANA ndiye kimbilio lako imara, nawe utaishi kwa ujasiri mkuu ukimtegemea peke yake.\n\n#Zaburi #Kimbilio #UvuliWakeMwenyezi #Ujasiri #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "18143950204596648",
+          "permalink": "https://www.instagram.com/p/DeBbONCoK5c/"
+        },
+        "fb": {
+          "id": "447560908444853_122206178336587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122206178336587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122206072412587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122206072412587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-10-03": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-10-03T06:33:52.705Z",
-    "publishTime": "2026-10-03T06:00:00.000Z",
-    "photo": "sw-card-zaburi-91-1-2.jpg",
-    "caption": "𝗕𝗪𝗔𝗡𝗔 𝗡𝗗𝗜𝗬𝗘 𝗞𝗜𝗠𝗕𝗜𝗟𝗜𝗢 𝗟𝗔𝗡𝗚𝗨\n\nZaburi 91:1-2\n\n\"Aketiye mahali pa siri pake Aliye juu Atakaa katika uvuli wake Mwenyezi. Nitasema, BWANA ndiye kimbilio langu na ngome yangu, Mungu wangu nitakayemtumaini.\"\n\nAnayekaa katika uvuli wa Mwenyezi Mungu hupata kimbilio kamili, lisilofikiwa na hatari yoyote. Tamka leo kuwa BWANA ndiye kimbilio lako imara, nawe utaishi kwa ujasiri mkuu ukimtegemea peke yake.\n\n#Zaburi #Kimbilio #UvuliWakeMwenyezi #Ujasiri #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "ig": {
-     "id": "18143950204596648",
-     "permalink": "https://www.instagram.com/p/DeBbONCoK5c/"
+    "2026-10-04": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-10-04T06:21:55.960Z",
+        "publishTime": "2026-10-04T06:00:00.000Z",
+        "photo": "en-card-psalm-34-8.jpg",
+        "caption": "𝗧𝗔𝗦𝗧𝗘 𝗔𝗡𝗗 𝗦𝗘𝗘 𝗛𝗜𝗦 𝗚𝗢𝗢𝗗𝗡𝗘𝗦𝗦\n\nPsalm 34:8\n\n\"Taste and see that the LORD is good; blessed is the one who takes refuge in him.\"\n\nGod's goodness is not a theory to debate but a taste to experience. Take one step of trust today, and you will find Him sweeter than anything else you have been feeding on.\n\n#Psalm #TasteAndSee #GodIsGood #BlessedRefuge #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "18027431837882486",
+          "permalink": "https://www.instagram.com/p/DeD-plRliDd/"
+        },
+        "fb": {
+          "id": "447560908444853_122206311794587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122206311794587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122206178336587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122206178336587338&set=a.122189068466587338&type=3"
-    }
-   }
-  },
-  "2026-10-04": {
-   "09:00": {
-    "status": "published",
-    "at": "2026-10-04T06:21:55.960Z",
-    "publishTime": "2026-10-04T06:00:00.000Z",
-    "photo": "en-card-psalm-34-8.jpg",
-    "caption": "𝗧𝗔𝗦𝗧𝗘 𝗔𝗡𝗗 𝗦𝗘𝗘 𝗛𝗜𝗦 𝗚𝗢𝗢𝗗𝗡𝗘𝗦𝗦\n\nPsalm 34:8\n\n\"Taste and see that the LORD is good; blessed is the one who takes refuge in him.\"\n\nGod's goodness is not a theory to debate but a taste to experience. Take one step of trust today, and you will find Him sweeter than anything else you have been feeding on.\n\n#Psalm #TasteAndSee #GodIsGood #BlessedRefuge #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "ig": {
-     "id": "18027431837882486",
-     "permalink": "https://www.instagram.com/p/DeD-plRliDd/"
+    "2026-10-05": {
+      "09:00": {
+        "status": "published",
+        "at": "2026-10-05T07:03:22.762Z",
+        "publishTime": "2026-10-05T06:00:00.000Z",
+        "photo": "sw-card-isaya-43-19.jpg",
+        "caption": "𝗠𝗨𝗡𝗚𝗨 𝗔𝗡𝗔𝗧𝗘𝗡𝗗𝗔 𝗡𝗘𝗡𝗢 𝗝𝗜𝗣𝗬𝗔\n\nIsaya 43:19\n\n\"Tazama, nitatenda neno jipya; sasa litachipuka; je! Hamtalijua sasa? Nitafanya njia hata jangwani, na mito ya maji nyikani.\"\n\nMungu si tu anarejea yaliyopita, bali anatenda mambo makuu mapya hata katika nyanja kame za maisha yako.\nFungua macho yako ya kiroho leo, kwa maana njia hii mpya anayoitengeneza nyikani imekusudiwa kukupitisha wewe.\n\n#Isaya #NenoJipya #NjiaJangwani #MatumainiMapya #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "ig": {
+          "id": "18086233691307450",
+          "permalink": "https://www.instagram.com/p/DeGoMJRjP1u/"
+        },
+        "fb": {
+          "id": "447560908444853_122206426088587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122206426088587338&set=a.122189068466587338&type=3"
+        }
+      }
     },
-    "fb": {
-     "id": "447560908444853_122206311794587338",
-     "permalink": "https://www.facebook.com/photo.php?fbid=122206311794587338&set=a.122189068466587338&type=3"
+    "2026-10-06": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-06T06:00:00.000Z",
+        "at": "2026-10-03T22:26:29.883Z",
+        "photo": "votd-2026-09-22-a.jpg",
+        "caption": "𝗟𝗜𝗩𝗘 𝗙𝗢𝗥 𝗚𝗢𝗗'𝗦 𝗔𝗣𝗣𝗥𝗢𝗩𝗔𝗟\n\nGalatians 1:10\n\n\"Am I now trying to win the approval of human beings, or of God? Or am I trying to please people? If I were still trying to please people, I would not be a servant of Christ.\"\n\nWhose applause are you living for? When the fear of people's opinions loosens its grip, serving Christ becomes simple and free — aim today at the one audience who already delights in you.\n\n#Galatians #PleaseGodNotPeople #ServantOfChrist #FreedomInChrist #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122206547732587338"
+        }
+      }
+    },
+    "2026-10-07": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-07T06:00:00.000Z",
+        "at": "2026-10-04T21:57:49.677Z",
+        "photo": "sw-card-isaya-12-2.jpg",
+        "caption": "𝗠𝗨𝗡𝗚𝗨 𝗡𝗗𝗜𝗬𝗘 𝗪𝗢𝗞𝗢𝗩𝗨 𝗪𝗔𝗡𝗚𝗨\n\nIsaya 12:2\n\n\"Tazama, Mungu ndiye wokovu wangu; Nitatumaini wala sitaogopa; Maana BWANA YEHOVA ni nguvu zangu na wimbo wangu; Naye amekuwa wokovu wangu.\"\n\nWokovu si tunachojitahidi kuulinda wenyewe, bali ni Mungu mwenyewe anayetukomboa kwa upendo wake mkuu. Mtumainie BWANA leo, na hofu haitaweza kukaa kwako; yeye atakuimbia wimbo wa ushindi mkamilifu.\n\n#Isaya #WokovuWangu #Sitaogopa #NguvuZangu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122206695182587338"
+        }
+      }
     }
-   }
   },
-  "2026-10-05": {
-   "09:00": {
-    "status": "scheduled",
-    "publishTime": "2026-10-05T06:00:00.000Z",
-    "at": "2026-10-02T21:20:37.297Z",
-    "photo": "sw-card-isaya-43-19.jpg",
-    "caption": "𝗠𝗨𝗡𝗚𝗨 𝗔𝗡𝗔𝗧𝗘𝗡𝗗𝗔 𝗡𝗘𝗡𝗢 𝗝𝗜𝗣𝗬𝗔\n\nIsaya 43:19\n\n\"Tazama, nitatenda neno jipya; sasa litachipuka; je! Hamtalijua sasa? Nitafanya njia hata jangwani, na mito ya maji nyikani.\"\n\nMungu si tu anarejea yaliyopita, bali anatenda mambo makuu mapya hata katika nyanja kame za maisha yako.\nFungua macho yako ya kiroho leo, kwa maana njia hii mpya anayoitengeneza nyikani imekusudiwa kukupitisha wewe.\n\n#Isaya #NenoJipya #NjiaJangwani #MatumainiMapya #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "fb": {
-     "id": "122206426088587338"
+  "rotation": {
+    "en": 7,
+    "sw": 9
+  },
+  "events": [
+    {
+      "ts": "2026-09-22T05:54:41.400Z",
+      "level": "info",
+      "date": "2026-09-23",
+      "slot": "09:00",
+      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z) — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-22T05:54:58.612Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z) — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-22T06:05:19.508Z",
+      "level": "success",
+      "date": "2026-09-22",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"votd-2026-09-17.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-22T09:40:00.000Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "LANGUAGE RULE (owner request): caption language must match the image language (English image -> English caption, Swahili image -> Swahili caption) with daily EN/SW alternation. 9 Swahili YouVersion VOTD images added; all 18 English captions rewritten in English. Removed the 2 Meta-scheduled 09-23/09-24 posts (they had EN images + SW captions); they will be re-booked language-correct by the next run: 09-23 Kiswahili, 09-24 English. Optional GEMINI_API_KEY secret enables Google Gemini rewriting of Swahili captions."
+    },
+    {
+      "ts": "2026-09-22T09:14:10.356Z",
+      "level": "info",
+      "date": "2026-09-23",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z, Kiswahili) — \"votd-sw-2026-09-16.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-22T09:14:13.078Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-22T13:30:00.000Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "LIBRARY EXPANSION (owner request): 33 → 100 images (55 EN / 45 SW). +7 YouVersion VOTD designs (Gal 1:10, 22 Sep), +60 verse cards (30 EN on NIV text + 30 SW on SUV text from bible.com, AI backgrounds, VLM-verified). New entries inserted at pool position 2; rotation pointers advanced to the new block, so the 09-25 (SW) and 09-26 (EN) slots are the first to use new images. GEMINI self-test button added (Actions → Run workflow → gemini-test); GEMINI_API_KEY secret not yet visible on the repo — Swahili captions use the stored text until it is saved."
+    },
+    {
+      "ts": "2026-09-22T13:29:48.927Z",
+      "level": "info",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T06:41:30.429Z",
+      "level": "success",
+      "date": "2026-09-23",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"votd-sw-2026-09-16.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-23T06:56:25.085Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "FORMAT CHANGE (owner request 2026-09-23): every post now starts with a short HEADING in capital letters + bold (Unicode bold — FB/IG have no native bold), then the scripture verse, then explanation + hashtags as before. Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked with old no-heading captions); next landed run re-books the same verses (rotation reset en→0/sw→2) with the new format."
+    },
+    {
+      "ts": "2026-09-23T06:57:43.169Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T06:57:52.790Z",
+      "level": "info",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T07:35:30.192Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "FORMAT CHANGE (owner request 2026-09-23): app promo line \"Download Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali\" added below the hashtags of every post (FB + IG). Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked without the promo); next landed run re-books the same verses (rotation reset en→0/sw→2) with the full format: bold heading → verse → explanation → hashtags → app promo."
+    },
+    {
+      "ts": "2026-09-23T07:36:04.162Z",
+      "level": "info",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T07:36:13.841Z",
+      "level": "info",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-23T23:13:27.601Z",
+      "level": "info",
+      "date": "2026-09-26",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-26T06:00:00.000Z, English) — \"votd-2026-09-16.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-24T06:47:13.079Z",
+      "level": "success",
+      "date": "2026-09-24",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-24T21:31:45.680Z",
+      "level": "info",
+      "date": "2026-09-27",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-27T06:00:00.000Z, Kiswahili) — \"sw-card-mathayo-6-33.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-25T07:47:26.841Z",
+      "level": "success",
+      "date": "2026-09-25",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-yohana-14-1.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-25T22:49:56.573Z",
+      "level": "info",
+      "date": "2026-09-28",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-28T06:00:00.000Z, English) — \"en-card-john-14-27.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-26T06:37:06.448Z",
+      "level": "success",
+      "date": "2026-09-26",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-26T22:12:45.260Z",
+      "level": "info",
+      "date": "2026-09-29",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-29T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-55-22.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-27T09:10:31.817Z",
+      "level": "success",
+      "date": "2026-09-27",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-mathayo-6-33.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-27T23:04:17.024Z",
+      "level": "info",
+      "date": "2026-09-30",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-30T06:00:00.000Z, English) — \"en-card-matthew-11-28.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-28T06:57:36.971Z",
+      "level": "success",
+      "date": "2026-09-28",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"en-card-john-14-27.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-28T22:01:26.863Z",
+      "level": "info",
+      "date": "2026-10-01",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-01T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-62-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-29T07:32:05.532Z",
+      "level": "success",
+      "date": "2026-09-29",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-zaburi-55-22.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-29T23:44:00.792Z",
+      "level": "info",
+      "date": "2026-10-02",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-02T06:00:00.000Z, English) — \"en-card-psalm-46-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-09-30T08:36:13.621Z",
+      "level": "success",
+      "date": "2026-09-30",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"en-card-matthew-11-28.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-09-30T21:25:51.683Z",
+      "level": "info",
+      "date": "2026-10-03",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-03T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-91-1-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-01T07:11:49.253Z",
+      "level": "success",
+      "date": "2026-10-01",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-zaburi-62-1.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-01T23:52:58.111Z",
+      "level": "info",
+      "date": "2026-10-04",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-04T06:00:00.000Z, English) — \"en-card-psalm-34-8.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-02T09:01:04.765Z",
+      "level": "success",
+      "date": "2026-10-02",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"en-card-psalm-46-1.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-02T21:20:37.297Z",
+      "level": "info",
+      "date": "2026-10-05",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-05T06:00:00.000Z, Kiswahili) — \"sw-card-isaya-43-19.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-03T06:33:52.705Z",
+      "level": "success",
+      "date": "2026-10-03",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-zaburi-91-1-2.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-03T22:26:29.883Z",
+      "level": "info",
+      "date": "2026-10-06",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-06T06:00:00.000Z, English) — \"votd-2026-09-22-a.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-04T06:21:55.960Z",
+      "level": "success",
+      "date": "2026-10-04",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"en-card-psalm-34-8.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-04T21:57:49.677Z",
+      "level": "info",
+      "date": "2026-10-07",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-07T06:00:00.000Z, Kiswahili) — \"sw-card-isaya-12-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-04T22:21:55.000Z",
+      "level": "info",
+      "date": "",
+      "slot": "",
+      "message": "LIBRARY EXPANSION (owner request 2026-10-04): 100 → 156 images (+15 English / +41 Kiswahili web-sourced verse graphics). Collected via web image search from many different sites (not only YouVersion); every image machine-vision verified (verse text + language read off the image, language-matched captions). New blocks inserted at the current rotation pointers (en=7/sw=9) so the first new image posts at the next unbooked slot of each language. Already-booked slots untouched."
+    },
+    {
+      "ts": "2026-10-05T07:03:22.762Z",
+      "level": "success",
+      "date": "2026-10-05",
+      "slot": "09:00",
+      "message": "09:00 Auto: published — \"sw-card-isaya-43-19.jpg\" | IG ✓ | FB ✓"
     }
-   }
-  },
-  "2026-10-06": {
-   "09:00": {
-    "status": "scheduled",
-    "publishTime": "2026-10-06T06:00:00.000Z",
-    "at": "2026-10-03T22:26:29.883Z",
-    "photo": "votd-2026-09-22-a.jpg",
-    "caption": "𝗟𝗜𝗩𝗘 𝗙𝗢𝗥 𝗚𝗢𝗗'𝗦 𝗔𝗣𝗣𝗥𝗢𝗩𝗔𝗟\n\nGalatians 1:10\n\n\"Am I now trying to win the approval of human beings, or of God? Or am I trying to please people? If I were still trying to please people, I would not be a servant of Christ.\"\n\nWhose applause are you living for? When the fear of people's opinions loosens its grip, serving Christ becomes simple and free — aim today at the one audience who already delights in you.\n\n#Galatians #PleaseGodNotPeople #ServantOfChrist #FreedomInChrist #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "en",
-    "fb": {
-     "id": "122206547732587338"
-    }
-   }
-  },
-  "2026-10-07": {
-   "09:00": {
-    "status": "scheduled",
-    "publishTime": "2026-10-07T06:00:00.000Z",
-    "at": "2026-10-04T21:57:49.677Z",
-    "photo": "sw-card-isaya-12-2.jpg",
-    "caption": "𝗠𝗨𝗡𝗚𝗨 𝗡𝗗𝗜𝗬𝗘 𝗪𝗢𝗞𝗢𝗩𝗨 𝗪𝗔𝗡𝗚𝗨\n\nIsaya 12:2\n\n\"Tazama, Mungu ndiye wokovu wangu; Nitatumaini wala sitaogopa; Maana BWANA YEHOVA ni nguvu zangu na wimbo wangu; Naye amekuwa wokovu wangu.\"\n\nWokovu si tunachojitahidi kuulinda wenyewe, bali ni Mungu mwenyewe anayetukomboa kwa upendo wake mkuu. Mtumainie BWANA leo, na hofu haitaweza kukaa kwako; yeye atakuimbia wimbo wa ushindi mkamilifu.\n\n#Isaya #WokovuWangu #Sitaogopa #NguvuZangu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
-    "lang": "sw",
-    "fb": {
-     "id": "122206695182587338"
-    }
-   }
-  }
- },
- "rotation": {
-  "en": 7,
-  "sw": 9
- },
- "events": [
-  {
-   "ts": "2026-09-22T05:54:41.400Z",
-   "level": "info",
-   "date": "2026-09-23",
-   "slot": "09:00",
-   "message": "09:00 pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z) — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-22T05:54:58.612Z",
-   "level": "info",
-   "date": "2026-09-24",
-   "slot": "09:00",
-   "message": "09:00 pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z) — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-22T06:05:19.508Z",
-   "level": "success",
-   "date": "2026-09-22",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"votd-2026-09-17.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-22T09:40:00.000Z",
-   "level": "info",
-   "date": "",
-   "slot": "",
-   "message": "LANGUAGE RULE (owner request): caption language must match the image language (English image -> English caption, Swahili image -> Swahili caption) with daily EN/SW alternation. 9 Swahili YouVersion VOTD images added; all 18 English captions rewritten in English. Removed the 2 Meta-scheduled 09-23/09-24 posts (they had EN images + SW captions); they will be re-booked language-correct by the next run: 09-23 Kiswahili, 09-24 English. Optional GEMINI_API_KEY secret enables Google Gemini rewriting of Swahili captions."
-  },
-  {
-   "ts": "2026-09-22T09:14:10.356Z",
-   "level": "info",
-   "date": "2026-09-23",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-23T06:00:00.000Z, Kiswahili) — \"votd-sw-2026-09-16.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-22T09:14:13.078Z",
-   "level": "info",
-   "date": "2026-09-24",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-22T13:30:00.000Z",
-   "level": "info",
-   "date": "",
-   "slot": "",
-   "message": "LIBRARY EXPANSION (owner request): 33 → 100 images (55 EN / 45 SW). +7 YouVersion VOTD designs (Gal 1:10, 22 Sep), +60 verse cards (30 EN on NIV text + 30 SW on SUV text from bible.com, AI backgrounds, VLM-verified). New entries inserted at pool position 2; rotation pointers advanced to the new block, so the 09-25 (SW) and 09-26 (EN) slots are the first to use new images. GEMINI self-test button added (Actions → Run workflow → gemini-test); GEMINI_API_KEY secret not yet visible on the repo — Swahili captions use the stored text until it is saved."
-  },
-  {
-   "ts": "2026-09-22T13:29:48.927Z",
-   "level": "info",
-   "date": "2026-09-25",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-23T06:41:30.429Z",
-   "level": "success",
-   "date": "2026-09-23",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"votd-sw-2026-09-16.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-23T06:56:25.085Z",
-   "level": "info",
-   "date": "",
-   "slot": "",
-   "message": "FORMAT CHANGE (owner request 2026-09-23): every post now starts with a short HEADING in capital letters + bold (Unicode bold — FB/IG have no native bold), then the scripture verse, then explanation + hashtags as before. Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked with old no-heading captions); next landed run re-books the same verses (rotation reset en→0/sw→2) with the new format."
-  },
-  {
-   "ts": "2026-09-23T06:57:43.169Z",
-   "level": "info",
-   "date": "2026-09-24",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-23T06:57:52.790Z",
-   "level": "info",
-   "date": "2026-09-25",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-23T07:35:30.192Z",
-   "level": "info",
-   "date": "",
-   "slot": "",
-   "message": "FORMAT CHANGE (owner request 2026-09-23): app promo line \"Download Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali\" added below the hashtags of every post (FB + IG). Removed the 2 pending Meta-scheduled 09-24/09-25 posts (booked without the promo); next landed run re-books the same verses (rotation reset en→0/sw→2) with the full format: bold heading → verse → explanation → hashtags → app promo."
-  },
-  {
-   "ts": "2026-09-23T07:36:04.162Z",
-   "level": "info",
-   "date": "2026-09-24",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-24T06:00:00.000Z, English) — \"votd-2026-09-15.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-23T07:36:13.841Z",
-   "level": "info",
-   "date": "2026-09-25",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-25T06:00:00.000Z, Kiswahili) — \"sw-card-yohana-14-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-23T23:13:27.601Z",
-   "level": "info",
-   "date": "2026-09-26",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-26T06:00:00.000Z, English) — \"votd-2026-09-16.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-24T06:47:13.079Z",
-   "level": "success",
-   "date": "2026-09-24",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"votd-2026-09-15.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-24T21:31:45.680Z",
-   "level": "info",
-   "date": "2026-09-27",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-27T06:00:00.000Z, Kiswahili) — \"sw-card-mathayo-6-33.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-25T07:47:26.841Z",
-   "level": "success",
-   "date": "2026-09-25",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"sw-card-yohana-14-1.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-25T22:49:56.573Z",
-   "level": "info",
-   "date": "2026-09-28",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-28T06:00:00.000Z, English) — \"en-card-john-14-27.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-26T06:37:06.448Z",
-   "level": "success",
-   "date": "2026-09-26",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"votd-2026-09-16.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-26T22:12:45.260Z",
-   "level": "info",
-   "date": "2026-09-29",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-29T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-55-22.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-27T09:10:31.817Z",
-   "level": "success",
-   "date": "2026-09-27",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"sw-card-mathayo-6-33.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-27T23:04:17.024Z",
-   "level": "info",
-   "date": "2026-09-30",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-09-30T06:00:00.000Z, English) — \"en-card-matthew-11-28.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-28T06:57:36.971Z",
-   "level": "success",
-   "date": "2026-09-28",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"en-card-john-14-27.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-28T22:01:26.863Z",
-   "level": "info",
-   "date": "2026-10-01",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-01T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-62-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-29T07:32:05.532Z",
-   "level": "success",
-   "date": "2026-09-29",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"sw-card-zaburi-55-22.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-29T23:44:00.792Z",
-   "level": "info",
-   "date": "2026-10-02",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-02T06:00:00.000Z, English) — \"en-card-psalm-46-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-09-30T08:36:13.621Z",
-   "level": "success",
-   "date": "2026-09-30",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"en-card-matthew-11-28.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-09-30T21:25:51.683Z",
-   "level": "info",
-   "date": "2026-10-03",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-03T06:00:00.000Z, Kiswahili) — \"sw-card-zaburi-91-1-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-10-01T07:11:49.253Z",
-   "level": "success",
-   "date": "2026-10-01",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"sw-card-zaburi-62-1.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-10-01T23:52:58.111Z",
-   "level": "info",
-   "date": "2026-10-04",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-04T06:00:00.000Z, English) — \"en-card-psalm-34-8.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-10-02T09:01:04.765Z",
-   "level": "success",
-   "date": "2026-10-02",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"en-card-psalm-46-1.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-10-02T21:20:37.297Z",
-   "level": "info",
-   "date": "2026-10-05",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-05T06:00:00.000Z, Kiswahili) — \"sw-card-isaya-43-19.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-10-03T06:33:52.705Z",
-   "level": "success",
-   "date": "2026-10-03",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"sw-card-zaburi-91-1-2.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-10-03T22:26:29.883Z",
-   "level": "info",
-   "date": "2026-10-06",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-06T06:00:00.000Z, English) — \"votd-2026-09-22-a.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-10-04T06:21:55.960Z",
-   "level": "success",
-   "date": "2026-10-04",
-   "slot": "09:00",
-   "message": "09:00 Auto: published — \"en-card-psalm-34-8.jpg\" | IG ✓ | FB ✓"
-  },
-  {
-   "ts": "2026-10-04T21:57:49.677Z",
-   "level": "info",
-   "date": "2026-10-07",
-   "slot": "09:00",
-   "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-07T06:00:00.000Z, Kiswahili) — \"sw-card-isaya-12-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
-  },
-  {
-   "ts": "2026-10-04T22:21:55.000Z",
-   "level": "info",
-   "date": "",
-   "slot": "",
-   "message": "LIBRARY EXPANSION (owner request 2026-10-04): 100 → 156 images (+15 English / +41 Kiswahili web-sourced verse graphics). Collected via web image search from many different sites (not only YouVersion); every image machine-vision verified (verse text + language read off the image, language-matched captions). New blocks inserted at the current rotation pointers (en=7/sw=9) so the first new image posts at the next unbooked slot of each language. Already-booked slots untouched."
-  }
- ]
+  ]
 }
