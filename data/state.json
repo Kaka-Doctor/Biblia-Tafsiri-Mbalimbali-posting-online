@@ -276,10 +276,23 @@
           "id": "122206695182587338"
         }
       }
+    },
+    "2026-10-08": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-08T06:00:00.000Z",
+        "at": "2026-10-05T22:37:35.087Z",
+        "photo": "web-en-isaiah-40-31.jpg",
+        "caption": "𝗦𝗧𝗥𝗘𝗡𝗚𝗧𝗛 𝗥𝗘𝗡𝗘𝗪𝗘𝗗\n\nIsaiah 40:31\n\n\"But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.\"\n\nReal strength is not found in running faster, but in waiting on the Lord. Like an eagle rides the wind instead of fighting it, your hope in God lifts what your own power cannot. Bring Him your tiredness today — He renews, not just refills.\n\n#Isaiah #Hope #Strength #Faith #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122206812056587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 7,
+    "en": 8,
     "sw": 9
   },
   "events": [
@@ -562,6 +575,13 @@
       "date": "2026-10-05",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"sw-card-isaya-43-19.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-05T22:37:35.087Z",
+      "level": "info",
+      "date": "2026-10-08",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-08T06:00:00.000Z, English) — \"web-en-isaiah-40-31.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
