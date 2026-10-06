@@ -171,11 +171,11 @@ Until the token exists, the workflow runs end-to-end in plan mode; use
 `"lang": "sw"`. `data/state.json` tracks one rotation index **per language**
 (`rotation.en`, `rotation.sw`) plus the language of every posted slot, and the
 agent alternates the slot language daily. After the last pair of a language
-the cycle restarts — the library holds **156 images (70 English + 86
+the cycle restarts — the library holds **200 images (100 English + 100
 Kiswahili)**: YouVersion VOTD graphics from both language pages, verse cards
 composed on AI backgrounds (NIV text for English, SUV text for Kiswahili,
 fetched from bible.com), and **web-sourced verse graphics from many different
-sites** (machine-vision verified, language-matched captions). That is ~300
+sites** (machine-vision verified, language-matched captions). That is ~400
 days of unique
 content before any image repeats (each language posts every second day).
 To extend a pool:
@@ -205,7 +205,7 @@ pointers so the new images start posting at the next unbooked slot.)
 
 ```
 data/
-  photos/          156 verse images (70 English + 86 Kiswahili: YouVersion VOTD
+  photos/          200 verse images (100 English + 100 Kiswahili: YouVersion VOTD
                     graphics + verse cards + VLM-verified web-sourced graphics
                     from many different sites)
   posts.json       the content pool: image ↔ heading + caption pairs, lang-tagged, alternate daily
