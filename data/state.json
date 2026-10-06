@@ -294,11 +294,24 @@
           "id": "122206812056587338"
         }
       }
+    },
+    "2026-10-09": {
+      "09:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-09T06:00:00.000Z",
+        "at": "2026-10-06T21:14:57.996Z",
+        "photo": "web-sw-zaburi-56-3.jpg",
+        "caption": "𝗡𝗜𝗧𝗔𝗪𝗘𝗞𝗔 𝗜𝗠𝗔𝗡𝗜 𝗬𝗔𝗡𝗚𝗨 𝗞𝗪𝗔𝗞𝗢\n\nZABURI 56:3\n\n\"Ee Mungu Mkuu, hofu inaponishika, mimi nakutumainia wewe.\"\n\nUjasiri haufuti siku za hofu, bali huzivuka kwa imani thabiti kwa Mungu wetu hata katikati ya changamoto. Hofu inapotukumba, hiyo ndiyo fursa adhimu ya kuimarisha imani yetu kwake badala ya kuilegeza.\n\n#Zaburi #Imani #Uwasi #Tegemeo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122206978208587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 8,
-    "sw": 9
+    "sw": 10
   },
   "events": [
     {
@@ -594,6 +607,13 @@
       "date": "2026-10-06",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"votd-2026-09-22-a.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-06T21:14:57.996Z",
+      "level": "info",
+      "date": "2026-10-09",
+      "slot": "09:00",
+      "message": "09:00 FB half pre-scheduled via Meta (publishes 2026-10-09T06:00:00.000Z, Kiswahili) — \"web-sw-zaburi-56-3.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
