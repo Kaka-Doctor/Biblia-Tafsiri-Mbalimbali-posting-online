@@ -25,6 +25,18 @@ on:
         description: 'Verification priority order (en,sw or sw,en)'
         required: false
         default: 'en,sw'
+      provider:
+        description: 'VLM provider: gemini or groq'
+        required: false
+        default: 'gemini'
+      groq_key:
+        description: 'Groq API key (required when provider=groq); masked'
+        required: false
+        default: ''
+      groq_model:
+        description: 'Optional Groq model override'
+        required: false
+        default: ''
 
 concurrency:
   group: vlm-relay
@@ -54,15 +66,19 @@ jobs:
           echo "bundle files: $(find work/candidates -type f | grep -vc meta || true)"
           echo "images: $(find work/candidates -type f -regex '.*\.\(jpe\?g\|png\|webp\)' | wc -l)"
 
-      - name: Mask key override
-        if: ${{ inputs.api_key != '' }}
-        run: echo "::add-mask::${{ inputs.api_key }}"
+      - name: Mask key overrides
+        run: |
+          if [ -n "${{ inputs.api_key }}" ]; then echo "::add-mask::${{ inputs.api_key }}"; fi
+          if [ -n "${{ inputs.groq_key }}" ]; then echo "::add-mask::${{ inputs.groq_key }}"; fi
 
       - name: Run VLM relay
         working-directory: work
         env:
+          RELAY_PROVIDER: ${{ inputs.provider || 'gemini' }}
           GEMINI_API_KEY: ${{ inputs.api_key || secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ inputs.model || vars.GEMINI_MODEL }}
+          GROQ_API_KEY: ${{ inputs.groq_key }}
+          GROQ_MODEL: ${{ inputs.groq_model }}
           RELAY_LANG_ORDER: ${{ inputs.lang_order || 'en,sw' }}
         run: node relay_verify.mjs 2>&1 | tee relay-log.txt
 
