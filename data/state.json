@@ -287,8 +287,19 @@
         }
       },
       "12:00": {
-        "status": "missed",
-        "at": "2026-10-07T17:53:53.564Z"
+        "status": "published",
+        "at": "2026-10-07T17:54:57.158Z",
+        "photo": "web-en-joshua-1-9.jpg",
+        "caption": "𝗦𝗧𝗥𝗢𝗡𝗚 𝗔𝗡𝗗 𝗖𝗢𝗨𝗥𝗔𝗚𝗘𝗢𝗨𝗦\n\nJoshua 1:9\n\n\"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.\"\n\nGod does not ask you to be fearless on your own; He commands courage and then supplies it with His promise to be with you wherever you go. Be strong today — not because the situation is easy, but because His presence goes with you.\n\n#Joshua #Courage #Strength #Faith #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "ig": {
+          "id": "18145470931603690",
+          "permalink": "https://www.instagram.com/p/DeM8V-DDE0F/"
+        },
+        "fb": {
+          "id": "447560908444853_122207087726587338",
+          "permalink": "https://www.facebook.com/122205160346587338/posts/122207087726587338"
+        }
       }
     },
     "2026-10-08": {
@@ -319,7 +330,7 @@
     }
   },
   "rotation": {
-    "en": 9,
+    "en": 10,
     "sw": 11
   },
   "events": [
@@ -651,6 +662,13 @@
       "date": "2026-10-09",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-09T09:00:00.000Z, Kiswahili) — \"web-sw-luka-1-37.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-07T17:54:57.158Z",
+      "level": "success",
+      "date": "2026-10-07",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-joshua-1-9.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
