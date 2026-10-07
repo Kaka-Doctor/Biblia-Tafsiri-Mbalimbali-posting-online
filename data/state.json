@@ -285,12 +285,42 @@
           "id": "447560908444853_122206695182587338",
           "permalink": "https://www.facebook.com/photo.php?fbid=122206695182587338&set=a.122189068466587338&type=3"
         }
+      },
+      "12:00": {
+        "status": "missed",
+        "at": "2026-10-07T17:53:53.564Z"
+      }
+    },
+    "2026-10-08": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-08T09:00:00.000Z",
+        "at": "2026-10-07T17:53:57.778Z",
+        "photo": "web-en-matthew-5-14.jpg",
+        "caption": "𝗬𝗢𝗨 𝗔𝗥𝗘 𝗧𝗛𝗘 𝗟𝗜𝗚𝗛𝗧\n\nMatthew 5:14\n\n\"You are THE LIGHT of the WORLD\"\n\nJesus did not say you might become light someday — He said you ARE the light of the world, here and now. Let your light shine today so that people see your good works and glorify your Father in heaven.\n\n#Matthew #Light #Shine #Witness #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122207087474587338"
+        }
+      }
+    },
+    "2026-10-09": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-09T09:00:00.000Z",
+        "at": "2026-10-07T17:54:10.374Z",
+        "photo": "web-sw-luka-1-37.jpg",
+        "caption": "𝗛𝗔𝗞𝗨𝗡𝗔 𝗡𝗘𝗡𝗢 𝗟𝗜𝗦𝗜𝗟𝗢𝗪𝗘𝗭𝗘𝗞𝗔𝗡𝗔\n\nLUKA 1:37\n\n\"Kwa maana hakuna jambo lisilowezekana kwa Mungu\"\n\nKupitia maneno haya muhimu kwa Mariamu, malaika alikazia hakuna jambo lolote linaloweza kumshinda Mungu. Ahadi zozote ulizopewa, iwe ni za kazi, familia, au afya yako, ziko salama kabisa mikononi mwake.\n\n#Luka #Uwezo #Imani #Ahadi #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122207087546587338"
+        }
       }
     }
   },
   "rotation": {
-    "en": 8,
-    "sw": 10
+    "en": 9,
+    "sw": 11
   },
   "events": [
     {
@@ -600,6 +630,27 @@
       "date": "2026-10-07",
       "slot": "09:00",
       "message": "09:00 Auto: published — \"sw-card-isaya-12-2.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-07T17:53:53.564Z",
+      "level": "info",
+      "date": "2026-10-07",
+      "slot": "12:00",
+      "message": "Slot 12:00 missed (outside 420-min catch-up window)"
+    },
+    {
+      "ts": "2026-10-07T17:53:57.778Z",
+      "level": "info",
+      "date": "2026-10-08",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-08T09:00:00.000Z, English) — \"web-en-matthew-5-14.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-07T17:54:10.374Z",
+      "level": "info",
+      "date": "2026-10-09",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-09T09:00:00.000Z, Kiswahili) — \"web-sw-luka-1-37.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
