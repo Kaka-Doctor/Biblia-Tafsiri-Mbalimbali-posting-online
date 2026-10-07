@@ -94,6 +94,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          # ALWAYS the freshest main: a workflow_dispatch run otherwise pins the
+          # dispatch-time commit, and a dispatch racing the previous run's state
+          # commit re-books DUPLICATE Meta posts (seen live on Ladies-Of-Destiny
+          # 2026-10-07).
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
