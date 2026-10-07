@@ -4,13 +4,14 @@ name: Bible Verse Agent
 #  Biblia Tafsiri Mbalimbali — posts one verse-of-the-day image + a caption
 #  in the SAME language as the scripture on that image to the Facebook page
 #  AND the connected Instagram account (@biblia_tafsiri_mbalimbali) every day
-#  at 09:00 EAT — alternating daily: English one day, Kiswahili the next
+#  at 12:00 EAT (owner rule 2026-10-07: TLP 06:00, LOD 09:00, BTM 12:00 —
+#  staggered through the day) — alternating daily: English one day, Kiswahili the next
 #  (owner rule 2026-09-22).
 #
 #  GitHub's cron fires this workflow every 30 minutes around the clock at
 #  :13/:43 — but the timing barely matters. Every run that lands PRE-SCHEDULES
 #  the next "scheduleDays" days (default 3) with META'S OWN scheduled
-#  publishing — Meta's servers then publish each post exactly at 09:00 EAT,
+#  publishing — Meta's servers then publish each post exactly at 12:00 EAT,
 #  no matter when or whether GitHub fires again.
 #
 #  WHY THIS DESIGN? GitHub silently DROPS most scheduled runs on young
@@ -18,8 +19,8 @@ name: Bible Verse Agent
 #  2026-09-21, regardless of cron density). Relying on GitHub firing at slot
 #  time does not work. With Meta-side pre-scheduling, ONE landed run every
 #  2 days keeps the horizon booked. Landed runs also record permalinks after
-#  posts go live, and late direct posting (4-hour catch-up, "graceMinutes")
-#  remains the fallback for unscheduled slots.
+#  posts go live, and late direct posting (7-hour catch-up, "graceMinutes" =
+#  420 since 2026-10-07) remains the fallback for unscheduled slots.
 #
 #  The minutes are deliberately OFF-PEAK (:13/:43, never :00/:30): GitHub
 #  drops scheduled runs at peak minutes when Actions load is high.

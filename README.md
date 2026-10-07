@@ -1,6 +1,7 @@
 # Biblia Tafsiri Mbalimbali — Bible Verse Auto-Poster
 
-Posts **one Bible verse image + caption every day at 09:00 EAT** to **both** the
+Posts **one Bible verse image + caption every day at 12:00 EAT** (owner rule
+2026-10-07: TLP 06:00, LOD 09:00, BTM 12:00 — staggered through the day) to **both** the
 Facebook page [Biblia Tafsiri Mbalimbali](https://www.facebook.com/biblia_tafsiri_mbalimbali)
 (`447560908444853`) **and** its connected Instagram account
 [@biblia_tafsiri_mbalimbali](https://www.instagram.com/biblia_tafsiri_mbalimbali)
@@ -93,15 +94,15 @@ does not rely on that:
    actually lets one through.
 2. Every landed run **pre-books the next `scheduleDays` (3) days of FB posts
    with Meta's own scheduled publishing**: FB photos with
-   `scheduled_publish_time = 09:00 EAT` — **Meta's servers publish the FB
-   post at exactly 09:00** with zero further involvement from GitHub. (IG
+   `scheduled_publish_time = 12:00 EAT` — **Meta's servers publish the FB
+   post at exactly 12:00** with zero further involvement from GitHub. (IG
    containers cannot be scheduled — the API's `publish_time` is silently
    ignored, verified 2026-09-22 — so the Instagram half is posted directly by
-   the first landed run after 09:00, within the 4-hour catch-up window.)
+   the first landed run after 12:00, within the 7-hour catch-up window.)
 3. Later landed runs **reconcile**: they confirm scheduled posts that went
    live and record their permalinks in `data/state.json`.
 4. If a slot somehow has no Meta booking and a run lands within
-   `graceMinutes` (240) of 09:00, it posts directly as a catch-up.
+   `graceMinutes` (420, widened 2026-10-07) of 12:00, it posts directly as a catch-up.
    Anything later is marked `missed` once, and the **force** button
    (Actions → *Bible Verse Agent* → Run workflow → tick `force`) rescues it
    the same day — including a FB-only `partial` slot, where force posts just
