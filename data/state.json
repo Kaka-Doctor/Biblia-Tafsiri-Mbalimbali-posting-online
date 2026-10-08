@@ -304,14 +304,19 @@
     },
     "2026-10-08": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-08T10:25:15.935Z",
         "publishTime": "2026-10-08T09:00:00.000Z",
-        "at": "2026-10-07T17:53:57.778Z",
         "photo": "web-en-matthew-5-14.jpg",
         "caption": "𝗬𝗢𝗨 𝗔𝗥𝗘 𝗧𝗛𝗘 𝗟𝗜𝗚𝗛𝗧\n\nMatthew 5:14\n\n\"You are THE LIGHT of the WORLD\"\n\nJesus did not say you might become light someday — He said you ARE the light of the world, here and now. Let your light shine today so that people see your good works and glorify your Father in heaven.\n\n#Matthew #Light #Shine #Witness #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18112647941173323",
+          "permalink": "https://www.instagram.com/p/DeOtruLGC4t/"
+        },
         "fb": {
-          "id": "122207087474587338"
+          "id": "447560908444853_122207087474587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207087474587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -689,6 +694,13 @@
       "date": "2026-10-10",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-10T09:00:00.000Z, English) — \"web-en-isaiah-25-4.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-08T10:25:15.935Z",
+      "level": "success",
+      "date": "2026-10-08",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-matthew-5-14.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
