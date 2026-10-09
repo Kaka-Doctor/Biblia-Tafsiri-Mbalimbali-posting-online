@@ -322,14 +322,19 @@
     },
     "2026-10-09": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-09T10:23:44.534Z",
         "publishTime": "2026-10-09T09:00:00.000Z",
-        "at": "2026-10-07T17:54:10.374Z",
         "photo": "web-sw-luka-1-37.jpg",
         "caption": "𝗛𝗔𝗞𝗨𝗡𝗔 𝗡𝗘𝗡𝗢 𝗟𝗜𝗦𝗜𝗟𝗢𝗪𝗘𝗭𝗘𝗞𝗔𝗡𝗔\n\nLUKA 1:37\n\n\"Kwa maana hakuna jambo lisilowezekana kwa Mungu\"\n\nKupitia maneno haya muhimu kwa Mariamu, malaika alikazia hakuna jambo lolote linaloweza kumshinda Mungu. Ahadi zozote ulizopewa, iwe ni za kazi, familia, au afya yako, ziko salama kabisa mikononi mwake.\n\n#Luka #Uwezo #Imani #Ahadi #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18498078265100325",
+          "permalink": "https://www.instagram.com/p/DeRSS-QGKEH/"
+        },
         "fb": {
-          "id": "122207087546587338"
+          "id": "447560908444853_122207087546587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207087546587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -721,6 +726,13 @@
       "date": "2026-10-11",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-11T09:00:00.000Z, Kiswahili) — \"web-sw-isaya-40-8.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-09T10:23:44.534Z",
+      "level": "success",
+      "date": "2026-10-09",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-luka-1-37.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
