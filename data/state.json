@@ -363,10 +363,23 @@
           "id": "122207233958587338"
         }
       }
+    },
+    "2026-10-12": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-12T09:00:00.000Z",
+        "at": "2026-10-10T00:02:42.577Z",
+        "photo": "web-en-psalm-37-5.jpg",
+        "caption": "𝗖𝗢𝗠𝗠𝗜𝗧 𝗬𝗢𝗨𝗥 𝗪𝗔𝗬 𝗧𝗢 𝗛𝗜𝗠\n\nPsalm 37:5\n\n\"Commit everything you do to the Lord. Trust him, and he will help you.\"\n\nCommitting your way to the Lord means handing over outcomes you cannot control. As you trust Him, He acts — He brings forth your righteousness like light and your justice like the noonday sun.\n\n#Psalm #Commit #Trust #Righteousness #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122207356118587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 11,
+    "en": 12,
     "sw": 12
   },
   "events": [
@@ -733,6 +746,13 @@
       "date": "2026-10-09",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-sw-luka-1-37.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-10T00:02:42.577Z",
+      "level": "info",
+      "date": "2026-10-12",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-12T09:00:00.000Z, English) — \"web-en-psalm-37-5.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
