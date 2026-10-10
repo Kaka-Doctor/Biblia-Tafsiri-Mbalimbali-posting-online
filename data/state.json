@@ -340,14 +340,19 @@
     },
     "2026-10-10": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-10T09:43:28.194Z",
         "publishTime": "2026-10-10T09:00:00.000Z",
-        "at": "2026-10-08T00:25:10.215Z",
         "photo": "web-en-isaiah-25-4.jpg",
         "caption": "𝗔 𝗦𝗛𝗘𝗟𝗧𝗘𝗥 𝗙𝗥𝗢𝗠 𝗧𝗛𝗘 𝗦𝗧𝗢𝗥𝗠\n\nIsaiah 25:4\n\n\"FOR THE BREATH OF THE RUTHLESS IS LIKE A STORM DRIVING AGAINST A WALL.\"\n\nTo the needy in their distress, God is a refuge from the storm and a shade from the heat. When life blows hardest, run to the Rock that does not move.\n\n#Isaiah #Refuge #Storm #Safety #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18076519424446351",
+          "permalink": "https://www.instagram.com/p/DeTyfKfDIZY/"
+        },
         "fb": {
-          "id": "122207116220587338"
+          "id": "447560908444853_122207116220587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207116220587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -753,6 +758,13 @@
       "date": "2026-10-12",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-12T09:00:00.000Z, English) — \"web-en-psalm-37-5.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-10T09:43:28.195Z",
+      "level": "success",
+      "date": "2026-10-10",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-isaiah-25-4.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
