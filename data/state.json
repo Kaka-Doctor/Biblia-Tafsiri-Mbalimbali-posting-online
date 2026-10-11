@@ -358,14 +358,19 @@
     },
     "2026-10-11": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-11T09:54:53.362Z",
         "publishTime": "2026-10-11T09:00:00.000Z",
-        "at": "2026-10-09T00:23:41.047Z",
         "photo": "web-sw-isaya-40-8.jpg",
         "caption": "𝗡𝗘𝗡𝗢 𝗟𝗔 𝗠𝗨𝗡𝗚𝗨 𝗛𝗨𝗕𝗔𝗞𝗜 𝗠𝗜𝗟𝗘𝗟𝗘\n\nISAYA 40:8\n\n\"Majani hunyauka na Maua huanguka, Lakini neno la Mungu wetu ladumu milele.\"\n\nKama majani yanavyofifia na maua yanavyokauka, ndivyo uhakika wa Neno la Mungu unavyobaki imara milele.\nWakati watu hubadilika na mitindo hupita, ahadi za Mungu wetu zinabaki imara na za kuaminika daima.\n\n#Isaya #NenoLaMungu #Uhakika #Imani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18114970475102865",
+          "permalink": "https://www.instagram.com/p/DeWYl3bFSJN/"
+        },
         "fb": {
-          "id": "122207233958587338"
+          "id": "447560908444853_122207233958587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207233958587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -785,6 +790,13 @@
       "date": "2026-10-13",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-13T09:00:00.000Z, Kiswahili) — \"web-sw-mika-6-8.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-11T09:54:53.362Z",
+      "level": "success",
+      "date": "2026-10-11",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-isaya-40-8.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
