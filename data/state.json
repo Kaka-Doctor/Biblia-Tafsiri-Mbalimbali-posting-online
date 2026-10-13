@@ -394,14 +394,19 @@
     },
     "2026-10-13": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-13T09:23:43.963Z",
         "publishTime": "2026-10-13T09:00:00.000Z",
-        "at": "2026-10-10T23:54:33.429Z",
         "photo": "web-sw-mika-6-8.jpg",
         "caption": "𝗞𝗨𝗧𝗘𝗡𝗗𝗔 𝗛𝗔𝗞𝗜, 𝗞𝗨𝗣𝗘𝗡𝗗𝗔 𝗥𝗘𝗛𝗘𝗠𝗔\n\nMIKA 6:8\n\n\"Anachotaka Mwenyezi-Mungu kwako ni hiki:\nKutenda mambo ya haki,\nkupenda kuwa na huruma,\nna kuishi kwa unyenyekevu\nna Mungu wako.\"\n\nMungu hashauku sadaka za kifahari; badala yake, anatafuta mioyo itendayo haki, ipendayo huruma, na inayoishi kwa unyenyekevu naye. Ukweli wa imani yetu hudhihirika si kwa maneno tu, bali kwa matendo yetu ya kila siku tunapoishi.\n\n#Mika #Haki #Rehema #Unyenyekevu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "17898016599397941",
+          "permalink": "https://www.instagram.com/p/DebenONIN6m/"
+        },
         "fb": {
-          "id": "122207494388587338"
+          "id": "447560908444853_122207494388587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207494388587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -849,6 +854,13 @@
       "date": "2026-10-15",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-15T09:00:00.000Z, Kiswahili) — \"web-sw-zaburi-121-1-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-13T09:23:43.963Z",
+      "level": "success",
+      "date": "2026-10-13",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-mika-6-8.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
