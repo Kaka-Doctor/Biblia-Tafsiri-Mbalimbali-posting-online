@@ -453,11 +453,24 @@
           "id": "122207913812587338"
         }
       }
+    },
+    "2026-10-17": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-17T09:00:00.000Z",
+        "at": "2026-10-14T22:41:45.051Z",
+        "photo": "web-sw-wafilipi-4-6.jpg",
+        "caption": "𝗨𝗦𝗜𝗪𝗔𝗦𝗜𝗪𝗔𝗦𝗜𝗞𝗔 𝗖𝗛𝗢𝗖𝗛𝗢𝗧𝗘\n\nWAFILIPI 4:6\n\n\"Msiwe na wasiwasi juu ya kitu chochote,\nila kwa kila hali, mwombeni Mungu\nkatika sala juu ya mahitaji yenu.\nkwa shukrani.\"\n\nAcha kuhangaika; mpelekee Mungu kila jambo lako kwa maombi na dua zenye shukrani tele. Amani yake Mungu, ipitayo ufahamu wote, italinda mioyo na fikra zako daima.\n\n#Wafilipi #Amani #Maombi #Shukrani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122208042722587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 14,
-    "sw": 14
+    "sw": 15
   },
   "events": [
     {
@@ -893,6 +906,13 @@
       "date": "2026-10-14",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-en-psalm-28-7.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-14T22:41:45.051Z",
+      "level": "info",
+      "date": "2026-10-17",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-17T09:00:00.000Z, Kiswahili) — \"web-sw-wafilipi-4-6.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
