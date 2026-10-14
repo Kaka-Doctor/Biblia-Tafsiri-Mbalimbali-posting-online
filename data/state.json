@@ -412,14 +412,19 @@
     },
     "2026-10-14": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-14T10:13:54.237Z",
         "publishTime": "2026-10-14T09:00:00.000Z",
-        "at": "2026-10-11T21:58:40.706Z",
         "photo": "web-en-psalm-28-7.jpg",
         "caption": "𝗠𝗬 𝗦𝗧𝗥𝗘𝗡𝗚𝗧𝗛 𝗔𝗡𝗗 𝗠𝗬 𝗦𝗛𝗜𝗘𝗟𝗗\n\nPsalm 28:7\n\n\"The Lord is my strength and my shield; my heart trusts in Him, and He helps me. My heart leaps for joy, and with my song I praise Him.\"\n\nStrength that comes from the Lord does not run out the way your own does. He is both the power behind you and the shield in front of you — trust Him and let your heart leap for joy.\n\n#Psalm #Strength #Shield #Trust #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18197410495388789",
+          "permalink": "https://www.instagram.com/p/DeeJJcumHe5/"
+        },
         "fb": {
-          "id": "122207669960587338"
+          "id": "447560908444853_122207669960587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207669960587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -881,6 +886,13 @@
       "date": "2026-10-16",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-16T09:00:00.000Z, English) — \"web-en-romans-8-37.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-14T10:13:54.237Z",
+      "level": "success",
+      "date": "2026-10-14",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-psalm-28-7.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
