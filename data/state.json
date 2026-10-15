@@ -430,14 +430,19 @@
     },
     "2026-10-15": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-15T10:55:55.859Z",
         "publishTime": "2026-10-15T09:00:00.000Z",
-        "at": "2026-10-13T00:40:06.863Z",
         "photo": "web-sw-zaburi-121-1-2.jpg",
         "caption": "𝗠𝗦𝗔𝗔𝗗𝗔 𝗪𝗔𝗡𝗚𝗨 𝗨𝗧𝗢𝗞𝗔 𝗞𝗪𝗔𝗞𝗘\n\nZABURI 121:1-2\n\n\"Natazama juu milimani;\nmsaada wangu utatoka wapi?\nMsaada wangu watoka\nkwa Mwenyezi-Mungu,\naliyeumba mbingu na dunia.\"\n\nMacho yangu yanaelekea milimani, lakini msaada wangu halisi huja kutoka kwa Mwenyezi Mungu, Muumba wa mbingu na nchi. Katika siku hii, ziondoe fikra zako kutoka kwenye matatizo na utazame juu kwa Mungu, chanzo kikuu cha utegemezi wako.\n\n#Zaburi #Msaada #Tegemeo #Imani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "17912421045541725",
+          "permalink": "https://www.instagram.com/p/DegywXQAWRJ/"
+        },
         "fb": {
-          "id": "122207809526587338"
+          "id": "447560908444853_122207809526587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207809526587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -913,6 +918,13 @@
       "date": "2026-10-17",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-17T09:00:00.000Z, Kiswahili) — \"web-sw-wafilipi-4-6.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-15T10:55:55.859Z",
+      "level": "success",
+      "date": "2026-10-15",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-zaburi-121-1-2.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
