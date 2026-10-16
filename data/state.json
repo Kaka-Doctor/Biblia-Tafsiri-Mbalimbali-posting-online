@@ -448,14 +448,19 @@
     },
     "2026-10-16": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-16T09:18:07.967Z",
         "publishTime": "2026-10-16T09:00:00.000Z",
-        "at": "2026-10-13T23:57:55.221Z",
         "photo": "web-en-romans-8-37.jpg",
         "caption": "𝗠𝗢𝗥𝗘 𝗧𝗛𝗔𝗡 𝗖𝗢𝗡𝗤𝗨𝗘𝗥𝗢𝗥𝗦\n\nROMANS 8:37\n\n\"WE ARE MORE THAN CONQUERORS THROUGH HIM WHO LOVED US\"\n\nYou are not just surviving the battles of life — in Christ you are more than a conqueror through Him who loved you. The victory is not earned by your strength; it is received by His love.\n\n#Romans #Victory #Conqueror #Love #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18118889986962562",
+          "permalink": "https://www.instagram.com/p/DejMXCnjW8r/"
+        },
         "fb": {
-          "id": "122207913812587338"
+          "id": "447560908444853_122207913812587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122207913812587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -945,6 +950,13 @@
       "date": "2026-10-18",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-18T09:00:00.000Z, English) — \"web-en-1john-4-19.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-16T09:18:07.968Z",
+      "level": "success",
+      "date": "2026-10-16",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-romans-8-37.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
