@@ -466,14 +466,19 @@
     },
     "2026-10-17": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-17T14:14:34.276Z",
         "publishTime": "2026-10-17T09:00:00.000Z",
-        "at": "2026-10-14T22:41:45.051Z",
         "photo": "web-sw-wafilipi-4-6.jpg",
         "caption": "𝗨𝗦𝗜𝗪𝗔𝗦𝗜𝗪𝗔𝗦𝗜𝗞𝗔 𝗖𝗛𝗢𝗖𝗛𝗢𝗧𝗘\n\nWAFILIPI 4:6\n\n\"Msiwe na wasiwasi juu ya kitu chochote,\nila kwa kila hali, mwombeni Mungu\nkatika sala juu ya mahitaji yenu.\nkwa shukrani.\"\n\nAcha kuhangaika; mpelekee Mungu kila jambo lako kwa maombi na dua zenye shukrani tele. Amani yake Mungu, ipitayo ufahamu wote, italinda mioyo na fikra zako daima.\n\n#Wafilipi #Amani #Maombi #Shukrani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18190590406408532",
+          "permalink": "https://www.instagram.com/p/DemTEmzIFtH/"
+        },
         "fb": {
-          "id": "122208042722587338"
+          "id": "447560908444853_122208042722587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208042722587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -489,11 +494,24 @@
           "id": "122208157922587338"
         }
       }
+    },
+    "2026-10-19": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-19T09:00:00.000Z",
+        "at": "2026-10-17T14:14:43.495Z",
+        "photo": "web-sw-zaburi-46-1.jpg",
+        "caption": "𝗠𝗨𝗡𝗚𝗨 𝗡𝗜 𝗞𝗜𝗠𝗕𝗜𝗟𝗜𝗢 𝗖𝗛𝗘𝗧𝗨\n\nZABURI 46:1\n\n\"MUNGU NI KIMBILIO LETU\nNA NGUVU YETU;\nYEVE NI MSAADA\nWETU DAIMA WAKATI\nWA TAABU.\"\n\nMungu ndiye kimbilio letu la hakika na nguvu yetu isiyoyumba, msaada kamili wakati wowote wa shida.\nChangamoto zozote unazokabiliana nazo leo hazihitaji kusubiri kesho; msaada wake wa haraka unapatikana sasa.\n\n#Zaburi #Kimbilio #Nguvu #Msaada #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122208354260587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 15,
-    "sw": 15
+    "sw": 16
   },
   "events": [
     {
@@ -957,6 +975,20 @@
       "date": "2026-10-16",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-en-romans-8-37.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-17T14:14:34.276Z",
+      "level": "success",
+      "date": "2026-10-17",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-wafilipi-4-6.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-17T14:14:43.495Z",
+      "level": "info",
+      "date": "2026-10-19",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-19T09:00:00.000Z, Kiswahili) — \"web-sw-zaburi-46-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
