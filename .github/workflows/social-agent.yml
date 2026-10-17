@@ -137,6 +137,16 @@ jobs:
           # "dispatchToken" (fine-grained PAT, contents:read + actions:write
           # on the sibling repos); this secret, if set, overrides it.
           DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+          # Meta credentials from ENCRYPTED repo secrets (public-repo secret
+          # hygiene, owner rule 2026-10-17). Unset secrets arrive as empty
+          # strings and the agent falls back to any value still present in
+          # data/config.json. Set these in repo Settings -> Secrets and
+          # variables -> Actions: META_USER_TOKEN, PAGE_ACCESS_TOKEN,
+          # META_APP_ID, META_APP_SECRET (+ GEMINI_API_KEY, DISPATCH_TOKEN).
+          META_USER_TOKEN: ${{ secrets.META_USER_TOKEN }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          META_APP_ID: ${{ secrets.META_APP_ID }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
           # Optional Google Gemini (owner request 2026-09-22): with this secret
           # set, Swahili captions are rewritten by Gemini at posting time;
           # without it the stored captions in data/posts.json are used.

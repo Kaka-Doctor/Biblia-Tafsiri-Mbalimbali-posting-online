@@ -76,7 +76,7 @@ Gemini being reachable. Create a free key at
 [aistudio.google.com/apikey](https://aistudio.google.com/apikey). Optional
 `GEMINI_MODEL` repo **variable** overrides the default `gemini-2.5-flash`.
 
-Sister repo: [Kaka-Doctor/Posting-to-social-medias](https://github.com/Kaka-Doctor/Posting-to-social-medias)
+Sister repo: [Kaka-Doctor/Posting-to-TLP](https://github.com/Kaka-Doctor/Posting-to-TLP)
 runs the same engine for the Teacher's Lesson Plan page + Instagram
 (3 posts/day). This repo is a trimmed copy of that proven production system,
 posting to the Biblia page + Instagram instead.
