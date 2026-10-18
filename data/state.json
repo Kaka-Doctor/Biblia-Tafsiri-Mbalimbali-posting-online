@@ -484,14 +484,19 @@
     },
     "2026-10-18": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-18T10:28:37.621Z",
         "publishTime": "2026-10-18T09:00:00.000Z",
-        "at": "2026-10-15T23:04:40.417Z",
         "photo": "web-en-1john-4-19.jpg",
         "caption": "𝗪𝗘 𝗟𝗢𝗩𝗘 𝗕𝗘𝗖𝗔𝗨𝗦𝗘 𝗛𝗘 𝗙𝗜𝗥𝗦𝗧 𝗟𝗢𝗩𝗘𝗗\n\n1 John 4:19\n\n\"We love him, because he first loved us.\"\n\nYour love for God could never start with you — it answers a love that reached you first. Rest in that order today: He initiated, you respond, and love flows from a full heart.\n\n#John #Love #Grace #Faith #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18087416165320243",
+          "permalink": "https://www.instagram.com/p/DeoeBQRlDv-/"
+        },
         "fb": {
-          "id": "122208157922587338"
+          "id": "447560908444853_122208157922587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208157922587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1009,6 +1014,13 @@
       "date": "2026-10-20",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-20T09:00:00.000Z, English) — \"web-en-2timothy-1-7.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-18T10:28:37.621Z",
+      "level": "success",
+      "date": "2026-10-18",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-1john-4-19.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
