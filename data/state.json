@@ -502,14 +502,19 @@
     },
     "2026-10-19": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-19T10:47:23.176Z",
         "publishTime": "2026-10-19T09:00:00.000Z",
-        "at": "2026-10-17T14:14:43.495Z",
         "photo": "web-sw-zaburi-46-1.jpg",
         "caption": "𝗠𝗨𝗡𝗚𝗨 𝗡𝗜 𝗞𝗜𝗠𝗕𝗜𝗟𝗜𝗢 𝗖𝗛𝗘𝗧𝗨\n\nZABURI 46:1\n\n\"MUNGU NI KIMBILIO LETU\nNA NGUVU YETU;\nYEVE NI MSAADA\nWETU DAIMA WAKATI\nWA TAABU.\"\n\nMungu ndiye kimbilio letu la hakika na nguvu yetu isiyoyumba, msaada kamili wakati wowote wa shida.\nChangamoto zozote unazokabiliana nazo leo hazihitaji kusubiri kesho; msaada wake wa haraka unapatikana sasa.\n\n#Zaburi #Kimbilio #Nguvu #Msaada #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "17943673383359158",
+          "permalink": "https://www.instagram.com/p/DerE8tzDTe3/"
+        },
         "fb": {
-          "id": "122208354260587338"
+          "id": "447560908444853_122208354260587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208354260587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1041,6 +1046,13 @@
       "date": "2026-10-21",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-21T09:00:00.000Z, Kiswahili) — \"web-sw-mathayo-11-28.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-19T10:47:23.176Z",
+      "level": "success",
+      "date": "2026-10-19",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-zaburi-46-1.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
