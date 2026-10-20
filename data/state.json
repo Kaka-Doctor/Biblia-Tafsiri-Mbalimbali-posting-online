@@ -561,11 +561,24 @@
           "id": "122208629192587338"
         }
       }
+    },
+    "2026-10-23": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-23T09:00:00.000Z",
+        "at": "2026-10-20T23:11:11.988Z",
+        "photo": "web-sw-yohana-14-27.jpg",
+        "caption": "𝗔𝗠𝗔𝗡𝗜 𝗡𝗔𝗪𝗔𝗖𝗛𝗜𝗔 𝗡𝗜𝗡𝗬𝗜\n\nYohana 14:27\n\n\"Amani nawaachieni; amani yangu nawapa. Si kama vile ulimwengu utoavyo, mimi nawapa nyinyi. Msifadhaike mioyoni mwenu, wala msiwe na woga.\"\n\nAmani ya Kristo haimaanishi maisha yasiyo na changamoto; hivyo usiruhusu moyo wako ufadhaike wala kuogopa.\nAmani aliyotuachia hukaa ndani yetu, ikitupa uwezo wa kuvishinda vizingiti vyote vya maisha.\n\n#Yohana #Amani #Yesu #Matumaini #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122208744470587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 17,
-    "sw": 17
+    "sw": 18
   },
   "events": [
     {
@@ -1085,6 +1098,13 @@
       "date": "2026-10-20",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-en-2timothy-1-7.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-20T23:11:11.988Z",
+      "level": "info",
+      "date": "2026-10-23",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-23T09:00:00.000Z, Kiswahili) — \"web-sw-yohana-14-27.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
