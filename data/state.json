@@ -520,14 +520,19 @@
     },
     "2026-10-20": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-20T10:03:05.727Z",
         "publishTime": "2026-10-20T09:00:00.000Z",
-        "at": "2026-10-17T21:46:45.670Z",
         "photo": "web-en-2timothy-1-7.jpg",
         "caption": "𝗔 𝗦𝗢𝗨𝗡𝗗 𝗠𝗜𝗡𝗗, 𝗡𝗢𝗧 𝗙𝗘𝗔𝗥\n\n2 TIMOTHY 1:7\n\n\"FOR GOD HAS NOT GIVEN US A SPIRIT OF FEAR, BUT OF POWER AND OF LOVE AND OF A SOUND MIND.\"\n\nFear is loud, but it is not from God — He gives power, love and a sound mind instead. Whatever is shaking you today, let His perfect love quiet the fear and steady your thoughts.\n\n#Timothy #FearNot #Power #Love #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18115253348100725",
+          "permalink": "https://www.instagram.com/p/DetkrgFHUKw/"
+        },
         "fb": {
-          "id": "122208394538587338"
+          "id": "447560908444853_122208394538587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208394538587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1073,6 +1078,13 @@
       "date": "2026-10-22",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-22T09:00:00.000Z, English) — \"web-en-psalm-147-3.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-20T10:03:05.727Z",
+      "level": "success",
+      "date": "2026-10-20",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-2timothy-1-7.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
