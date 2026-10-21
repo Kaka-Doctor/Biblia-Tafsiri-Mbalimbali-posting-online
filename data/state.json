@@ -538,14 +538,19 @@
     },
     "2026-10-21": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-21T11:14:49.414Z",
         "publishTime": "2026-10-21T09:00:00.000Z",
-        "at": "2026-10-18T21:54:23.393Z",
         "photo": "web-sw-mathayo-11-28.jpg",
         "caption": "𝗡𝗝𝗢𝗢 𝗞𝗪𝗔𝗡𝗚𝗨 𝗡𝗔𝗠𝗜 𝗡𝗜𝗧𝗔𝗪𝗔𝗣𝗨𝗠𝗭𝗜𝗦𝗛𝗔\n\nMathayo 11:28\n\n\"Njoni kwangu nyinyi nyote msumbukao na kulemewa na mizigo, nami nitawapumzisha.\"\n\nMwaliko wa Yesu hauna masharti yoyote; anawaita kwa upendo mwingi wale wote waliolemewa na mizigo waipumzike kwake. Mizigo yote ya maisha na uzito wa moyo wako inaweza kuwekwa salama kabisa miguuni pa Yesu Kristo, naye atakupumzisha.\n\n#Mathayo #Mapumziko #Yesu #Amani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18065614595512193",
+          "permalink": "https://www.instagram.com/p/DewRsDVHVNR/"
+        },
         "fb": {
-          "id": "122208510458587338"
+          "id": "447560908444853_122208510458587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208510458587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1105,6 +1110,13 @@
       "date": "2026-10-23",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-23T09:00:00.000Z, Kiswahili) — \"web-sw-yohana-14-27.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-21T11:14:49.414Z",
+      "level": "success",
+      "date": "2026-10-21",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-mathayo-11-28.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
