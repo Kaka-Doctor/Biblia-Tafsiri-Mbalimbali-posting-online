@@ -556,14 +556,19 @@
     },
     "2026-10-22": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-22T10:11:42.019Z",
         "publishTime": "2026-10-22T09:00:00.000Z",
-        "at": "2026-10-19T21:46:22.723Z",
         "photo": "web-en-psalm-147-3.jpg",
         "caption": "𝗛𝗘 𝗛𝗘𝗔𝗟𝗦 𝗧𝗛𝗘 𝗕𝗥𝗢𝗞𝗘𝗡𝗛𝗘𝗔𝗥𝗧𝗘𝗗\n\nPsalm 147:3\n\n\"He healeth the broken in heart, and bindeth up their wounds.\"\n\nGod does not avoid wounded people — He draws near, binds up their wounds and heals the brokenhearted. If your heart is cracked today, you are exactly the kind of person He came to mend.\n\n#Psalm #Healing #Comfort #Hope #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18133034042506161",
+          "permalink": "https://www.instagram.com/p/DeyvQayF4JD/"
+        },
         "fb": {
-          "id": "122208629192587338"
+          "id": "447560908444853_122208629192587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208629192587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1137,6 +1142,13 @@
       "date": "2026-10-24",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-24T09:00:00.000Z, English) — \"web-en-proverbs-3-5-6.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-22T10:11:42.019Z",
+      "level": "success",
+      "date": "2026-10-22",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-psalm-147-3.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
