@@ -592,14 +592,19 @@
     },
     "2026-10-24": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-24T10:21:47.547Z",
         "publishTime": "2026-10-24T09:00:00.000Z",
-        "at": "2026-10-22T00:00:21.631Z",
         "photo": "web-en-proverbs-3-5-6.jpg",
         "caption": "𝗧𝗥𝗨𝗦𝗧, 𝗗𝗢𝗡'𝗧 𝗟𝗘𝗔𝗡 𝗢𝗡 𝗬𝗢𝗨𝗥𝗦𝗘𝗟𝗙\n\nProverbs 3:5-6\n\n\"Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.\"\n\nYour own understanding is too small for the road ahead, but God’s wisdom never misses a step. Trust Him with the whole journey today and let Him direct your paths.\n\n#Proverbs #Trust #Wisdom #Guidance #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "18207835522375385",
+          "permalink": "https://www.instagram.com/p/De35_s4DXEX/"
+        },
         "fb": {
-          "id": "122208843464587338"
+          "id": "447560908444853_122208843464587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208843464587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1201,6 +1206,13 @@
       "date": "2026-10-26",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-26T09:00:00.000Z, English) — \"web-en-hebrews-12-2.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-24T10:21:47.547Z",
+      "level": "success",
+      "date": "2026-10-24",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-proverbs-3-5-6.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
