@@ -610,14 +610,19 @@
     },
     "2026-10-25": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-25T09:26:55.612Z",
         "publishTime": "2026-10-25T09:00:00.000Z",
-        "at": "2026-10-22T22:46:30.837Z",
         "photo": "web-sw-isaya-26-3.jpg",
         "caption": "𝗔𝗠𝗔𝗡𝗜 𝗬𝗔 𝗞𝗨𝗧𝗘𝗚𝗘𝗠𝗘𝗔\n\nISAYA 26:3\n\n\"Ee Mungu, wawaweka katika\namani walio thabiti,\nwawaweka katika amani kwa\nkuwa wanakutegemea.\"\n\nAmani kamili hutoka kwa Mungu kwa wale wanaomtumaini kikamilifu, kwa sababu mawazo yao yamemegemea Yeye tu. Mwekee Bwana matumaini yako yote leo, na amani yake takatifu itaizunguka nafsi yako kama ngao imara.\n\n#Isaya #Amani #Tegemeo #Imani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "17915605824536560",
+          "permalink": "https://www.instagram.com/p/De6YhGuHJpL/"
+        },
         "fb": {
-          "id": "122208943712587338"
+          "id": "447560908444853_122208943712587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122208943712587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1233,6 +1238,13 @@
       "date": "2026-10-27",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-27T09:00:00.000Z, Kiswahili) — \"web-sw-zaburi-27-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-25T09:26:55.612Z",
+      "level": "success",
+      "date": "2026-10-25",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-isaya-26-3.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
