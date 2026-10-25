@@ -651,10 +651,23 @@
           "id": "122209159886587338"
         }
       }
+    },
+    "2026-10-28": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-28T09:00:00.000Z",
+        "at": "2026-10-25T22:33:33.043Z",
+        "photo": "web-en-1corinthians-16-14.jpg",
+        "caption": "𝗗𝗢 𝗘𝗩𝗘𝗥𝗬𝗧𝗛𝗜𝗡𝗚 𝗜𝗡 𝗟𝗢𝗩𝗘\n\n1 CORINTHIANS 16:14\n\n\"Let everything you do be done in love.\"\n\nLove is not a mood to wait for — it is a command for every action, task and word. Let love be the \"how\" of everything you do today, and watch ordinary things become meaningful.\n\n#Corinthians #Love #Action #Faith #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122209289384587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 19,
+    "en": 20,
     "sw": 20
   },
   "events": [
@@ -1245,6 +1258,13 @@
       "date": "2026-10-25",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-sw-isaya-26-3.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-25T22:33:33.043Z",
+      "level": "info",
+      "date": "2026-10-28",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-28T09:00:00.000Z, English) — \"web-en-1corinthians-16-14.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
