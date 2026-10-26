@@ -628,14 +628,19 @@
     },
     "2026-10-26": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-26T11:32:59.583Z",
         "publishTime": "2026-10-26T09:00:00.000Z",
-        "at": "2026-10-23T23:31:56.603Z",
         "photo": "web-en-hebrews-12-2.jpg",
         "caption": "𝗙𝗜𝗫 𝗬𝗢𝗨𝗥 𝗘𝗬𝗘𝗦 𝗢𝗡 𝗝𝗘𝗦𝗨𝗦\n\nHebrews 12:2\n\n\"Fixing our eyes on Jesus, the pioneer and perfecter of faith. For the joy set before him he endured the cross, scorning its shame, and sat down at the right hand of the throne of God.\"\n\nFaith does not stare at the mess; it fixes its eyes on Jesus, the author and perfecter of our faith. The race feels long, but the One who began your faith will carry it to completion.\n\n#Hebrews #Jesus #Faith #Endurance #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "en",
+        "ig": {
+          "id": "17975897265160569",
+          "permalink": "https://www.instagram.com/p/De9LvXAF5Yj/"
+        },
         "fb": {
-          "id": "122209055996587338"
+          "id": "447560908444853_122209055996587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122209055996587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1265,6 +1270,13 @@
       "date": "2026-10-28",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-28T09:00:00.000Z, English) — \"web-en-1corinthians-16-14.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-26T11:32:59.583Z",
+      "level": "success",
+      "date": "2026-10-26",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-en-hebrews-12-2.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
