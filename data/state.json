@@ -669,11 +669,24 @@
           "id": "122209289384587338"
         }
       }
+    },
+    "2026-10-29": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-29T09:00:00.000Z",
+        "at": "2026-10-26T23:22:04.334Z",
+        "photo": "web-sw-wagalatia-5-22.jpg",
+        "caption": "𝗠𝗔𝗧𝗨𝗡𝗗𝗔 𝗬𝗔 𝗥𝗢𝗛𝗢\n\nWagalatia 5:22\n\n\"TUNDA LA UAMINIFU\"\n\nMatunda ya Roho kama upendo na amani, hayajitokezi kwa juhudi za kibinadamu bali kwa kukaa imara ndani ya Kristo. Mruhusu Roho Mtakatifu akamilishe kazi yake muhimu ndani yako leo; azae matunda adhimu kwa utukufu wa Mungu.\n\n#Wagalatia #RohoMtakatifu #Matunda #Upendo #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122209415366587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 20,
-    "sw": 20
+    "sw": 21
   },
   "events": [
     {
@@ -1277,6 +1290,13 @@
       "date": "2026-10-26",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-en-hebrews-12-2.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-26T23:22:04.334Z",
+      "level": "info",
+      "date": "2026-10-29",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-29T09:00:00.000Z, Kiswahili) — \"web-sw-wagalatia-5-22.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
