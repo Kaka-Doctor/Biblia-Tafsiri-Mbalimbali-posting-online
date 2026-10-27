@@ -687,10 +687,23 @@
           "id": "122209415366587338"
         }
       }
+    },
+    "2026-10-30": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-30T09:00:00.000Z",
+        "at": "2026-10-27T23:46:58.693Z",
+        "photo": "web-en-zephaniah-3-17.jpg",
+        "caption": "𝗛𝗘 𝗥𝗘𝗝𝗢𝗜𝗖𝗘𝗦 𝗢𝗩𝗘𝗥 𝗬𝗢𝗨\n\nZephaniah 3:17\n\n\"THE LORD YOUR GOD IS IN YOUR MIDST, A VICTORIOUS WARRIOR. HE WILL EXULT OVER YOU WITH JOY, HE WILL BE QUIET IN HIS LOVE, HE WILL REJOICE OVER YOU WITH SHOUTS OF JOY.\"\n\nThe same God who is mighty to save is tender enough to delight in you with singing. You are not merely tolerated by Heaven — you are celebrated.\n\n#Zephaniah #Joy #Delight #Love #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122209545518587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 20,
+    "en": 21,
     "sw": 21
   },
   "events": [
@@ -1309,6 +1322,13 @@
       "date": "2026-10-27",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-sw-zaburi-27-1.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-27T23:46:58.693Z",
+      "level": "info",
+      "date": "2026-10-30",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-30T09:00:00.000Z, English) — \"web-en-zephaniah-3-17.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
