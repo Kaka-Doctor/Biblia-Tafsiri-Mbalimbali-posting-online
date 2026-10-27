@@ -646,14 +646,19 @@
     },
     "2026-10-27": {
       "12:00": {
-        "status": "scheduled",
+        "status": "published",
+        "at": "2026-10-27T10:32:01.051Z",
         "publishTime": "2026-10-27T09:00:00.000Z",
-        "at": "2026-10-24T21:36:44.884Z",
         "photo": "web-sw-zaburi-27-1.jpg",
         "caption": "𝗕𝗪𝗔𝗡𝗔 𝗡𝗜 𝗠𝗪𝗔𝗡𝗚𝗔𝗭𝗔 𝗪𝗔𝗡𝗚𝗨\n\nZaburi 27:1\n\n\"MAOMBI YA KUMUONDOA ADUI ALIYEPANDA MBELE YA USO WAKO ILI KUKUZUIA\"\n\nBwana ni mwangaza wangu na wokovu wangu — nitamogopa nani?\nBwana akiwa nuru yako, hakuna giza lenye nguvu ya kukushinda mbele zako.\nMkabidhi Bwana kila changamoto yako leo, na ujasiri usioyumba utajaa moyoni mwako.\n\n#Zaburi #Mwangaza #Uwasi #Imani #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
         "lang": "sw",
+        "ig": {
+          "id": "18064411994530459",
+          "permalink": "https://www.instagram.com/p/De_pjqrF7op/"
+        },
         "fb": {
-          "id": "122209159886587338"
+          "id": "447560908444853_122209159886587338",
+          "permalink": "https://www.facebook.com/photo.php?fbid=122209159886587338&set=a.122189068466587338&type=3"
         }
       }
     },
@@ -1297,6 +1302,13 @@
       "date": "2026-10-29",
       "slot": "12:00",
       "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-29T09:00:00.000Z, Kiswahili) — \"web-sw-wagalatia-5-22.jpg\"; IG half to be posted by a landed run in the catch-up window"
+    },
+    {
+      "ts": "2026-10-27T10:32:01.051Z",
+      "level": "success",
+      "date": "2026-10-27",
+      "slot": "12:00",
+      "message": "12:00 Auto: published — \"web-sw-zaburi-27-1.jpg\" | IG ✓ | FB ✓"
     }
   ]
 }
