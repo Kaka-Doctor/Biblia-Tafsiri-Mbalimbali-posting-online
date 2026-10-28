@@ -705,11 +705,24 @@
           "id": "122209545518587338"
         }
       }
+    },
+    "2026-10-31": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-10-31T09:00:00.000Z",
+        "at": "2026-10-28T21:54:10.746Z",
+        "photo": "web-sw-zaburi-24-1.jpg",
+        "caption": "𝗗𝗨𝗡𝗜𝗔 𝗡𝗜 𝗬𝗔 𝗕𝗪𝗔𝗡𝗔\n\nZaburi 24:1\n\n\"Ameumba Vyote na Vyote ni vyake\"\n\nDunia na vyote vilivyomo ndani yake ni mali ya Bwana, pamoja na wakazi wake wote. Kila unachokiona leo – mbingu, nchi na vyote vilivyomo – ni mali yake, tunaitwa kuwa wasimamizi wema.\n\n#Zaburi #Bwana #Umiliki #Uumbaji #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122209669610587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 21,
-    "sw": 21
+    "sw": 22
   },
   "events": [
     {
@@ -1341,6 +1354,13 @@
       "date": "2026-10-28",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-en-1corinthians-16-14.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-28T21:54:10.746Z",
+      "level": "info",
+      "date": "2026-10-31",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-10-31T09:00:00.000Z, Kiswahili) — \"web-sw-zaburi-24-1.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
