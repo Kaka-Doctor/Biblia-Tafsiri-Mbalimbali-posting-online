@@ -723,10 +723,23 @@
           "id": "122209669610587338"
         }
       }
+    },
+    "2026-11-01": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-11-01T09:00:00.000Z",
+        "at": "2026-10-30T00:24:48.710Z",
+        "photo": "web-en-matthew-19-26.jpg",
+        "caption": "𝗪𝗜𝗧𝗛 𝗚𝗢𝗗 𝗔𝗟𝗟 𝗧𝗛𝗜𝗡𝗚𝗦 𝗣𝗢𝗦𝗦𝗜𝗕𝗟𝗘\n\nMatthew 19:26\n\n\"WITH God all things are possible\"\n\n\"Impossible\" is a human word, not a divine one — with God the equation changes completely. Bring Him the situation you gave up on; nothing is too hard for the One who made all things.\n\n#Matthew #Possible #Faith #Miracles #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "en",
+        "fb": {
+          "id": "122209794554587338"
+        }
+      }
     }
   },
   "rotation": {
-    "en": 21,
+    "en": 22,
     "sw": 22
   },
   "events": [
@@ -1373,6 +1386,13 @@
       "date": "2026-10-29",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-sw-wagalatia-5-22.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-30T00:24:48.710Z",
+      "level": "info",
+      "date": "2026-11-01",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-11-01T09:00:00.000Z, English) — \"web-en-matthew-19-26.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
