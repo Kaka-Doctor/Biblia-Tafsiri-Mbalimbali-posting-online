@@ -741,11 +741,24 @@
           "id": "122209794554587338"
         }
       }
+    },
+    "2026-11-02": {
+      "12:00": {
+        "status": "scheduled",
+        "publishTime": "2026-11-02T09:00:00.000Z",
+        "at": "2026-10-30T22:58:38.068Z",
+        "photo": "web-sw-waroma-8-28.jpg",
+        "caption": "𝗩𝗜𝗧𝗨 𝗩𝗬𝗘𝗠𝗔 𝗩𝗜𝗡𝗔𝗙𝗔𝗡𝗬𝗜𝗞𝗔\n\nWAROMA 8:28\n\n\"Tunajua kwamba,\nkatika mambo yote,\nMungu hufanya kazi\nna kuifanikisha pamoja\nna wote wampendao,\nyaani wale aliowaita\nkadiri ya kusudi lake.\"\n\nKwa wanaompenda Mungu, vitu vyema vinafanyika, hata katika hali zisizoonekana vyema. Mungu hutumia hata majaribu kujenga mapenzi yake mema ndani ya wanaompenda.\n\n#Waroma #Matumaini #Mapenzi #Mungu #BibliaTafsiriMbalimbali\n\nDownload Our App from PlayStore with this link: https://play.google.com/store/apps/details?id=com.biblia.tafsiri.mbalimbali",
+        "lang": "sw",
+        "fb": {
+          "id": "122209919108587338"
+        }
+      }
     }
   },
   "rotation": {
     "en": 22,
-    "sw": 22
+    "sw": 23
   },
   "events": [
     {
@@ -1405,6 +1418,13 @@
       "date": "2026-10-30",
       "slot": "12:00",
       "message": "12:00 Auto: published — \"web-en-zephaniah-3-17.jpg\" | IG ✓ | FB ✓"
+    },
+    {
+      "ts": "2026-10-30T22:58:38.068Z",
+      "level": "info",
+      "date": "2026-11-02",
+      "slot": "12:00",
+      "message": "12:00 FB half pre-scheduled via Meta (publishes 2026-11-02T09:00:00.000Z, Kiswahili) — \"web-sw-waroma-8-28.jpg\"; IG half to be posted by a landed run in the catch-up window"
     }
   ]
 }
